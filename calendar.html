@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caelan's Labor Market Tracker — Release Calendar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div>
+      <p class="eyebrow">Caelan's Labor Market Tracker</p>
+      <h1>Labor Market Release Calendar</h1>
+      <p class="tagline">Track upcoming data drops from government agencies and private intelligence firms.</p>
+    </div>
+    <div class="calendar-cta">
+      <p>Add your own release:</p>
+      <button class="refresh-btn" id="toggleAddForm" type="button">Add entry</button>
+    </div>
+  </header>
+
+  <nav class="site-nav" role="tablist">
+    <a href="index.html" class="nav-link" role="tab" aria-selected="false">News Feed</a>
+    <a href="calendar.html" class="nav-link active" role="tab" aria-selected="true">Release Calendar</a>
+    <a href="live.html" class="nav-link" role="tab" aria-selected="false">Live Feeds</a>
+    <a href="alt.html" class="nav-link" role="tab" aria-selected="false">Alt Compare</a>
+    <a href="impact.html" class="nav-link" role="tab" aria-selected="false">Market Impact</a>
+    <a href="papers.html" class="nav-link" role="tab" aria-selected="false">Research</a>
+    <a href="links.html" class="nav-link" role="tab" aria-selected="false">Links</a>
+  </nav>
+
+  <main>
+    <section class="calendar">
+      <h2>Upcoming Releases</h2>
+      <p class="calendar-subtitle">Dates, sources, and links for the next wave of labor-market intel.</p>
+      <div class="auto-panel">
+        <div class="auto-actions">
+          <button id="autoRefresh" class="refresh-btn" type="button">Refresh auto schedule</button>
+          <p id="autoStatus" class="form-status">Auto schedule pulls directly from BLS, ADP, and Fed calendars.</p>
+        </div>
+        <div class="fred-inline-key">
+          <label>
+            <span>FRED API key (optional)</span>
+            <input type="password" id="calendarFredKey" placeholder="Reuse the key from Live Feeds">
+          </label>
+          <button type="button" id="calendarFredApply" class="toggle-btn">Save key</button>
+        </div>
+      </div>
+      <form id="addReleaseForm" class="add-form hidden">
+        <div class="form-row">
+          <label>
+            <span>Admin passphrase</span>
+            <input type="password" id="adminPass" required>
+          </label>
+          <label>
+            <span>Title</span>
+            <input type="text" id="releaseTitle" required>
+          </label>
+          <label>
+            <span>Source</span>
+            <input type="text" id="releaseSource" required>
+          </label>
+        </div>
+        <div class="form-row">
+          <label>
+            <span>Date & time</span>
+            <input type="datetime-local" id="releaseDate" required>
+          </label>
+          <label>
+            <span>Link</span>
+            <input type="url" id="releaseLink" required>
+          </label>
+          <label>
+            <span>Location (optional)</span>
+            <input type="text" id="releaseLocation" placeholder="Washington, DC">
+          </label>
+        </div>
+        <label class="full-width">
+          <span>Description</span>
+          <textarea id="releaseDescription" rows="3" required></textarea>
+        </label>
+        <label class="full-width checkbox-field">
+          <input type="checkbox" id="releaseRecurring">
+          <span>Mark as recurring release</span>
+        </label>
+        <div class="form-actions">
+          <p id="formStatus" class="form-status" aria-live="polite"></p>
+          <button type="submit" class="refresh-btn">Save entry</button>
+        </div>
+      </form>
+      <div class="view-controls">
+        <div class="view-switch" role="group" aria-label="Switch calendar layout">
+          <button type="button" class="toggle-btn active" data-view="list">List view</button>
+          <button type="button" class="toggle-btn" data-view="grid">Calendar view</button>
+        </div>
+        <div class="month-nav view-hidden" id="calendarMonthNav">
+          <button type="button" id="calendarPrevMonth" aria-label="Previous month">‹</button>
+          <span id="calendarMonthLabel"></span>
+          <button type="button" id="calendarNextMonth" aria-label="Next month">›</button>
+        </div>
+      </div>
+      <ul id="calendarList" class="calendar-list"></ul>
+      <div id="calendarGrid" class="calendar-grid view-hidden" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <script src="calendar.js" type="module"></script>
+</body>
+</html>

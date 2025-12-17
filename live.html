@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caelan's Labor Market Tracker — Live Feeds</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="live-feeds">
+  <header class="site-header">
+    <div>
+      <p class="eyebrow">Caelan's Labor Market Tracker</p>
+      <h1>Live Labor Market Feeds</h1>
+      <p class="tagline">Drop in the dashboards and streams you watch intra-day.</p>
+    </div>
+  </header>
+
+  <nav class="site-nav" role="tablist">
+    <a href="index.html" class="nav-link" role="tab" aria-selected="false">News Feed</a>
+    <a href="calendar.html" class="nav-link" role="tab" aria-selected="false">Release Calendar</a>
+    <a href="live.html" class="nav-link active" role="tab" aria-selected="true">Live Feeds</a>
+    <a href="alt.html" class="nav-link" role="tab" aria-selected="false">Alt Compare</a>
+    <a href="impact.html" class="nav-link" role="tab" aria-selected="false">Market Impact</a>
+    <a href="papers.html" class="nav-link" role="tab" aria-selected="false">Research</a>
+    <a href="links.html" class="nav-link" role="tab" aria-selected="false">Links</a>
+  </nav>
+
+	  <main>
+	    <section class="links-board">
+	      <header class="links-board-header">
+	        <div>
+	          <h2>Streaming dashboards</h2>
+	          <p>Embed real-time vacancy indices, wage trackers, Google Trends, or trading dashboards.</p>
+        </div>
+      </header>
+      <div class="links-grid live-grid">
+        <article class="link-card">
+          <h2>Google Search Interest: "Unemployment"</h2>
+          <p>Live Google Trends view for the “unemployment” keyword (United States, past 12 months).</p>
+          <div class="timescale-panel">
+            <p>Timescale</p>
+            <div class="pill-switch" role="group" aria-label="Timescale">
+              <button class="pill" data-range="now 1-d">1D</button>
+              <button class="pill" data-range="now 7-d">7D</button>
+              <button class="pill" data-range="today 3-m">3M</button>
+              <button class="pill active" data-range="today 12-m">1Y</button>
+              <button class="pill" data-range="today 5-y">5Y</button>
+              <button class="pill" data-range="all">All</button>
+            </div>
+          </div>
+          <div class="state-switch">
+            <label for="stateInput">Region</label>
+            <input list="stateOptions" id="stateInput" placeholder="Search any US state">
+            <datalist id="stateOptions">
+              <option value="United States"></option>
+              <option value="Alabama"></option>
+              <option value="Alaska"></option>
+              <option value="Arizona"></option>
+              <option value="Arkansas"></option>
+              <option value="California"></option>
+              <option value="Colorado"></option>
+              <option value="Connecticut"></option>
+              <option value="Delaware"></option>
+              <option value="District of Columbia"></option>
+              <option value="Florida"></option>
+              <option value="Georgia"></option>
+              <option value="Hawaii"></option>
+              <option value="Idaho"></option>
+              <option value="Illinois"></option>
+              <option value="Indiana"></option>
+              <option value="Iowa"></option>
+              <option value="Kansas"></option>
+              <option value="Kentucky"></option>
+              <option value="Louisiana"></option>
+              <option value="Maine"></option>
+              <option value="Maryland"></option>
+              <option value="Massachusetts"></option>
+              <option value="Michigan"></option>
+              <option value="Minnesota"></option>
+              <option value="Mississippi"></option>
+              <option value="Missouri"></option>
+              <option value="Montana"></option>
+              <option value="Nebraska"></option>
+              <option value="Nevada"></option>
+              <option value="New Hampshire"></option>
+              <option value="New Jersey"></option>
+              <option value="New Mexico"></option>
+              <option value="New York"></option>
+              <option value="North Carolina"></option>
+              <option value="North Dakota"></option>
+              <option value="Ohio"></option>
+              <option value="Oklahoma"></option>
+              <option value="Oregon"></option>
+              <option value="Pennsylvania"></option>
+              <option value="Rhode Island"></option>
+              <option value="South Carolina"></option>
+              <option value="South Dakota"></option>
+              <option value="Tennessee"></option>
+              <option value="Texas"></option>
+              <option value="Utah"></option>
+              <option value="Vermont"></option>
+              <option value="Virginia"></option>
+              <option value="Washington"></option>
+              <option value="West Virginia"></option>
+              <option value="Wisconsin"></option>
+              <option value="Wyoming"></option>
+            </datalist>
+            <small id="stateStatus" class="form-status"></small>
+          </div>
+          <div class="embed-frame">
+            <iframe
+              id="trendsFrame"
+              src=""
+              width="100%"
+              height="350"
+              frameborder="0"
+              scrolling="0"
+              aria-label="Google Trends chart for unemployment searches"></iframe>
+          </div>
+	          <small>Need a different query or region? Swap the `keyword`, `geo`, or `time` params.</small>
+	        </article>
+	      </div>
+	    </section>
+
+    <section class="rate-board" id="rateBoard">
+      <header class="links-board-header">
+        <div>
+          <h2>Interest rate monitor</h2>
+          <p>Track Fed policy settings and Treasury yields with live pulls from FRED.</p>
+        </div>
+        <div class="rate-switch" role="group" aria-label="Interest rate window">
+          <button type="button" class="pill active" data-rate-range="6m">6M</button>
+          <button type="button" class="pill" data-rate-range="1y">1Y</button>
+          <button type="button" class="pill" data-rate-range="5y">5Y</button>
+          <button type="button" class="pill" data-rate-range="max">Max</button>
+        </div>
+      </header>
+      <p id="rateStatus" class="form-status" aria-live="polite"></p>
+      <article class="policy-card">
+        <header class="policy-head">
+          <div>
+            <h3>Policy rates</h3>
+            <p>Effective fed funds, target upper bound, and bank prime rate.</p>
+          </div>
+        </header>
+        <div class="policy-chart-wrap">
+          <canvas id="policyRatesChart" height="220"></canvas>
+        </div>
+        <div class="policy-stats">
+          <div>
+            <p class="detail-label">Effective fed funds</p>
+            <p id="policyEffrValue">—</p>
+          </div>
+          <div>
+            <p class="detail-label">Target upper bound</p>
+            <p id="policyTargetValue">—</p>
+          </div>
+          <div>
+            <p class="detail-label">Bank prime</p>
+            <p id="policyPrimeValue">—</p>
+          </div>
+        </div>
+      </article>
+      <div id="rateCards" class="rate-grid"></div>
+      <article class="yield-card">
+        <header class="yield-head">
+          <div>
+            <h3>Yield curve monitor</h3>
+            <p>Compare long rates vs a short tenor and watch the spread flip negative.</p>
+          </div>
+          <label class="yield-select">
+            <span>Spread</span>
+            <select id="yieldPairSelect">
+              <option value="10s2s" selected>10Y - 2Y</option>
+              <option value="10s3m">10Y - 3M</option>
+              <option value="30s10s">30Y - 10Y</option>
+              <option value="5s2s">5Y - 2Y</option>
+              <option value="5s3m">5Y - 3M</option>
+            </select>
+          </label>
+        </header>
+        <div class="yield-chart-wrap">
+          <canvas id="yieldSpreadChart" height="220"></canvas>
+        </div>
+        <div class="yield-stats">
+          <div>
+            <p class="detail-label" id="yieldLongLabel">10-year yield</p>
+            <p id="yieldTenValue">—</p>
+          </div>
+          <div>
+            <p class="detail-label" id="yieldShortLabel">2-year yield</p>
+            <p id="yieldTwoValue">—</p>
+          </div>
+          <div>
+            <p class="detail-label">Spread (10Y - 2Y)</p>
+            <p id="yieldSpreadValue">—</p>
+          </div>
+        </div>
+      </article>
+    </section>
+
+	    <section class="revision-board">
+	      <header class="links-board-header">
+	        <div>
+	          <h2>BLS revision explorer</h2>
+          <p>Track how total nonfarm payroll estimates evolve from first print to final revision.</p>
+        </div>
+        <div class="revision-toggle" id="revisionToggle">
+          <button type="button" class="toggle-btn active" data-revision-series="PAYEMS">Total Nonfarm (SA)</button>
+          <button type="button" class="toggle-btn" data-revision-series="PAYNSA">Total Nonfarm (NSA)</button>
+        </div>
+      </header>
+      <div class="fred-controls revision-controls">
+        <label>
+          <span>Supersector</span>
+          <select id="revisionSupersectorSelect" aria-label="Supersector list"></select>
+        </label>
+        <small>Tip: This dataset only has NSA supersector series; SA/NSA applies to Total nonfarm only.</small>
+      </div>
+      <p id="revisionStatus" class="form-status" aria-live="polite">Load the precomputed JSON via the Python script to explore revisions.</p>
+      <div class="revision-content">
+        <div class="chart-card revision-chart-card">
+          <div class="chart-header">
+            <h3>Employment levels (thousands of jobs)</h3>
+            <div class="revision-range" id="revisionRange">
+              <button type="button" class="pill" data-revision-range="12m">12M</button>
+              <button type="button" class="pill active" data-revision-range="24m">24M</button>
+              <button type="button" class="pill" data-revision-range="5y">5Y</button>
+              <button type="button" class="pill" data-revision-range="max">Max</button>
+            </div>
+          </div>
+          <p class="chart-subtitle" id="revisionChartSubtitle"></p>
+          <div class="revision-chart-wrap">
+            <canvas id="revisionChart" class="fixed-chart" height="320"></canvas>
+          </div>
+        </div>
+        <div class="revision-stats" id="revisionStats"></div>
+      </div>
+      <div class="revision-table-wrap">
+        <table class="revision-table">
+          <thead>
+            <tr>
+              <th>Month</th>
+              <th>Initial</th>
+              <th>1st rev</th>
+              <th>Final</th>
+              <th>Δ 1 mo</th>
+              <th>Δ 2 mo</th>
+            </tr>
+          </thead>
+          <tbody id="revisionTableBody">
+            <tr><td colspan="6">Run the revision script to populate this table.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="revision-table-wrap">
+        <table class="revision-table compact">
+          <thead>
+            <tr>
+              <th>Month</th>
+              <th>Final – Initial</th>
+            </tr>
+          </thead>
+          <tbody id="revisionDeltaTableBody">
+            <tr><td colspan="2">Run the revision script to populate this table.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="links-board">
+      <header class="links-board-header">
+        <div>
+          <h2>Alt Compare</h2>
+          <p>Deep-dive comparisons between BLS, Revelio, and ADP (coverage-aware totals, transforms, gaps, and revisions).</p>
+        </div>
+        <a class="refresh-btn" href="alt.html">Open Alt Compare</a>
+      </header>
+    </section>
+
+    <section class="fred-board">
+      <header class="links-board-header">
+        <div>
+          <h2>FRED data explorer</h2>
+          <p>Connect your St. Louis Fed API key and browse the core employment, wages, and inflation indicators.</p>
+        </div>
+      </header>
+      <div class="fred-controls">
+        <label>
+          <span>FRED API key</span>
+          <input type="password" id="fredApiKey" placeholder="Paste your API key">
+        </label>
+        <button id="fredApplyKey" class="refresh-btn" type="button">Apply key</button>
+        <small>Key stored locally in this browser only.</small>
+      </div>
+      <div class="fred-controls">
+        <label>
+          <span>Indicator</span>
+          <select id="fredSeriesSelect"></select>
+        </label>
+        <label>
+          <span>Timescale</span>
+          <select id="fredRangeSelect">
+            <option value="1y">1 year</option>
+            <option value="5y" selected>5 years</option>
+            <option value="10y">10 years</option>
+            <option value="max">Max available</option>
+          </select>
+        </label>
+        <button id="fredRefresh" class="refresh-btn" type="button">Refresh</button>
+      </div>
+      <p id="fredStatus" class="form-status" aria-live="polite"></p>
+      <div class="chart-card">
+        <canvas id="fredChart" height="320"></canvas>
+      </div>
+      <div class="fred-details">
+        <div>
+          <p class="detail-label">Latest value</p>
+          <p id="fredLatestValue">—</p>
+        </div>
+        <div>
+          <p class="detail-label">Last updated</p>
+          <p id="fredLatestDate">—</p>
+        </div>
+        <div>
+          <p class="detail-label">Units</p>
+          <p id="fredUnits">—</p>
+        </div>
+        <div>
+          <p class="detail-label">Source</p>
+          <p><a id="fredSourceLink" href="https://fred.stlouisfed.org" target="_blank" rel="noopener">Open in FRED →</a></p>
+        </div>
+      </div>
+      <p id="fredDescription" class="fred-description"></p>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="live.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caelan's Labor Market Tracker — Alt Compare</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div>
+      <p class="eyebrow">Caelan's Labor Market Tracker</p>
+      <h1>Alt Data Comparison</h1>
+      <p class="tagline">Compare payroll signals (BLS, Revelio, ADP) with coverage-aware totals, transforms, and gaps.</p>
+    </div>
+  </header>
+
+  <nav class="site-nav" role="tablist">
+    <a href="index.html" class="nav-link" role="tab" aria-selected="false">News Feed</a>
+    <a href="calendar.html" class="nav-link" role="tab" aria-selected="false">Release Calendar</a>
+    <a href="live.html" class="nav-link" role="tab" aria-selected="false">Live Feeds</a>
+    <a href="alt.html" class="nav-link active" role="tab" aria-selected="true">Alt Compare</a>
+    <a href="impact.html" class="nav-link" role="tab" aria-selected="false">Market Impact</a>
+    <a href="papers.html" class="nav-link" role="tab" aria-selected="false">Research</a>
+    <a href="links.html" class="nav-link" role="tab" aria-selected="false">Links</a>
+  </nav>
+
+  <main>
+    <section class="revelio-board alt-board">
+      <header class="links-board-header">
+        <div>
+          <h2>Employment levels & transforms</h2>
+          <p>Defaults to Total private (ADP comparable). Totals support SA/NSA; sectors are NSA-only.</p>
+        </div>
+      </header>
+
+      <div class="fred-controls">
+        <label>
+          <span>Sector</span>
+          <select id="altSectorSelect"></select>
+        </label>
+        <label>
+          <span>Seasonality</span>
+          <select id="altSeasonalitySelect">
+            <option value="sa" selected>Seasonally adjusted</option>
+            <option value="nsa">Not seasonally adjusted</option>
+          </select>
+        </label>
+        <label>
+          <span>Transform</span>
+          <select id="altTransformSelect">
+            <option value="level" selected>Level</option>
+            <option value="mom">MoM change</option>
+            <option value="yoy">YoY change</option>
+            <option value="momPct">MoM %</option>
+            <option value="yoyPct">YoY %</option>
+            <option value="index">Index (start=100)</option>
+          </select>
+        </label>
+        <label>
+          <span>Timescale</span>
+          <select id="altRangeSelect">
+            <option value="1y">1 year</option>
+            <option value="3y" selected>3 years</option>
+            <option value="max">Max</option>
+          </select>
+        </label>
+        <button id="altRefresh" class="refresh-btn" type="button">Refresh</button>
+        <div class="auto-info" id="altInfo">
+          <button type="button" class="info-pill" id="altInfoBtn" aria-label="Methodology" aria-expanded="false">i</button>
+          <div class="auto-info-details" id="altInfoDetails" role="dialog" aria-label="Methodology details">
+            <p><strong>Methodology</strong></p>
+            <p><strong>Coverage</strong>: ADP is private payrolls. Revelio “Total nonfarm” uses the published national totals from <code>employment_national_revelio.csv</code> when available (SA/NSA). If that file is missing, it falls back to summing NAICS buckets excluding 11 (ag) + 99 (unclassified). “Total private” is summed excluding 11 + 92 (government) + 99. BLS totals use PAYEMS/PAYNSA (nonfarm) and CES05/USPRIV (private).</p>
+            <p><strong>BLS SA totals</strong>: If the CES Total Private SA series is unavailable, the exporter falls back to FRED’s USPRIV series for the latest levels.</p>
+            <p><strong>Alignment</strong>: Revelio NAICS buckets are mapped to CES supersectors; ADP’s “TTU” is aligned by summing Utilities + Wholesale + Retail + Transportation/Warehousing where available.</p>
+            <p><strong>Missing data</strong>: Missing values stay missing (not zero). Transforms (MoM/YoY/%/index) ignore missing observations.</p>
+            <p><strong>Gap</strong>: The gap panel is always shown as % difference versus BLS (Revelio vs BLS, ADP vs BLS).</p>
+            <p><strong>Revisions</strong>: Uses first vs latest vintage in your Revelio release history for each month (final–first).</p>
+          </div>
+        </div>
+        <small id="altHint">Totals: Total private is ADP comparable; Total nonfarm uses Revelio published totals when available.</small>
+      </div>
+
+      <p id="altStatus" class="form-status" aria-live="polite">Loading comparison datasets…</p>
+
+      <div class="chart-card revelio-chart-card">
+        <div class="revelio-chart-wrap">
+          <canvas id="altChart" height="320"></canvas>
+        </div>
+        <div class="revelio-metrics" id="altMetrics"></div>
+      </div>
+
+      <div class="chart-card revelio-chart-card">
+        <div class="chart-header">
+          <h3>Gap vs BLS</h3>
+        </div>
+        <div class="revelio-chart-wrap revelio-chart-wrap-small">
+          <canvas id="altGapChart" height="220"></canvas>
+        </div>
+      </div>
+
+      <div class="accuracy-grid" id="altAccuracy" aria-live="polite"></div>
+    </section>
+
+    <section class="revelio-board alt-board">
+      <header class="links-board-header">
+        <div>
+          <h2>Revisions (Total nonfarm, SA)</h2>
+          <p>Uses the first and latest release in your Revelio vintage history to estimate revision size.</p>
+        </div>
+      </header>
+
+      <div class="fred-controls">
+        <label>
+          <span>Metric</span>
+          <select id="altRevMetricSelect">
+            <option value="revision" selected>Revision size (final–first)</option>
+            <option value="level">Final level</option>
+          </select>
+        </label>
+        <label>
+          <span>Timescale</span>
+          <select id="altRevRangeSelect">
+            <option value="1y">1 year</option>
+            <option value="3y" selected>3 years</option>
+            <option value="max">Max</option>
+          </select>
+        </label>
+        <button id="altRevRefresh" class="refresh-btn" type="button">Refresh</button>
+        <small id="altRevHint">Requires `data/bls_vs_revelio_revisions.json` from `fetch_bls_revisions.py`.</small>
+      </div>
+
+      <p id="altRevStatus" class="form-status" aria-live="polite">Loading revision dataset…</p>
+
+      <div class="chart-card revelio-chart-card">
+        <div class="revelio-chart-wrap">
+          <canvas id="altRevChart" height="320"></canvas>
+        </div>
+        <div class="revelio-metrics" id="altRevMetrics"></div>
+      </div>
+
+      <div class="chart-card revelio-chart-card">
+        <div class="chart-header">
+          <h3>% gap (BLS – Revelio)</h3>
+        </div>
+        <div class="revelio-chart-wrap revelio-chart-wrap-small">
+          <canvas id="altRevGapChart" height="220"></canvas>
+        </div>
+      </div>
+
+      <div class="revision-table-wrap">
+        <table class="revision-table" id="altRevTable">
+          <thead id="altRevTableHead"></thead>
+          <tbody id="altRevTableBody"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="alt.js" type="module"></script>
+</body>
+</html>

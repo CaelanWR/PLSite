@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caelan's Labor Market Tracker — Research</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div>
+      <p class="eyebrow">Caelan's Labor Market Tracker</p>
+      <h1>Labor Economics Research</h1>
+      <p class="tagline">Fresh academic papers and policy notes, ranked by recency with quick abstracts.</p>
+    </div>
+  </header>
+
+  <nav class="site-nav" role="tablist">
+    <a href="index.html" class="nav-link" role="tab" aria-selected="false">News Feed</a>
+    <a href="calendar.html" class="nav-link" role="tab" aria-selected="false">Release Calendar</a>
+    <a href="live.html" class="nav-link" role="tab" aria-selected="false">Live Feeds</a>
+    <a href="alt.html" class="nav-link" role="tab" aria-selected="false">Alt Compare</a>
+    <a href="impact.html" class="nav-link" role="tab" aria-selected="false">Market Impact</a>
+    <a href="papers.html" class="nav-link active" role="tab" aria-selected="true">Research</a>
+    <a href="links.html" class="nav-link" role="tab" aria-selected="false">Links</a>
+  </nav>
+
+  <main>
+    <section class="links-board papers-board">
+      <header class="links-board-header">
+        <div>
+          <h2>Latest labor-market papers</h2>
+          <p>Pulls from arXiv Econ, NBER, NEP labor-market alerts, and more. Sorted by publication time.</p>
+        </div>
+        <div class="papers-actions">
+          <input type="search" id="paperFilter" placeholder="Filter by keyword, author, or source">
+          <button id="laborToggle" class="toggle-btn active" type="button">Labor econ only</button>
+          <button id="papersRefresh" class="refresh-btn" type="button">Refresh feed</button>
+        </div>
+      </header>
+      <div id="sourceFilters" class="source-filters" role="group" aria-label="Filter by source"></div>
+      <p id="papersStatus" class="form-status" aria-live="polite">Loading recent research…</p>
+      <div id="paperList" class="papers-grid"></div>
+    </section>
+  </main>
+
+  <script src="papers.js" type="module"></script>
+</body>
+</html>

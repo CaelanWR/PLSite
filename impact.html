@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caelan's Labor Market Tracker — Market Impact</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+      <header class="site-header">
+        <div>
+          <p class="eyebrow">Caelan's Labor Market Tracker</p>
+          <h1>Market Impact</h1>
+          <p class="tagline">Quantify how ADP and Revelio releases move payroll market probabilities.</p>
+        </div>
+      </header>
+
+  <nav class="site-nav" role="tablist">
+    <a href="index.html" class="nav-link" role="tab" aria-selected="false">News Feed</a>
+    <a href="calendar.html" class="nav-link" role="tab" aria-selected="false">Release Calendar</a>
+    <a href="live.html" class="nav-link" role="tab" aria-selected="false">Live Feeds</a>
+    <a href="alt.html" class="nav-link" role="tab" aria-selected="false">Alt Compare</a>
+    <a href="impact.html" class="nav-link active" role="tab" aria-selected="true">Market Impact</a>
+    <a href="papers.html" class="nav-link" role="tab" aria-selected="false">Research</a>
+    <a href="links.html" class="nav-link" role="tab" aria-selected="false">Links</a>
+  </nav>
+
+  <main>
+    <section class="revelio-board">
+      <header class="links-board-header">
+        <div>
+          <h2>Payroll release event study</h2>
+        </div>
+      </header>
+
+      <div class="fred-controls">
+        <label>
+          <span>Provider</span>
+          <select id="impactProviderSelect">
+            <option value="kalshi" selected>Kalshi</option>
+            <option value="polymarket">Polymarket (NFP)</option>
+          </select>
+        </label>
+        <label>
+          <span>Top section</span>
+          <select id="impactSectionSelect">
+            <option value="" selected>Jump…</option>
+            <option value="impactYesCard">Yes price</option>
+            <option value="impactExpectationCard">Market expectation</option>
+            <option value="impactAlignmentCard">Announcement alignment</option>
+            <option value="impactDistributionCard">Strike distribution</option>
+            <option value="impactHistoryCard">History</option>
+            <option value="impactStrikesCard">Strikes table</option>
+          </select>
+        </label>
+        <label>
+          <span>Source</span>
+          <select id="impactSourceSelect">
+            <option value="all" selected>ADP + Revelio</option>
+            <option value="adp">ADP</option>
+            <option value="revelio">Revelio</option>
+          </select>
+        </label>
+        <label>
+          <span>Event</span>
+          <select id="impactEventSelect"></select>
+        </label>
+        <label>
+          <span>Horizon</span>
+          <select id="impactHorizonSelect">
+            <option value="5m">+5 min</option>
+            <option value="30m" selected>+30 min</option>
+            <option value="60m">+1 hour</option>
+            <option value="240m">+4 hours</option>
+          </select>
+        </label>
+        <button id="impactRefresh" class="refresh-btn" type="button">Refresh</button>
+        <div class="auto-info" id="impactInfo">
+          <button type="button" class="info-pill" id="impactInfoBtn" aria-label="Methodology" aria-expanded="false">i</button>
+          <div class="auto-info-details" id="impactInfoDetails" role="dialog" aria-label="Methodology details">
+            <p><strong>Methodology</strong></p>
+            <p><strong>Window</strong>: Pulls 1-minute Kalshi candlesticks from 30 minutes before the release to 4 hours after.</p>
+            <p><strong>Baseline</strong>: Uses the last candle at or before the release timestamp as the pre-release price.</p>
+            <p><strong>Impact</strong>: Reports Δ(Yes price) in percentage points at selected horizons.</p>
+            <p><strong>Market expected</strong>: Builds an implied distribution and computes the weighted-average expected payroll change before and after the release. For Polymarket brackets, uses each bracket midpoint (e.g. <code>100K-150K → 125K</code>). For Kalshi “Above X” strikes, estimates bracket probabilities from CDF differences between adjacent strikes.</p>
+            <p><strong>Aggregate strike</strong>: If you select <em>Aggregate (announcement-weighted)</em>, the chart switches to an “announcement-aligned” move: for each strike <code>S</code> and announced payroll change <code>A</code>, set <code>sign = +1</code> if <code>A &gt; S</code> else <code>-1</code> if <code>A &lt; S</code>, weight <code>w = exp(-|S-A|/50,000)</code>, compute <code>ΔYes(t) = Yes(t) - Yes(baseline)</code>, then aggregate <code>agg(t) = Σ(w·sign·ΔYes(t)) / Σ(w)</code> across strikes with data.</p>
+            <p><strong>Source summary</strong>: Aggregates mean/|mean| moves, volume-rate ratios, and stabilization times across all loaded events.</p>
+          </div>
+        </div>
+      </div>
+
+      <p id="impactStatus" class="form-status" aria-live="polite">Loading impact dataset…</p>
+
+      <div id="impactSections">
+      <div class="chart-card revelio-chart-card impact-section" id="impactYesCard">
+        <div class="chart-header">
+          <h3>Yes price</h3>
+          <label>
+            <span>Strike</span>
+            <select id="impactStrikeSelect"></select>
+          </label>
+        </div>
+        <div class="revelio-chart-wrap">
+          <canvas id="impactChart" height="320"></canvas>
+        </div>
+        <div class="revelio-metrics" id="impactMetrics"></div>
+      </div>
+
+      <div class="chart-card impact-section" id="impactExpectationCard">
+        <div class="chart-header">
+          <h3>Market expectation</h3>
+          <label>
+            <span>Data</span>
+            <select id="impactSummaryProviderSelect">
+              <option value="same" selected>Same as provider</option>
+              <option value="kalshi">Kalshi</option>
+              <option value="polymarket">Polymarket</option>
+              <option value="both">Kalshi + Polymarket</option>
+            </select>
+          </label>
+        </div>
+        <p class="chart-subtitle" id="impactExpectationText">Select an event to see how the market-implied expected payroll change repriced after the release.</p>
+        <div class="revelio-metrics" id="impactExpectationMetrics"></div>
+        <div class="revelio-chart-wrap revelio-chart-wrap-small">
+          <canvas id="impactExpectationChart" height="220"></canvas>
+        </div>
+      </div>
+
+      <div class="chart-card impact-section" id="impactAlignmentCard">
+        <div class="chart-header">
+          <h3>Announcement alignment</h3>
+        </div>
+        <p class="chart-subtitle">Across all loaded events: does the market reprice in the direction implied by the announcement vs the pre-release expectation?</p>
+        <div class="revelio-metrics" id="impactAlignmentMetrics"></div>
+      </div>
+
+      <div class="chart-card impact-section" id="impactSummaryCard">
+        <div class="chart-header">
+          <h3>Source summary</h3>
+        </div>
+        <p class="chart-subtitle">Averages across all loaded events at the selected horizon.</p>
+        <div class="revelio-metrics" id="impactSummaryMetrics"></div>
+      </div>
+
+      <div class="chart-card revelio-chart-card impact-section" id="impactDistributionCard">
+        <div class="chart-header">
+          <h3>Strike distribution</h3>
+          <label>
+            <span class="visually-hidden">Bar chart mode</span>
+            <select id="impactBarModeSelect">
+              <option value="distribution" selected>Before vs after</option>
+              <option value="delta">Δ Yes by strike</option>
+            </select>
+          </label>
+        </div>
+        <div class="revelio-chart-wrap revelio-chart-wrap-small">
+          <canvas id="impactBarChart" height="220"></canvas>
+        </div>
+      </div>
+
+      <div class="revision-table-wrap impact-section" id="impactHistoryCard">
+        <table class="revision-table compact" id="impactHistoryTable">
+          <thead id="impactHistoryTableHead"></thead>
+          <tbody id="impactHistoryTableBody"></tbody>
+        </table>
+      </div>
+
+      <div class="revision-table-wrap impact-section" id="impactStrikesCard">
+        <table class="revision-table compact" id="impactTable">
+          <thead id="impactTableHead"></thead>
+          <tbody id="impactTableBody"></tbody>
+        </table>
+      </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="impact.js" type="module"></script>
+</body>
+</html>

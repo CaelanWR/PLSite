@@ -1,0 +1,4 @@
+id,type,label,release_iso,release_month,payroll_month,actual,expected,unit
+2025-12-adp,adp,ADP National Employment Report,2025-12-03T13:15:00Z,2025-12,2025-11,-32000,40000,jobs
+2025-12-revelio,revelio,Revelio Public Labor Statistics (RPLS),2025-12-04T13:00:00Z,2025-12,2025-11,-9000,,jobs
+

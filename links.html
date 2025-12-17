@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caelan's Labor Market Tracker — Links</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div>
+      <p class="eyebrow">Caelan's Labor Market Tracker</p>
+      <h1>Labor Market Links</h1>
+      <p class="tagline">Bookmark the tools, dashboards, and datasets you check every day.</p>
+    </div>
+  </header>
+
+  <nav class="site-nav" role="tablist">
+    <a href="index.html" class="nav-link" role="tab" aria-selected="false">News Feed</a>
+    <a href="calendar.html" class="nav-link" role="tab" aria-selected="false">Release Calendar</a>
+    <a href="live.html" class="nav-link" role="tab" aria-selected="false">Live Feeds</a>
+    <a href="alt.html" class="nav-link" role="tab" aria-selected="false">Alt Compare</a>
+    <a href="impact.html" class="nav-link" role="tab" aria-selected="false">Market Impact</a>
+    <a href="papers.html" class="nav-link" role="tab" aria-selected="false">Research</a>
+    <a href="links.html" class="nav-link active" role="tab" aria-selected="true">Links</a>
+  </nav>
+
+  <main>
+    <section class="links-board">
+      <header class="links-board-header">
+        <div>
+          <h2>Library</h2>
+          <p>Save articles from the News Feed and maintain your own shortcuts. Stored locally in this browser.</p>
+        </div>
+      </header>
+
+	      <div class="fred-controls">
+	        <label>
+	          <span>Filter</span>
+	          <input type="search" id="linksFilter" placeholder="Search saved articles and links">
+        </label>
+      </div>
+
+      <h3 class="section-title">Saved articles</h3>
+      <div id="savedArticles" class="custom-links"></div>
+    </section>
+
+	    <section class="links-board">
+	      <header class="links-board-header">
+	        <div>
+	          <h2>Links</h2>
+	          <p>Add and remove your shortcuts (stored locally in this browser).</p>
+	        </div>
+	        <button id="toggleLinkForm" class="refresh-btn" type="button">Add link</button>
+	      </header>
+      <div id="customLinks" class="custom-links"></div>
+    </section>
+  </main>
+
+  <div id="linkModal" class="links-modal hidden" role="dialog" aria-modal="true">
+    <div class="links-modal-content">
+      <div class="links-modal-header">
+        <h2>Add a Shortcut</h2>
+        <button id="closeLinkForm" class="modal-close" type="button" aria-label="Close">✕</button>
+      </div>
+      <form id="linkForm" class="links-form">
+        <div class="form-row">
+          <label>
+            <span>Title</span>
+            <input type="text" id="linkTitle" required>
+          </label>
+          <label>
+            <span>URL</span>
+            <input type="url" id="linkUrl" required>
+          </label>
+        </div>
+        <label>
+          <span>Tags (comma-separated)</span>
+          <input type="text" id="linkTags" placeholder="e.g., Revelio, BLS, Calendar">
+        </label>
+        <label>
+          <span>Description</span>
+          <textarea id="linkDescription" rows="3" required></textarea>
+        </label>
+        <div class="form-actions">
+          <p id="linkFormStatus" class="form-status" aria-live="polite"></p>
+          <button type="submit" class="refresh-btn">Save link</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="links.js" type="module"></script>
+</body>
+</html>
