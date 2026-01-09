@@ -230,8 +230,8 @@ const ensureLoaded = async () => {
   setRevStatus("Loading revision dataset…");
   try {
     const [employmentRaw, revisionsRaw] = await Promise.all([
-      fetchJSONLocal("data/bls_vs_revelio_employment.json"),
-      fetchJSONLocal("data/bls_vs_revelio_revisions.json")
+      fetchJSONLocal("../data/bls_vs_revelio_employment.json"),
+      fetchJSONLocal("../data/bls_vs_revelio_revisions.json")
     ]);
     state.employment = prepareEmployment(employmentRaw);
     state.revisions = prepareRevisions(revisionsRaw);

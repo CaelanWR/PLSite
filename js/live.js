@@ -378,7 +378,7 @@ const revisionSources = [
   {
     id: "level2",
     label: "Level 2 + totals",
-    path: "data/bls_revisions_level2.json"
+    path: "../data/bls_revisions_level2.json"
   }
 ];
 
@@ -1835,8 +1835,8 @@ const ensureRevelioLoaded = async () => {
   setRevelioStatus("Loading BLS vs Revelio comparison data…");
   try {
     const [employmentRaw, revisionsRaw] = await Promise.all([
-      fetchJSONLoose("data/bls_vs_revelio_employment.json"),
-      fetchJSONLoose("data/bls_vs_revelio_revisions.json")
+      fetchJSONLoose("../data/bls_vs_revelio_employment.json"),
+      fetchJSONLoose("../data/bls_vs_revelio_revisions.json")
     ]);
     revelioState.employment = prepareRevelioEmployment(employmentRaw);
     revelioState.revisions = prepareRevelioRevisions(revisionsRaw);

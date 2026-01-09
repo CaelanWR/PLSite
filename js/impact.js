@@ -43,8 +43,8 @@ const PROVIDER_KEY = "impactProvider";
 const SUMMARY_PROVIDER_KEY = "impactSummaryProvider";
 const TOP_SECTION_KEY = "impactTopSection";
 const PROVIDER_CONFIG = {
-  kalshi: { label: "Kalshi", path: "data/kalshi_impact.json" },
-  polymarket: { label: "Polymarket", path: "data/polymarket_impact.json" }
+  kalshi: { label: "Kalshi", path: "../data/kalshi_impact.json" },
+  polymarket: { label: "Polymarket", path: "../data/polymarket_impact.json" }
 };
 
 const formatPct = (value) => {

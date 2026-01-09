@@ -1,6 +1,6 @@
 import { byId, toNumber, fetchJSONLocal } from "./ui_utils.js";
 
-const DATA_PATH = "data/market_priors.json";
+const DATA_PATH = "../data/market_priors.json";
 const REFRESH_MS = 5 * 60 * 1000;
 const STORAGE_KEY = "marketPriorsEvent";
 
