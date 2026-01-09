@@ -16,7 +16,7 @@ Auth
   - Optional: the browser can send `Authorization: Bearer ...` to the proxy.
 
 Run
-  python3 serve.py --port 8000
+  python3 scripts/serve.py --port 8000
 """
 
 from __future__ import annotations
@@ -26,6 +26,7 @@ import json
 import os
 from http import HTTPStatus
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
+from pathlib import Path
 from typing import Any, Dict, Optional
 from urllib.error import HTTPError, URLError
 from urllib.parse import urlparse
@@ -36,6 +37,7 @@ from fetch_kalshi_impact import _kalshi_auth_headers  # type: ignore
 
 KALSHI_UPSTREAM_BASE = "https://api.elections.kalshi.com/trade-api/v2"
 API_PREFIX = "/api/kalshi"
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 def _json_bytes(payload: Any) -> bytes:
@@ -146,6 +148,7 @@ def main() -> int:
     parser.add_argument("--port", type=int, default=8000, help="Port to bind (default: 8000)")
     args = parser.parse_args()
 
+    os.chdir(BASE_DIR)
     httpd = ThreadingHTTPServer((args.host, args.port), Handler)
     print(f"Serving on http://{args.host}:{args.port} (Kalshi proxy at {API_PREFIX}/...)", flush=True)
     try:
@@ -159,4 +162,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

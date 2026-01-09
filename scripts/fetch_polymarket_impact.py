@@ -51,6 +51,15 @@ from impact_common import (  # type: ignore[import-not-found]
 )
 
 
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+
+def _resolve_repo_path(value: str) -> Path:
+    path = Path(value).expanduser()
+    if path.is_absolute():
+        return path
+    return (BASE_DIR / path).resolve()
+
 DEFAULT_GAMMA_URL = "https://gamma-api.polymarket.com"
 DEFAULT_CLOB_URL = "https://clob.polymarket.com"
 DEFAULT_OUT = "data/polymarket_impact.json"
@@ -543,8 +552,8 @@ def main() -> int:
     parser.add_argument("--verbose", action="store_true", help="Print progress details.")
     args = parser.parse_args()
 
-    out_path = Path(args.out)
-    cache_dir = Path(args.cache_dir)
+    out_path = _resolve_repo_path(args.out)
+    cache_dir = _resolve_repo_path(args.cache_dir)
     horizons = _parse_horizons(args.horizons)
     if not horizons:
         print("Error: --horizons must contain at least one positive integer minute value.", file=sys.stderr)
@@ -576,8 +585,8 @@ def main() -> int:
     )
     _attach_announced_values(
         events,
-        adp_history_csv=Path("ADP_NER_history.csv"),
-        revelio_national_csv=Path("employment_national_revelio.csv"),
+        adp_history_csv=_resolve_repo_path("data/raw/ADP_NER_history.csv"),
+        revelio_national_csv=_resolve_repo_path("data/raw/employment_national_revelio.csv"),
     )
 
     print("Resolving Polymarket NFP events…", flush=True)

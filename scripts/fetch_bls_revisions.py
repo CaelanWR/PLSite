@@ -21,6 +21,10 @@ import math
 # CONFIGURATION
 # =============================================================================
 
+BASE_DIR = Path(__file__).resolve().parent.parent
+DATA_DIR = BASE_DIR / "data"
+RAW_DIR = DATA_DIR / "raw"
+
 # Provide your FRED API key via the environment:
 #   export FRED_API_KEY="..."
 API_KEY = os.environ.get("FRED_API_KEY", "").strip()
@@ -40,7 +44,7 @@ START_DATE = "2012-01-01"
 END_DATE = "2025-10-31"
 
 # Output paths (JSON feeds power the website explorer)
-OUTPUT_DIR = Path("data")
+OUTPUT_DIR = DATA_DIR
 OUTPUT_CSV_LEVEL2 = OUTPUT_DIR / "bls_revisions_level2.csv"
 OUTPUT_JSON_LEVEL2 = OUTPUT_DIR / "bls_revisions_level2.json"
 OUTPUT_CSV_DETAILED = OUTPUT_DIR / "bls_revisions_detailed.csv"
@@ -48,11 +52,11 @@ OUTPUT_JSON_DETAILED = OUTPUT_DIR / "bls_revisions_detailed.json"
 
 # Revelio alignment exports (for BLS vs Revelio comparisons)
 RUN_REVELIO_ALIGNMENT_EXPORT = True
-REVELIO_REVISIONS_CSV = Path("bls_revisions_revelio.csv")
-REVELIO_EMPLOYMENT_CSV = Path("employment_naics_revelio.csv")
+REVELIO_REVISIONS_CSV = RAW_DIR / "bls_revisions_revelio.csv"
+REVELIO_EMPLOYMENT_CSV = RAW_DIR / "employment_naics_revelio.csv"
 REVELIO_NATIONAL_EMPLOYMENT_CSV_CANDIDATES = [
-    Path("employment_national_revelio.csv"),
-    Path("employment_national_Revelio.csv")
+    RAW_DIR / "employment_national_revelio.csv",
+    RAW_DIR / "employment_national_Revelio.csv"
 ]
 
 def _pick_first_existing(paths: List[Path]) -> Optional[Path]:
@@ -60,8 +64,8 @@ def _pick_first_existing(paths: List[Path]) -> Optional[Path]:
         if path.exists():
             return path
     return None
-OUTPUT_CSV_BLS_REVISIONS_REVELIO_FORMAT = Path("bls_revisions.csv")
-OUTPUT_CSV_BLS_EMPLOYMENT_REVELIO_FORMAT = Path("employment_naics.csv")
+OUTPUT_CSV_BLS_REVISIONS_REVELIO_FORMAT = RAW_DIR / "bls_revisions.csv"
+OUTPUT_CSV_BLS_EMPLOYMENT_REVELIO_FORMAT = RAW_DIR / "employment_naics.csv"
 OUTPUT_CSV_BLS_VS_REVELIO_REVISIONS = OUTPUT_DIR / "bls_vs_revelio_revisions.csv"
 OUTPUT_JSON_BLS_VS_REVELIO_REVISIONS = OUTPUT_DIR / "bls_vs_revelio_revisions.json"
 OUTPUT_CSV_BLS_VS_REVELIO_EMPLOYMENT = OUTPUT_DIR / "bls_vs_revelio_employment.csv"
@@ -89,7 +93,7 @@ REVELIO_TO_CES_SUPERSECTOR = {
 }
 
 # ADP (National Employment Report) history (levels)
-ADP_NER_HISTORY_CSV = Path("ADP_NER_history.csv")
+ADP_NER_HISTORY_CSV = RAW_DIR / "ADP_NER_history.csv"
 
 ADP_INDUSTRY_TO_SECTOR = {
     "Construction": "23",
@@ -1079,7 +1083,7 @@ def analyze_supersector_detailed(api_key, supersector_code, detail_level, start_
         
         # Save to CSV
         safe_name = supersector_name.replace(' ', '_').replace(',', '').replace('/', '_')
-        filename = f"bls_revisions_level{detail_level}_{supersector_code}_{safe_name}.csv"
+        filename = RAW_DIR / f"bls_revisions_level{detail_level}_{supersector_code}_{safe_name}.csv"
         revision_dataset.to_csv(filename, index=False)
         print(f"Saved: {filename}")
         
@@ -1120,6 +1124,7 @@ def main():
         return {}
     
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    RAW_DIR.mkdir(parents=True, exist_ok=True)
 
     results = {}
     metadata_cache = {}

@@ -222,8 +222,8 @@ def _attach_announced_values(
 ) -> None:
     """
     Adds `event["value"] = {"actual": ..., "unit": "jobs"}` when missing, using local datasets:
-      - ADP: `ADP_NER_history.csv` national SA level deltas
-      - Revelio: `employment_national_revelio.csv` SA level deltas
+      - ADP: `data/raw/ADP_NER_history.csv` national SA level deltas
+      - Revelio: `data/raw/employment_national_revelio.csv` SA level deltas
     """
     adp_levels: Dict[str, float] = {}
     revelio_levels: Dict[str, float] = {}

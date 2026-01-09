@@ -5,11 +5,11 @@ Kalshi payroll market impact pipeline.
 Generates `data/kalshi_impact.json`, which is consumed by `impact.html`.
 
 Two modes:
-  - Demo (no network): `python3 fetch_kalshi_impact.py --demo`
+  - Demo (no network): `python3 scripts/fetch_kalshi_impact.py --demo`
   - Live (requires Kalshi credentials + network access):
-      KALSHI_KEY_ID="..." KALSHI_PRIVATE_KEY_PATH="/path/to/kalshi.key" python3 fetch_kalshi_impact.py --start-month 2025-07 --end-month 2025-12
+      KALSHI_KEY_ID="..." KALSHI_PRIVATE_KEY_PATH="/path/to/kalshi.key" python3 scripts/fetch_kalshi_impact.py --start-month 2025-07 --end-month 2025-12
       # or (if you already have a bearer token)
-      KALSHI_TOKEN="..." python3 fetch_kalshi_impact.py --start-month 2025-07 --end-month 2025-12
+      KALSHI_TOKEN="..." python3 scripts/fetch_kalshi_impact.py --start-month 2025-07 --end-month 2025-12
 
 The exported JSON includes:
   - Per-market deltas + volume for each event
@@ -63,6 +63,15 @@ from impact_common import (  # type: ignore[import-not-found]
     _to_utc_ts,
     _ym_string,
 )
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+
+def _resolve_repo_path(value: str) -> Path:
+    path = Path(value).expanduser()
+    if path.is_absolute():
+        return path
+    return (BASE_DIR / path).resolve()
 
 try:  # Optional dependency for API-key auth signing (not required)
     from cryptography.hazmat.primitives import hashes, serialization  # type: ignore[import-not-found]
@@ -243,7 +252,7 @@ def _kalshi_auth_headers(
     if kind == "key":
         key_id = str(auth.get("key_id") or "").strip()
         private_key_path_raw = str(auth.get("private_key_path") or "").strip()
-        private_key_path = Path(private_key_path_raw).expanduser()
+        private_key_path = _resolve_repo_path(private_key_path_raw)
         if not key_id:
             raise ValueError("Kalshi API key id missing.")
         if not private_key_path_raw:
@@ -836,13 +845,13 @@ def main() -> int:
     parser.add_argument("--cache-dir", default="data/kalshi_cache", help="Cache directory for API responses.")
     parser.add_argument(
         "--adp-history-csv",
-        default="ADP_NER_history.csv",
-        help="Local ADP history CSV used to infer announced MoM change (default: ADP_NER_history.csv).",
+        default="data/raw/ADP_NER_history.csv",
+        help="Local ADP history CSV used to infer announced MoM change (default: data/raw/ADP_NER_history.csv).",
     )
     parser.add_argument(
         "--revelio-national-csv",
-        default="employment_national_revelio.csv",
-        help="Local Revelio national totals CSV used to infer announced MoM change (default: employment_national_revelio.csv).",
+        default="data/raw/employment_national_revelio.csv",
+        help="Local Revelio national totals CSV used to infer announced MoM change (default: data/raw/employment_national_revelio.csv).",
     )
     parser.add_argument("--interval", default="1m", help="Candlestick granularity (e.g., 1m, 1h, 1d).")
     parser.add_argument("--horizons", default="5,30,60,240", help="Comma-separated post-release horizons in minutes.")
@@ -856,7 +865,7 @@ def main() -> int:
     )
     args = parser.parse_args()
 
-    out_path = Path(args.out)
+    out_path = _resolve_repo_path(args.out)
     if args.demo:
         _build_demo_dataset(out_path)
         print(f"Wrote demo dataset: {out_path}")
@@ -881,7 +890,7 @@ def main() -> int:
             )
             return 2
 
-    cache_dir = Path(args.cache_dir)
+    cache_dir = _resolve_repo_path(args.cache_dir)
     if args.verbose:
         print(
             f"Kalshi config: base_url={base_url} series={args.series} auth={auth.get('kind')}",
@@ -889,7 +898,7 @@ def main() -> int:
         )
 
     if args.events_csv:
-        events = _load_events_from_csv(Path(args.events_csv))
+        events = _load_events_from_csv(_resolve_repo_path(args.events_csv))
         if not events:
             print(f"Error: no events loaded from {args.events_csv}", file=sys.stderr)
             return 2
@@ -924,8 +933,8 @@ def main() -> int:
         )
         _attach_announced_values(
             events,
-            adp_history_csv=Path(args.adp_history_csv) if args.adp_history_csv else None,
-            revelio_national_csv=Path(args.revelio_national_csv) if args.revelio_national_csv else None,
+            adp_history_csv=_resolve_repo_path(args.adp_history_csv) if args.adp_history_csv else None,
+            revelio_national_csv=_resolve_repo_path(args.revelio_national_csv) if args.revelio_national_csv else None,
         )
 
     pre_minutes = int(args.pre_minutes)

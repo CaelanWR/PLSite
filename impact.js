@@ -1473,7 +1473,7 @@ const updateView = async () => {
   if (provider === "polymarket" && market && candlePoints.length === 0) {
     const usedFallback = Boolean(market?.fetch?.used_fallback);
     setStatus(
-      `Polymarket has no price history in this window${usedFallback ? " (even after widening the query window)" : ""}. Try re-running fetch_polymarket_impact.py with larger --fallback-pre-days/--fallback-post-days.`,
+      `Polymarket has no price history in this window${usedFallback ? " (even after widening the query window)" : ""}. Try re-running scripts/fetch_polymarket_impact.py with larger --fallback-pre-days/--fallback-post-days.`,
       true
     );
     return;
