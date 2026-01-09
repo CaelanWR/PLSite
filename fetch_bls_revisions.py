@@ -7,6 +7,8 @@ Uses FRED API to pull different data vintages for revision analysis
 import pandas as pd
 import requests
 import time
+import os
+import argparse
 from datetime import datetime, timedelta
 from dateutil.relativedelta import relativedelta
 import hashlib
@@ -19,11 +21,11 @@ import math
 # CONFIGURATION
 # =============================================================================
 
-# Replace with your FRED API key from https://fred.stlouisfed.org/docs/api/api_key.html
-API_KEY = "79b9c5dba66245c39a69448a937bf8bb"
-
-if API_KEY == "your_api_key_here":
-    raise ValueError("Please replace 'your_api_key_here' with your actual FRED API key")
+# Provide your FRED API key via the environment:
+#   export FRED_API_KEY="..."
+API_KEY = os.environ.get("FRED_API_KEY", "").strip()
+if not API_KEY:
+    raise ValueError("Missing FRED API key. Set FRED_API_KEY in your environment.")
 
 # Analysis mode toggles
 RUN_LEVEL_2_ANALYSIS = True      # Broad industries + totals (SA + NSA)
@@ -1089,6 +1091,24 @@ def analyze_supersector_detailed(api_key, supersector_code, detail_level, start_
 
 def main():
     """Execute BLS revision analysis based on configuration settings"""
+    parser = argparse.ArgumentParser(description="BLS revision analysis and Alt Compare exports.")
+    parser.add_argument(
+        "--alignment-only",
+        action="store_true",
+        help="Skip full revision analysis; only generate BLS vs Revelio alignment exports.",
+    )
+    parser.add_argument(
+        "--employment-only",
+        action="store_true",
+        help="Only refresh Alt Compare employment levels (skips revision exports).",
+    )
+    args = parser.parse_args()
+
+    run_level2 = RUN_LEVEL_2_ANALYSIS and not args.alignment_only and not args.employment_only
+    run_detailed = RUN_DETAILED_ANALYSIS and not args.alignment_only and not args.employment_only
+    run_alignment = RUN_REVELIO_ALIGNMENT_EXPORT
+    run_alignment_revisions = not args.employment_only
+
     print("BLS Revision Analysis")
     print(f"Date range: {START_DATE} to {END_DATE}\n")
     
@@ -1183,7 +1203,7 @@ def main():
         return merged
 
     # Analyze broad industries (level 2) plus total nonfarm
-    if RUN_LEVEL_2_ANALYSIS:
+    if run_level2:
         print(f"\n{'='*60}")
         print("Running: Level 2 + PAYNSA")
         print(f"{'='*60}")
@@ -1195,7 +1215,7 @@ def main():
             results['level_2'] = level2_data
 
     # Analyze detailed industries within a supersector
-    if RUN_DETAILED_ANALYSIS:
+    if run_detailed:
         data = analyze_supersector_detailed(
             API_KEY, DETAILED_SUPERSECTOR_CODE, DETAILED_LEVEL,
             START_DATE, END_DATE
@@ -1206,15 +1226,15 @@ def main():
             results['detailed'] = data
 
     # Optional: Export BLS datasets in the same schema/date formatting as the Revelio CSVs
-    if RUN_REVELIO_ALIGNMENT_EXPORT:
+    if run_alignment:
         try:
             bls_rev_df = None
             bls_emp_df = None
-            if REVELIO_REVISIONS_CSV.exists():
+            if run_alignment_revisions and REVELIO_REVISIONS_CSV.exists():
                 releases, common_start = parse_revelio_revision_releases(REVELIO_REVISIONS_CSV)
                 print(f"\nRevelio alignment: {len(releases)} releases, common start {common_start}")
                 bls_rev_df = export_bls_revisions_revelio_format(API_KEY, releases, common_start)
-            else:
+            elif run_alignment_revisions:
                 print(f"Revelio revisions file not found: {REVELIO_REVISIONS_CSV}")
 
             if REVELIO_EMPLOYMENT_CSV.exists():
@@ -1233,7 +1253,7 @@ def main():
 
 if __name__ == "__main__":
     results = main()
-    
+
     print(f"\n{'='*60}")
     print("Analysis complete")
     for key, data in results.items():

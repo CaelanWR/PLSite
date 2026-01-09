@@ -1,945 +1,961 @@
 month,naics2d_code,naics2d_name,employment_nsa,employment_sa
-2021-01,11,"Agriculture, Forestry, Fishing and Hunting",282522,285068
-2021-01,21,"Mining, Quarrying, and Oil and Gas Extraction",614805,614841
-2021-01,22,Utilities,456547,456824
-2021-01,23,Construction,7523611,7543314
-2021-01,31-33,Manufacturing,12239313,12241473
-2021-01,42,Wholesale Trade,5799665,5806175
-2021-01,44-45,Retail Trade,14761418,14749370
-2021-01,48-49,Transportation and Warehousing,6601940,6578370
-2021-01,51,Information,2882834,2878024
-2021-01,52-53,Financial Activities,8742222,8740463
-2021-01,54-56,Professional and Business Services,20686522,20657202
-2021-01,61-62,Education and Health Services,23472069,23318024
-2021-01,71-72,Leisure and Hospitality,14603303,14709218
-2021-01,81,Other Services (except Public Administration),5427232,5430445
-2021-01,92,Public Administration,22185565,22153608
-2021-01,99,Unclassified,511411,513185
-2021-02,11,"Agriculture, Forestry, Fishing and Hunting",282690,286095
-2021-02,21,"Mining, Quarrying, and Oil and Gas Extraction",611468,612869
-2021-02,22,Utilities,456248,457717
-2021-02,23,Construction,7519865,7560383
-2021-02,31-33,Manufacturing,12223709,12272251
-2021-02,42,Wholesale Trade,5794423,5818365
-2021-02,44-45,Retail Trade,14693860,14766575
-2021-02,48-49,Transportation and Warehousing,6565887,6586392
-2021-02,51,Information,2883467,2887679
-2021-02,52-53,Financial Activities,8739257,8768609
-2021-02,54-56,Professional and Business Services,20698930,20737042
-2021-02,61-62,Education and Health Services,23476310,23398646
-2021-02,71-72,Leisure and Hospitality,14606780,14754753
-2021-02,81,Other Services (except Public Administration),5422563,5443394
-2021-02,92,Public Administration,22153552,22176888
-2021-02,99,Unclassified,510847,514279
-2021-03,11,"Agriculture, Forestry, Fishing and Hunting",285396,287798
-2021-03,21,"Mining, Quarrying, and Oil and Gas Extraction",610713,611937
-2021-03,22,Utilities,457973,459077
-2021-03,23,Construction,7549580,7583704
-2021-03,31-33,Manufacturing,12263470,12306765
-2021-03,42,Wholesale Trade,5810593,5830986
-2021-03,44-45,Retail Trade,14728548,14797620
-2021-03,48-49,Transportation and Warehousing,6576572,6593529
-2021-03,51,Information,2898056,2903464
-2021-03,52-53,Financial Activities,8767127,8795270
-2021-03,54-56,Professional and Business Services,20784235,20819799
-2021-03,61-62,Education and Health Services,23555859,23483368
-2021-03,71-72,Leisure and Hospitality,14721597,14827267
-2021-03,81,Other Services (except Public Administration),5443855,5459544
-2021-03,92,Public Administration,22188858,22214184
-2021-03,99,Unclassified,513434,516150
-2021-04,11,"Agriculture, Forestry, Fishing and Hunting",288006,289715
-2021-04,21,"Mining, Quarrying, and Oil and Gas Extraction",609392,611513
-2021-04,22,Utilities,458576,460006
-2021-04,23,Construction,7566996,7601232
-2021-04,31-33,Manufacturing,12281066,12331820
-2021-04,42,Wholesale Trade,5821115,5842244
-2021-04,44-45,Retail Trade,14768130,14844430
-2021-04,48-49,Transportation and Warehousing,6584511,6602951
-2021-04,51,Information,2905710,2914417
-2021-04,52-53,Financial Activities,8776548,8814645
-2021-04,54-56,Professional and Business Services,20829731,20891374
-2021-04,61-62,Education and Health Services,23585565,23556096
-2021-04,71-72,Leisure and Hospitality,14835718,14922450
-2021-04,81,Other Services (except Public Administration),5458225,5476693
-2021-04,92,Public Administration,22206339,22244811
-2021-04,99,Unclassified,515252,517584
-2021-05,11,"Agriculture, Forestry, Fishing and Hunting",293325,292861
-2021-05,21,"Mining, Quarrying, and Oil and Gas Extraction",609675,610719
-2021-05,22,Utilities,460277,460232
-2021-05,23,Construction,7622890,7614825
-2021-05,31-33,Manufacturing,12346087,12358147
-2021-05,42,Wholesale Trade,5852732,5854257
-2021-05,44-45,Retail Trade,14902775,14919957
-2021-05,48-49,Transportation and Warehousing,6614799,6621120
-2021-05,51,Information,2917495,2923512
-2021-05,52-53,Financial Activities,8805933,8825249
-2021-05,54-56,Professional and Business Services,20938288,20945159
-2021-05,61-62,Education and Health Services,23584410,23630371
-2021-05,71-72,Leisure and Hospitality,15136005,15080497
-2021-05,81,Other Services (except Public Administration),5494524,5490236
-2021-05,92,Public Administration,22274488,22265715
-2021-05,99,Unclassified,520362,519266
-2021-06,11,"Agriculture, Forestry, Fishing and Hunting",297910,294641
-2021-06,21,"Mining, Quarrying, and Oil and Gas Extraction",611162,610127
-2021-06,22,Utilities,462779,461913
-2021-06,23,Construction,7672306,7630277
-2021-06,31-33,Manufacturing,12429108,12396112
-2021-06,42,Wholesale Trade,5885886,5870143
-2021-06,44-45,Retail Trade,15035323,15002391
-2021-06,48-49,Transportation and Warehousing,6648017,6643110
-2021-06,51,Information,2935674,2939019
-2021-06,52-53,Financial Activities,8858815,8840329
-2021-06,54-56,Professional and Business Services,21068026,21052327
-2021-06,61-62,Education and Health Services,23452968,23735103
-2021-06,71-72,Leisure and Hospitality,15398810,15227144
-2021-06,81,Other Services (except Public Administration),5523517,5511113
-2021-06,92,Public Administration,22274527,22293466
-2021-06,99,Unclassified,524046,520791
-2021-07,11,"Agriculture, Forestry, Fishing and Hunting",299076,295985
-2021-07,21,"Mining, Quarrying, and Oil and Gas Extraction",610936,609272
-2021-07,22,Utilities,463237,462332
-2021-07,23,Construction,7691551,7650846
-2021-07,31-33,Manufacturing,12463074,12421916
-2021-07,42,Wholesale Trade,5899197,5882795
-2021-07,44-45,Retail Trade,15093154,15062152
-2021-07,48-49,Transportation and Warehousing,6658182,6652704
-2021-07,51,Information,2949182,2950991
-2021-07,52-53,Financial Activities,8885664,8856375
-2021-07,54-56,Professional and Business Services,21136912,21114313
-2021-07,61-62,Education and Health Services,23457284,23815735
-2021-07,71-72,Leisure and Hospitality,15503778,15351031
-2021-07,81,Other Services (except Public Administration),5535660,5530051
-2021-07,92,Public Administration,22208479,22304830
-2021-07,99,Unclassified,524886,522267
-2021-08,11,"Agriculture, Forestry, Fishing and Hunting",299833,296844
-2021-08,21,"Mining, Quarrying, and Oil and Gas Extraction",611401,609201
-2021-08,22,Utilities,464651,463442
-2021-08,23,Construction,7717489,7675474
-2021-08,31-33,Manufacturing,12513028,12459917
-2021-08,42,Wholesale Trade,5926059,5902320
-2021-08,44-45,Retail Trade,15151928,15088079
-2021-08,48-49,Transportation and Warehousing,6683653,6671317
-2021-08,51,Information,2973750,2964343
-2021-08,52-53,Financial Activities,8920389,8881333
-2021-08,54-56,Professional and Business Services,21252405,21215896
-2021-08,61-62,Education and Health Services,23967287,23891989
-2021-08,71-72,Leisure and Hospitality,15602651,15449532
-2021-08,81,Other Services (except Public Administration),5576935,5547194
-2021-08,92,Public Administration,22424194,22340801
-2021-08,99,Unclassified,526823,522946
-2021-09,11,"Agriculture, Forestry, Fishing and Hunting",296994,296980
-2021-09,21,"Mining, Quarrying, and Oil and Gas Extraction",610493,609860
-2021-09,22,Utilities,464699,464197
-2021-09,23,Construction,7698972,7695610
-2021-09,31-33,Manufacturing,12500455,12490385
-2021-09,42,Wholesale Trade,5919483,5916162
-2021-09,44-45,Retail Trade,15071625,15082423
-2021-09,48-49,Transportation and Warehousing,6680095,6681459
-2021-09,51,Information,2987236,2979927
-2021-09,52-53,Financial Activities,8924202,8911823
-2021-09,54-56,Professional and Business Services,21325811,21312542
-2021-09,61-62,Education and Health Services,24105677,23985226
-2021-09,71-72,Leisure and Hospitality,15439268,15474967
-2021-09,81,Other Services (except Public Administration),5565458,5563792
-2021-09,92,Public Administration,22414604,22379897
-2021-09,99,Unclassified,523663,523991
-2021-10,11,"Agriculture, Forestry, Fishing and Hunting",297029,297391
-2021-10,21,"Mining, Quarrying, and Oil and Gas Extraction",611127,610685
-2021-10,22,Utilities,465396,464934
-2021-10,23,Construction,7707817,7710828
-2021-10,31-33,Manufacturing,12532307,12520555
-2021-10,42,Wholesale Trade,5932005,5925951
-2021-10,44-45,Retail Trade,15152127,15121862
-2021-10,48-49,Transportation and Warehousing,6700601,6691126
-2021-10,51,Information,3001024,2992609
-2021-10,52-53,Financial Activities,8945256,8935026
-2021-10,54-56,Professional and Business Services,21421850,21385829
-2021-10,61-62,Education and Health Services,24208394,24064224
-2021-10,71-72,Leisure and Hospitality,15470939,15527409
-2021-10,81,Other Services (except Public Administration),5580733,5579059
-2021-10,92,Public Administration,22437344,22399014
-2021-10,99,Unclassified,523646,524360
-2021-11,11,"Agriculture, Forestry, Fishing and Hunting",297156,298365
-2021-11,21,"Mining, Quarrying, and Oil and Gas Extraction",611120,611267
-2021-11,22,Utilities,466044,465949
-2021-11,23,Construction,7718423,7733808
-2021-11,31-33,Manufacturing,12563821,12555093
-2021-11,42,Wholesale Trade,5942559,5938832
-2021-11,44-45,Retail Trade,15227532,15159048
-2021-11,48-49,Transportation and Warehousing,6723030,6700212
-2021-11,51,Information,3012104,3007486
-2021-11,52-53,Financial Activities,8962381,8959064
-2021-11,54-56,Professional and Business Services,21489563,21470682
-2021-11,61-62,Education and Health Services,24271583,24143286
-2021-11,71-72,Leisure and Hospitality,15506658,15573713
-2021-11,81,Other Services (except Public Administration),5595556,5593897
-2021-11,92,Public Administration,22453330,22426275
-2021-11,99,Unclassified,523573,524521
-2021-12,11,"Agriculture, Forestry, Fishing and Hunting",296681,299212
-2021-12,21,"Mining, Quarrying, and Oil and Gas Extraction",610778,612171
-2021-12,22,Utilities,465562,466572
-2021-12,23,Construction,7715132,7750437
-2021-12,31-33,Manufacturing,12561616,12579477
-2021-12,42,Wholesale Trade,5938208,5949404
-2021-12,44-45,Retail Trade,15240838,15193303
-2021-12,48-49,Transportation and Warehousing,6731783,6707483
-2021-12,51,Information,3012308,3015931
-2021-12,52-53,Financial Activities,8959273,8974880
-2021-12,54-56,Professional and Business Services,21500968,21533626
-2021-12,61-62,Education and Health Services,24293276,24211718
-2021-12,71-72,Leisure and Hospitality,15532064,15625325
-2021-12,81,Other Services (except Public Administration),5596653,5609256
-2021-12,92,Public Administration,22448126,22447517
-2021-12,99,Unclassified,523334,525097
-2022-01,11,"Agriculture, Forestry, Fishing and Hunting",297353,299884
-2022-01,21,"Mining, Quarrying, and Oil and Gas Extraction",611771,611957
-2022-01,22,Utilities,467252,467693
-2022-01,23,Construction,7749992,7770230
-2022-01,31-33,Manufacturing,12603648,12608822
-2022-01,42,Wholesale Trade,5953849,5961138
-2022-01,44-45,Retail Trade,15243620,15236439
-2022-01,48-49,Transportation and Warehousing,6743502,6721089
-2022-01,51,Information,3034012,3030711
-2022-01,52-53,Financial Activities,8993577,8996223
-2022-01,54-56,Professional and Business Services,21639161,21614150
-2022-01,61-62,Education and Health Services,24447809,24299635
-2022-01,71-72,Leisure and Hospitality,15592836,15698248
-2022-01,81,Other Services (except Public Administration),5620149,5623698
-2022-01,92,Public Administration,22487086,22460866
-2022-01,99,Unclassified,523470,525338
-2022-02,11,"Agriculture, Forestry, Fishing and Hunting",297528,300873
-2022-02,21,"Mining, Quarrying, and Oil and Gas Extraction",611571,612727
-2022-02,22,Utilities,467502,468894
-2022-02,23,Construction,7753209,7792162
-2022-02,31-33,Manufacturing,12595096,12640398
-2022-02,42,Wholesale Trade,5954041,5976798
-2022-02,44-45,Retail Trade,15201082,15268953
-2022-02,48-49,Transportation and Warehousing,6728127,6748762
-2022-02,51,Information,3036259,3039399
-2022-02,52-53,Financial Activities,8986290,9015721
-2022-02,54-56,Professional and Business Services,21662023,21696844
-2022-02,61-62,Education and Health Services,24465408,24380225
-2022-02,71-72,Leisure and Hospitality,15608585,15753804
-2022-02,81,Other Services (except Public Administration),5620369,5639378
-2022-02,92,Public Administration,22458318,22478405
-2022-02,99,Unclassified,522434,525714
-2022-03,11,"Agriculture, Forestry, Fishing and Hunting",299612,301928
-2022-03,21,"Mining, Quarrying, and Oil and Gas Extraction",613361,614343
-2022-03,22,Utilities,468835,469823
-2022-03,23,Construction,7781375,7814278
-2022-03,31-33,Manufacturing,12627609,12668210
-2022-03,42,Wholesale Trade,5971306,5990509
-2022-03,44-45,Retail Trade,15230426,15293309
-2022-03,48-49,Transportation and Warehousing,6738535,6754745
-2022-03,51,Information,3048217,3053251
-2022-03,52-53,Financial Activities,9006617,9035039
-2022-03,54-56,Professional and Business Services,21738464,21770596
-2022-03,61-62,Education and Health Services,24542726,24460387
-2022-03,71-72,Leisure and Hospitality,15712350,15813563
-2022-03,81,Other Services (except Public Administration),5643814,5657178
-2022-03,92,Public Administration,22484907,22505157
-2022-03,99,Unclassified,524029,526575
-2022-04,11,"Agriculture, Forestry, Fishing and Hunting",300721,302361
-2022-04,21,"Mining, Quarrying, and Oil and Gas Extraction",613884,615569
-2022-04,22,Utilities,469582,470877
-2022-04,23,Construction,7800158,7833686
-2022-04,31-33,Manufacturing,12644319,12692773
-2022-04,42,Wholesale Trade,5982317,6002294
-2022-04,44-45,Retail Trade,15240356,15309719
-2022-04,48-49,Transportation and Warehousing,6742280,6759310
-2022-04,51,Information,3054025,3062514
-2022-04,52-53,Financial Activities,9013024,9051948
-2022-04,54-56,Professional and Business Services,21780068,21839087
-2022-04,61-62,Education and Health Services,24574312,24534881
-2022-04,71-72,Leisure and Hospitality,15798609,15879817
-2022-04,81,Other Services (except Public Administration),5658197,5674652
-2022-04,92,Public Administration,22492607,22524467
-2022-04,99,Unclassified,525232,527419
-2022-05,11,"Agriculture, Forestry, Fishing and Hunting",304423,303954
-2022-05,21,"Mining, Quarrying, and Oil and Gas Extraction",616145,616810
-2022-05,22,Utilities,472109,471910
-2022-05,23,Construction,7863174,7854668
-2022-05,31-33,Manufacturing,12719208,12730539
-2022-05,42,Wholesale Trade,6018635,6019471
-2022-05,44-45,Retail Trade,15337662,15349332
-2022-05,48-49,Transportation and Warehousing,6767254,6771984
-2022-05,51,Information,3066961,3072904
-2022-05,52-53,Financial Activities,9045421,9066130
-2022-05,54-56,Professional and Business Services,21908878,21912335
-2022-05,61-62,Education and Health Services,24576545,24618290
-2022-05,71-72,Leisure and Hospitality,16050496,15990103
-2022-05,81,Other Services (except Public Administration),5696429,5691041
-2022-05,92,Public Administration,22570174,22556619
-2022-05,99,Unclassified,529491,528267
-2022-06,11,"Agriculture, Forestry, Fishing and Hunting",307775,304494
-2022-06,21,"Mining, Quarrying, and Oil and Gas Extraction",618926,617730
-2022-06,22,Utilities,474584,473764
-2022-06,23,Construction,7918449,7876112
-2022-06,31-33,Manufacturing,12793153,12760589
-2022-06,42,Wholesale Trade,6051060,6035226
-2022-06,44-45,Retail Trade,15439495,15404481
-2022-06,48-49,Transportation and Warehousing,6787612,6782835
-2022-06,51,Information,3078914,3082627
-2022-06,52-53,Financial Activities,9094061,9074968
-2022-06,54-56,Professional and Business Services,22033777,22019665
-2022-06,61-62,Education and Health Services,24425803,24714436
-2022-06,71-72,Leisure and Hospitality,16252648,16075045
-2022-06,81,Other Services (except Public Administration),5723064,5712403
-2022-06,92,Public Administration,22558059,22576329
-2022-06,99,Unclassified,532155,528841
-2022-07,11,"Agriculture, Forestry, Fishing and Hunting",307902,304812
-2022-07,21,"Mining, Quarrying, and Oil and Gas Extraction",620717,619098
-2022-07,22,Utilities,475347,474490
-2022-07,23,Construction,7936863,7895940
-2022-07,31-33,Manufacturing,12823822,12782915
-2022-07,42,Wholesale Trade,6063523,6047290
-2022-07,44-45,Retail Trade,15469671,15437593
-2022-07,48-49,Transportation and Warehousing,6795099,6789397
-2022-07,51,Information,3086313,3088346
-2022-07,52-53,Financial Activities,9115943,9084901
-2022-07,54-56,Professional and Business Services,22095702,22072308
-2022-07,61-62,Education and Health Services,24425934,24792640
-2022-07,71-72,Leisure and Hospitality,16313547,16155451
-2022-07,81,Other Services (except Public Administration),5733857,5730029
-2022-07,92,Public Administration,22493955,22586186
-2022-07,99,Unclassified,532129,529473
-2022-08,11,"Agriculture, Forestry, Fishing and Hunting",308198,305265
-2022-08,21,"Mining, Quarrying, and Oil and Gas Extraction",622458,620592
-2022-08,22,Utilities,476939,475832
-2022-08,23,Construction,7961281,7920235
-2022-08,31-33,Manufacturing,12865361,12814028
-2022-08,42,Wholesale Trade,6086225,6063685
-2022-08,44-45,Retail Trade,15504252,15442502
-2022-08,48-49,Transportation and Warehousing,6811127,6799160
-2022-08,51,Information,3103062,3093573
-2022-08,52-53,Financial Activities,9142217,9101832
-2022-08,54-56,Professional and Business Services,22198539,22165296
-2022-08,61-62,Education and Health Services,24946297,24877606
-2022-08,71-72,Leisure and Hospitality,16382063,16231702
-2022-08,81,Other Services (except Public Administration),5775116,5746878
-2022-08,92,Public Administration,22719036,22640647
-2022-08,99,Unclassified,533642,529821
-2022-09,11,"Agriculture, Forestry, Fishing and Hunting",304827,304953
-2022-09,21,"Mining, Quarrying, and Oil and Gas Extraction",621909,621745
-2022-09,22,Utilities,476830,476385
-2022-09,23,Construction,7940294,7939163
-2022-09,31-33,Manufacturing,12832649,12824597
-2022-09,42,Wholesale Trade,6074240,6072538
-2022-09,44-45,Retail Trade,15403400,15419257
-2022-09,48-49,Transportation and Warehousing,6791970,6794324
-2022-09,51,Information,3101681,3094348
-2022-09,52-53,Financial Activities,9128190,9115588
-2022-09,54-56,Professional and Business Services,22235235,22226102
-2022-09,61-62,Education and Health Services,25072313,24958161
-2022-09,71-72,Leisure and Hospitality,16198418,16245934
-2022-09,81,Other Services (except Public Administration),5760232,5760144
-2022-09,92,Public Administration,22703224,22676938
-2022-09,99,Unclassified,530007,530596
-2022-10,11,"Agriculture, Forestry, Fishing and Hunting",304375,304788
-2022-10,21,"Mining, Quarrying, and Oil and Gas Extraction",623077,623020
-2022-10,22,Utilities,478208,477854
-2022-10,23,Construction,7948577,7952675
-2022-10,31-33,Manufacturing,12852462,12842650
-2022-10,42,Wholesale Trade,6086666,6081606
-2022-10,44-45,Retail Trade,15451587,15430274
-2022-10,48-49,Transportation and Warehousing,6807631,6799243
-2022-10,51,Information,3104022,3095834
-2022-10,52-53,Financial Activities,9139519,9130066
-2022-10,54-56,Professional and Business Services,22303659,22270019
-2022-10,61-62,Education and Health Services,25180298,25039358
-2022-10,71-72,Leisure and Hospitality,16222191,16287350
-2022-10,81,Other Services (except Public Administration),5774781,5774080
-2022-10,92,Public Administration,22735914,22703500
-2022-10,99,Unclassified,529782,530733
-2022-11,11,"Agriculture, Forestry, Fishing and Hunting",304021,305196
-2022-11,21,"Mining, Quarrying, and Oil and Gas Extraction",623356,623773
-2022-11,22,Utilities,478737,478735
-2022-11,23,Construction,7949975,7965460
-2022-11,31-33,Manufacturing,12861240,12854079
-2022-11,42,Wholesale Trade,6092086,6088509
-2022-11,44-45,Retail Trade,15500905,15441803
-2022-11,48-49,Transportation and Warehousing,6823465,6802106
-2022-11,51,Information,3098316,3094272
-2022-11,52-53,Financial Activities,9138090,9135658
-2022-11,54-56,Professional and Business Services,22326705,22309224
-2022-11,61-62,Education and Health Services,25243377,25115022
-2022-11,71-72,Leisure and Hospitality,16259060,16328671
-2022-11,81,Other Services (except Public Administration),5786648,5784677
-2022-11,92,Public Administration,22758181,22735006
-2022-11,99,Unclassified,529728,530783
-2022-12,11,"Agriculture, Forestry, Fishing and Hunting",303405,305816
-2022-12,21,"Mining, Quarrying, and Oil and Gas Extraction",623360,624693
-2022-12,22,Utilities,478835,479934
-2022-12,23,Construction,7944814,7978174
-2022-12,31-33,Manufacturing,12841944,12858996
-2022-12,42,Wholesale Trade,6084564,6094282
-2022-12,44-45,Retail Trade,15499308,15453956
-2022-12,48-49,Transportation and Warehousing,6822047,6797850
-2022-12,51,Information,3082026,3085931
-2022-12,52-53,Financial Activities,9118681,9134950
-2022-12,54-56,Professional and Business Services,22305110,22335083
-2022-12,61-62,Education and Health Services,25269581,25184422
-2022-12,71-72,Leisure and Hospitality,16280352,16367071
-2022-12,81,Other Services (except Public Administration),5784693,5794654
-2022-12,92,Public Administration,22757369,22755885
-2022-12,99,Unclassified,529485,531082
-2023-01,11,"Agriculture, Forestry, Fishing and Hunting",303368,305883
-2023-01,21,"Mining, Quarrying, and Oil and Gas Extraction",625437,625738
-2023-01,22,Utilities,480548,481146
-2023-01,23,Construction,7968301,7988975
-2023-01,31-33,Manufacturing,12858137,12866146
-2023-01,42,Wholesale Trade,6094036,6102028
-2023-01,44-45,Retail Trade,15464030,15461761
-2023-01,48-49,Transportation and Warehousing,6817936,6796819
-2023-01,51,Information,3075993,3074183
-2023-01,52-53,Financial Activities,9133238,9140234
-2023-01,54-56,Professional and Business Services,22378010,22357134
-2023-01,61-62,Education and Health Services,25411309,25268757
-2023-01,71-72,Leisure and Hospitality,16312283,16419065
-2023-01,81,Other Services (except Public Administration),5804021,5807823
-2023-01,92,Public Administration,22813883,22792925
-2023-01,99,Unclassified,529145,531104
-2023-02,11,"Agriculture, Forestry, Fishing and Hunting",302882,306164
-2023-02,21,"Mining, Quarrying, and Oil and Gas Extraction",625373,626281
-2023-02,22,Utilities,480431,481744
-2023-02,23,Construction,7963391,8000768
-2023-02,31-33,Manufacturing,12827921,12870007
-2023-02,42,Wholesale Trade,6086510,6108086
-2023-02,44-45,Retail Trade,15403762,15466831
-2023-02,48-49,Transportation and Warehousing,6782006,6802779
-2023-02,51,Information,3051869,3053956
-2023-02,52-53,Financial Activities,9111630,9141163
-2023-02,54-56,Professional and Business Services,22348796,22380349
-2023-02,61-62,Education and Health Services,25432936,25340192
-2023-02,71-72,Leisure and Hospitality,16319040,16461441
-2023-02,81,Other Services (except Public Administration),5802491,5819671
-2023-02,92,Public Administration,22808133,22824955
-2023-02,99,Unclassified,528114,531242
-2023-03,11,"Agriculture, Forestry, Fishing and Hunting",304137,306365
-2023-03,21,"Mining, Quarrying, and Oil and Gas Extraction",626227,626966
-2023-03,22,Utilities,481753,482625
-2023-03,23,Construction,7981167,8012839
-2023-03,31-33,Manufacturing,12830922,12868846
-2023-03,42,Wholesale Trade,6095388,6113399
-2023-03,44-45,Retail Trade,15426280,15482976
-2023-03,48-49,Transportation and Warehousing,6787180,6802631
-2023-03,51,Information,3042562,3047235
-2023-03,52-53,Financial Activities,9114646,9143359
-2023-03,54-56,Professional and Business Services,22375133,22403831
-2023-03,61-62,Education and Health Services,25507216,25414979
-2023-03,71-72,Leisure and Hospitality,16402685,16499381
-2023-03,81,Other Services (except Public Administration),5820703,5831728
-2023-03,92,Public Administration,22842477,22857615
-2023-03,99,Unclassified,529349,531724
-2023-04,11,"Agriculture, Forestry, Fishing and Hunting",305006,306576
-2023-04,21,"Mining, Quarrying, and Oil and Gas Extraction",626176,627427
-2023-04,22,Utilities,481947,483107
-2023-04,23,Construction,7990442,8023250
-2023-04,31-33,Manufacturing,12818152,12864322
-2023-04,42,Wholesale Trade,6096285,6115108
-2023-04,44-45,Retail Trade,15426490,15488896
-2023-04,48-49,Transportation and Warehousing,6783152,6798753
-2023-04,51,Information,3027608,3035904
-2023-04,52-53,Financial Activities,9106236,9146007
-2023-04,54-56,Professional and Business Services,22362881,22419286
-2023-04,61-62,Education and Health Services,25535831,25486377
-2023-04,71-72,Leisure and Hospitality,16466306,16541907
-2023-04,81,Other Services (except Public Administration),5831546,5845967
-2023-04,92,Public Administration,22863741,22888967
-2023-04,99,Unclassified,530462,532504
-2023-05,11,"Agriculture, Forestry, Fishing and Hunting",308249,307773
-2023-05,21,"Mining, Quarrying, and Oil and Gas Extraction",627708,627997
-2023-05,22,Utilities,484518,484163
-2023-05,23,Construction,8047686,8038745
-2023-05,31-33,Manufacturing,12862047,12872674
-2023-05,42,Wholesale Trade,6119402,6119554
-2023-05,44-45,Retail Trade,15494988,15501140
-2023-05,48-49,Transportation and Warehousing,6793484,6796609
-2023-05,51,Information,3021312,3027209
-2023-05,52-53,Financial Activities,9127862,9149996
-2023-05,54-56,Professional and Business Services,22440465,22440545
-2023-05,61-62,Education and Health Services,25517907,25555358
-2023-05,71-72,Leisure and Hospitality,16657688,16592375
-2023-05,81,Other Services (except Public Administration),5860837,5854342
-2023-05,92,Public Administration,22942810,22924447
-2023-05,99,Unclassified,533496,532146
-2023-06,11,"Agriculture, Forestry, Fishing and Hunting",310352,307060
-2023-06,21,"Mining, Quarrying, and Oil and Gas Extraction",629293,627936
-2023-06,22,Utilities,486707,485933
-2023-06,23,Construction,8090615,8047972
-2023-06,31-33,Manufacturing,12901787,12869663
-2023-06,42,Wholesale Trade,6137580,6121654
-2023-06,44-45,Retail Trade,15564618,15527534
-2023-06,48-49,Transportation and Warehousing,6799930,6795293
-2023-06,51,Information,3012827,3016924
-2023-06,52-53,Financial Activities,9166523,9146820
-2023-06,54-56,Professional and Business Services,22492788,22480291
-2023-06,61-62,Education and Health Services,25339051,25634116
-2023-06,71-72,Leisure and Hospitality,16791353,16607853
-2023-06,81,Other Services (except Public Administration),5875531,5866621
-2023-06,92,Public Administration,22940436,22958034
-2023-06,99,Unclassified,535475,532105
-2023-07,11,"Agriculture, Forestry, Fishing and Hunting",310164,307076
-2023-07,21,"Mining, Quarrying, and Oil and Gas Extraction",629675,628100
-2023-07,22,Utilities,487669,486860
-2023-07,23,Construction,8103216,8062078
-2023-07,31-33,Manufacturing,12906864,12866210
-2023-07,42,Wholesale Trade,6140952,6124887
-2023-07,44-45,Retail Trade,15572424,15539278
-2023-07,48-49,Transportation and Warehousing,6793149,6787225
-2023-07,51,Information,3002378,3004635
-2023-07,52-53,Financial Activities,9181337,9148546
-2023-07,54-56,Professional and Business Services,22495653,22471477
-2023-07,61-62,Education and Health Services,25337196,25712146
-2023-07,71-72,Leisure and Hospitality,16816019,16652616
-2023-07,81,Other Services (except Public Administration),5877876,5875845
-2023-07,92,Public Administration,22903196,22991332
-2023-07,99,Unclassified,535646,532955
-2023-08,11,"Agriculture, Forestry, Fishing and Hunting",310006,307129
-2023-08,21,"Mining, Quarrying, and Oil and Gas Extraction",630190,628659
-2023-08,22,Utilities,488416,487411
-2023-08,23,Construction,8119952,8079882
-2023-08,31-33,Manufacturing,12917042,12867476
-2023-08,42,Wholesale Trade,6151392,6130052
-2023-08,44-45,Retail Trade,15589858,15530227
-2023-08,48-49,Transportation and Warehousing,6788278,6776683
-2023-08,51,Information,3002235,2992633
-2023-08,52-53,Financial Activities,9191995,9150270
-2023-08,54-56,Professional and Business Services,22524792,22494787
-2023-08,61-62,Education and Health Services,25840959,25778964
-2023-08,71-72,Leisure and Hospitality,16857358,16709790
-2023-08,81,Other Services (except Public Administration),5910119,5883404
-2023-08,92,Public Administration,23102304,23029004
-2023-08,99,Unclassified,537240,533478
-2023-09,11,"Agriculture, Forestry, Fishing and Hunting",307037,307304
-2023-09,21,"Mining, Quarrying, and Oil and Gas Extraction",628882,629186
-2023-09,22,Utilities,487504,487117
-2023-09,23,Construction,8091164,8092274
-2023-09,31-33,Manufacturing,12866114,12860043
-2023-09,42,Wholesale Trade,6131399,6131311
-2023-09,44-45,Retail Trade,15499672,15520589
-2023-09,48-49,Transportation and Warehousing,6773012,6776333
-2023-09,51,Information,2991802,2984391
-2023-09,52-53,Financial Activities,9162781,9149947
-2023-09,54-56,Professional and Business Services,22508969,22503896
-2023-09,61-62,Education and Health Services,25957929,25850189
-2023-09,71-72,Leisure and Hospitality,16662937,16722288
-2023-09,81,Other Services (except Public Administration),5890495,5892000
-2023-09,92,Public Administration,23084994,23067243
-2023-09,99,Unclassified,533050,533901
-2023-10,11,"Agriculture, Forestry, Fishing and Hunting",306965,307431
-2023-10,21,"Mining, Quarrying, and Oil and Gas Extraction",628818,629146
-2023-10,22,Utilities,487874,487630
-2023-10,23,Construction,8107756,8112950
-2023-10,31-33,Manufacturing,12869716,12861793
-2023-10,42,Wholesale Trade,6140756,6136684
-2023-10,44-45,Retail Trade,15541291,15528946
-2023-10,48-49,Transportation and Warehousing,6785531,6778206
-2023-10,51,Information,2987268,2979245
-2023-10,52-53,Financial Activities,9162176,9153486
-2023-10,54-56,Professional and Business Services,22558179,22526830
-2023-10,61-62,Education and Health Services,26062171,25924604
-2023-10,71-72,Leisure and Hospitality,16681122,16754959
-2023-10,81,Other Services (except Public Administration),5903067,5903349
-2023-10,92,Public Administration,23129972,23103619
-2023-10,99,Unclassified,532657,533845
-2023-11,11,"Agriculture, Forestry, Fishing and Hunting",306166,307308
-2023-11,21,"Mining, Quarrying, and Oil and Gas Extraction",628154,628841
-2023-11,22,Utilities,487747,487840
-2023-11,23,Construction,8106707,8122309
-2023-11,31-33,Manufacturing,12863151,12857516
-2023-11,42,Wholesale Trade,6141208,6137774
-2023-11,44-45,Retail Trade,15579823,15530127
-2023-11,48-49,Transportation and Warehousing,6796047,6776145
-2023-11,51,Information,2978389,2974862
-2023-11,52-53,Financial Activities,9152940,9151374
-2023-11,54-56,Professional and Business Services,22551774,22535614
-2023-11,61-62,Education and Health Services,26114876,25986584
-2023-11,71-72,Leisure and Hospitality,16699768,16771919
-2023-11,81,Other Services (except Public Administration),5914169,5911898
-2023-11,92,Public Administration,23154794,23135619
-2023-11,99,Unclassified,533418,534578
-2023-12,11,"Agriculture, Forestry, Fishing and Hunting",305163,307449
-2023-12,21,"Mining, Quarrying, and Oil and Gas Extraction",627226,628463
-2023-12,22,Utilities,486393,487577
-2023-12,23,Construction,8098255,8129648
-2023-12,31-33,Manufacturing,12836202,12852375
-2023-12,42,Wholesale Trade,6131233,6139323
-2023-12,44-45,Retail Trade,15569922,15526586
-2023-12,48-49,Transportation and Warehousing,6788315,6764400
-2023-12,51,Information,2963800,2967960
-2023-12,52-53,Financial Activities,9130787,9147660
-2023-12,54-56,Professional and Business Services,22517093,22544247
-2023-12,61-62,Education and Health Services,26128660,26039739
-2023-12,71-72,Leisure and Hospitality,16704152,16784275
-2023-12,81,Other Services (except Public Administration),5913241,5920435
-2023-12,92,Public Administration,23162642,23160132
-2023-12,99,Unclassified,533157,534572
-2024-01,11,"Agriculture, Forestry, Fishing and Hunting",304701,307197
-2024-01,21,"Mining, Quarrying, and Oil and Gas Extraction",628820,629210
-2024-01,22,Utilities,486863,487618
-2024-01,23,Construction,8121001,8142094
-2024-01,31-33,Manufacturing,12838100,12848866
-2024-01,42,Wholesale Trade,6132153,6140798
-2024-01,44-45,Retail Trade,15516865,15519719
-2024-01,48-49,Transportation and Warehousing,6780960,6761340
-2024-01,51,Information,2961331,2961025
-2024-01,52-53,Financial Activities,9134687,9146096
-2024-01,54-56,Professional and Business Services,22569078,22552355
-2024-01,61-62,Education and Health Services,26243056,26106259
-2024-01,71-72,Leisure and Hospitality,16692506,16800785
-2024-01,81,Other Services (except Public Administration),5925099,5929095
-2024-01,92,Public Administration,23214276,23198339
-2024-01,99,Unclassified,532536,534580
-2024-02,11,"Agriculture, Forestry, Fishing and Hunting",304041,307258
-2024-02,21,"Mining, Quarrying, and Oil and Gas Extraction",628078,628738
-2024-02,22,Utilities,485910,487144
-2024-02,23,Construction,8120239,8156018
-2024-02,31-33,Manufacturing,12805225,12844131
-2024-02,42,Wholesale Trade,6120127,6140532
-2024-02,44-45,Retail Trade,15461149,15519441
-2024-02,48-49,Transportation and Warehousing,6713919,6734839
-2024-02,51,Information,2946458,2947500
-2024-02,52-53,Financial Activities,9116407,9146065
-2024-02,54-56,Professional and Business Services,22537714,22566040
-2024-02,61-62,Education and Health Services,26266518,26166194
-2024-02,71-72,Leisure and Hospitality,16679764,16819293
-2024-02,81,Other Services (except Public Administration),5920584,5935924
-2024-02,92,Public Administration,23212872,23226391
-2024-02,99,Unclassified,531954,534931
-2024-03,11,"Agriculture, Forestry, Fishing and Hunting",305100,307238
-2024-03,21,"Mining, Quarrying, and Oil and Gas Extraction",627906,628401
-2024-03,22,Utilities,485998,486754
-2024-03,23,Construction,8135759,8166182
-2024-03,31-33,Manufacturing,12803844,12839111
-2024-03,42,Wholesale Trade,6124752,6141573
-2024-03,44-45,Retail Trade,15470746,15521248
-2024-03,48-49,Transportation and Warehousing,6681084,6695758
-2024-03,51,Information,2943183,2947506
-2024-03,52-53,Financial Activities,9120192,9149213
-2024-03,54-56,Professional and Business Services,22549656,22574923
-2024-03,61-62,Education and Health Services,26333766,26231597
-2024-03,71-72,Leisure and Hospitality,16737982,16830114
-2024-03,81,Other Services (except Public Administration),5935621,5944291
-2024-03,92,Public Administration,23250448,23260430
-2024-03,99,Unclassified,533082,535284
-2024-04,11,"Agriculture, Forestry, Fishing and Hunting",305485,306988
-2024-04,21,"Mining, Quarrying, and Oil and Gas Extraction",627185,628006
-2024-04,22,Utilities,486245,487273
-2024-04,23,Construction,8147158,8179229
-2024-04,31-33,Manufacturing,12796161,12840067
-2024-04,42,Wholesale Trade,6125882,6143552
-2024-04,44-45,Retail Trade,15466846,15522250
-2024-04,48-49,Transportation and Warehousing,6659123,6673269
-2024-04,51,Information,2938543,2946658
-2024-04,52-53,Financial Activities,9115120,9155758
-2024-04,54-56,Professional and Business Services,22548654,22602460
-2024-04,61-62,Education and Health Services,26361816,26302282
-2024-04,71-72,Leisure and Hospitality,16767298,16837210
-2024-04,81,Other Services (except Public Administration),5942833,5955195
-2024-04,92,Public Administration,23262836,23281391
-2024-04,99,Unclassified,533607,535502
-2024-05,11,"Agriculture, Forestry, Fishing and Hunting",307660,307179
-2024-05,21,"Mining, Quarrying, and Oil and Gas Extraction",627726,627644
-2024-05,22,Utilities,487698,487189
-2024-05,23,Construction,8195974,8186602
-2024-05,31-33,Manufacturing,12816064,12826016
-2024-05,42,Wholesale Trade,6141705,6141184
-2024-05,44-45,Retail Trade,15519895,15520498
-2024-05,48-49,Transportation and Warehousing,6636784,6638291
-2024-05,51,Information,2936800,2942663
-2024-05,52-53,Financial Activities,9133911,9157494
-2024-05,54-56,Professional and Business Services,22603910,22600661
-2024-05,61-62,Education and Health Services,26314125,26347213
-2024-05,71-72,Leisure and Hospitality,16905206,16834961
-2024-05,81,Other Services (except Public Administration),5960215,5952607
-2024-05,92,Public Administration,23328373,23305180
-2024-05,99,Unclassified,536339,534863
-2024-06,11,"Agriculture, Forestry, Fishing and Hunting",310317,307014
-2024-06,21,"Mining, Quarrying, and Oil and Gas Extraction",629741,628228
-2024-06,22,Utilities,490196,489470
-2024-06,23,Construction,8243824,8200876
-2024-06,31-33,Manufacturing,12846128,12814457
-2024-06,42,Wholesale Trade,6159532,6143518
-2024-06,44-45,Retail Trade,15568745,15529572
-2024-06,48-49,Transportation and Warehousing,6613586,6609091
-2024-06,51,Information,2937043,2941527
-2024-06,52-53,Financial Activities,9182512,9162193
-2024-06,54-56,Professional and Business Services,22654533,22643674
-2024-06,61-62,Education and Health Services,26097630,26399071
-2024-06,71-72,Leisure and Hospitality,16984770,16795465
-2024-06,81,Other Services (except Public Administration),5965684,5958533
-2024-06,92,Public Administration,23324192,23341100
-2024-06,99,Unclassified,538156,534733
-2024-07,11,"Agriculture, Forestry, Fishing and Hunting",310348,307263
-2024-07,21,"Mining, Quarrying, and Oil and Gas Extraction",630399,628871
-2024-07,22,Utilities,491094,490335
-2024-07,23,Construction,8257188,8215841
-2024-07,31-33,Manufacturing,12857166,12816775
-2024-07,42,Wholesale Trade,6161131,6145240
-2024-07,44-45,Retail Trade,15567773,15533537
-2024-07,48-49,Transportation and Warehousing,6563497,6557332
-2024-07,51,Information,2937790,2940279
-2024-07,52-53,Financial Activities,9210091,9175556
-2024-07,54-56,Professional and Business Services,22674949,22650024
-2024-07,61-62,Education and Health Services,26080246,26463417
-2024-07,71-72,Leisure and Hospitality,16970985,16802341
-2024-07,81,Other Services (except Public Administration),5965971,5965756
-2024-07,92,Public Administration,23290750,23374788
-2024-07,99,Unclassified,537712,534985
-2024-08,11,"Agriculture, Forestry, Fishing and Hunting",310250,307429
-2024-08,21,"Mining, Quarrying, and Oil and Gas Extraction",630790,629592
-2024-08,22,Utilities,491660,490757
-2024-08,23,Construction,8272051,8232976
-2024-08,31-33,Manufacturing,12864548,12816767
-2024-08,42,Wholesale Trade,6164641,6144513
-2024-08,44-45,Retail Trade,15577386,15519895
-2024-08,48-49,Transportation and Warehousing,6523602,6512336
-2024-08,51,Information,2943827,2934129
-2024-08,52-53,Financial Activities,9226388,9183335
-2024-08,54-56,Professional and Business Services,22706978,22680265
-2024-08,61-62,Education and Health Services,26567261,26512020
-2024-08,71-72,Leisure and Hospitality,16979530,16834768
-2024-08,81,Other Services (except Public Administration),5999825,5974655
-2024-08,92,Public Administration,23469669,23401504
-2024-08,99,Unclassified,538833,535130
-2024-09,11,"Agriculture, Forestry, Fishing and Hunting",307048,307458
-2024-09,21,"Mining, Quarrying, and Oil and Gas Extraction",628719,629490
-2024-09,22,Utilities,491665,491334
-2024-09,23,Construction,8239975,8243350
-2024-09,31-33,Manufacturing,12823552,12819463
-2024-09,42,Wholesale Trade,6141594,6143121
-2024-09,44-45,Retail Trade,15480802,15506781
-2024-09,48-49,Transportation and Warehousing,6503935,6508118
-2024-09,51,Information,2940914,2933449
-2024-09,52-53,Financial Activities,9211326,9198288
-2024-09,54-56,Professional and Business Services,22709963,22708997
-2024-09,61-62,Education and Health Services,26669349,26568086
-2024-09,71-72,Leisure and Hospitality,16741803,16812952
-2024-09,81,Other Services (except Public Administration),5977774,5980883
-2024-09,92,Public Administration,23444976,23435817
-2024-09,99,Unclassified,534460,535572
-2024-10,11,"Agriculture, Forestry, Fishing and Hunting",306796,307316
-2024-10,21,"Mining, Quarrying, and Oil and Gas Extraction",627769,628484
-2024-10,22,Utilities,492259,492124
-2024-10,23,Construction,8245454,8251765
-2024-10,31-33,Manufacturing,12817713,12811668
-2024-10,42,Wholesale Trade,6142423,6139339
-2024-10,44-45,Retail Trade,15511021,15507654
-2024-10,48-49,Transportation and Warehousing,6512540,6506158
-2024-10,51,Information,2939979,2932153
-2024-10,52-53,Financial Activities,9222198,9214300
-2024-10,54-56,Professional and Business Services,22756596,22727590
-2024-10,61-62,Education and Health Services,26754257,26620130
-2024-10,71-72,Leisure and Hospitality,16721635,16804050
-2024-10,81,Other Services (except Public Administration),5986377,5987642
-2024-10,92,Public Administration,23483542,23463311
-2024-10,99,Unclassified,534001,535426
-2024-11,11,"Agriculture, Forestry, Fishing and Hunting",306096,307204
-2024-11,21,"Mining, Quarrying, and Oil and Gas Extraction",626481,627438
-2024-11,22,Utilities,492234,492421
-2024-11,23,Construction,8243404,8259157
-2024-11,31-33,Manufacturing,12807144,12803035
-2024-11,42,Wholesale Trade,6140711,6137420
-2024-11,44-45,Retail Trade,15543912,15503643
-2024-11,48-49,Transportation and Warehousing,6523404,6504870
-2024-11,51,Information,2934939,2931958
-2024-11,52-53,Financial Activities,9221435,9220757
-2024-11,54-56,Professional and Business Services,22755096,22740305
-2024-11,61-62,Education and Health Services,26804430,26676267
-2024-11,71-72,Leisure and Hospitality,16724586,16799176
-2024-11,81,Other Services (except Public Administration),5993598,5991030
-2024-11,92,Public Administration,23508633,23493518
-2024-11,99,Unclassified,534292,535557
-2024-12,11,"Agriculture, Forestry, Fishing and Hunting",304940,307099
-2024-12,21,"Mining, Quarrying, and Oil and Gas Extraction",625217,626331
-2024-12,22,Utilities,491692,492959
-2024-12,23,Construction,8232726,8262176
-2024-12,31-33,Manufacturing,12776565,12791864
-2024-12,42,Wholesale Trade,6128030,6134351
-2024-12,44-45,Retail Trade,15531491,15490006
-2024-12,48-49,Transportation and Warehousing,6520398,6496822
-2024-12,51,Information,2925547,2929964
-2024-12,52-53,Financial Activities,9211268,9228696
-2024-12,54-56,Professional and Business Services,22723837,22747989
-2024-12,61-62,Education and Health Services,26818382,26725459
-2024-12,71-72,Leisure and Hospitality,16710879,16784040
-2024-12,81,Other Services (except Public Administration),5981982,5986266
-2024-12,92,Public Administration,23504422,23500846
-2024-12,99,Unclassified,534343,535559
-2025-01,11,"Agriculture, Forestry, Fishing and Hunting",304962,307433
-2025-01,21,"Mining, Quarrying, and Oil and Gas Extraction",624435,624888
-2025-01,22,Utilities,492905,493814
-2025-01,23,Construction,8251879,8273375
-2025-01,31-33,Manufacturing,12770788,12784220
-2025-01,42,Wholesale Trade,6123159,6132396
-2025-01,44-45,Retail Trade,15475427,15483568
-2025-01,48-49,Transportation and Warehousing,6515999,6497971
-2025-01,51,Information,2926958,2928165
-2025-01,52-53,Financial Activities,9226276,9242113
-2025-01,54-56,Professional and Business Services,22770133,22757508
-2025-01,61-62,Education and Health Services,26897680,26766822
-2025-01,71-72,Leisure and Hospitality,16652884,16762573
-2025-01,81,Other Services (except Public Administration),5984405,5988493
-2025-01,92,Public Administration,23544524,23533412
-2025-01,99,Unclassified,533921,536039
-2025-02,11,"Agriculture, Forestry, Fishing and Hunting",304553,307703
-2025-02,21,"Mining, Quarrying, and Oil and Gas Extraction",623920,624331
-2025-02,22,Utilities,492819,493972
-2025-02,23,Construction,8246063,8280234
-2025-02,31-33,Manufacturing,12732358,12768104
-2025-02,42,Wholesale Trade,6108117,6127366
-2025-02,44-45,Retail Trade,15418433,15471984
-2025-02,48-49,Transportation and Warehousing,6503786,6524871
-2025-02,51,Information,2918140,2918123
-2025-02,52-53,Financial Activities,9221380,9251148
-2025-02,54-56,Professional and Business Services,22742073,22767157
-2025-02,61-62,Education and Health Services,26918831,26810933
-2025-02,71-72,Leisure and Hospitality,16611522,16748169
-2025-02,81,Other Services (except Public Administration),5975998,5989495
-2025-02,92,Public Administration,23518646,23528857
-2025-02,99,Unclassified,532930,535756
-2025-03,11,"Agriculture, Forestry, Fishing and Hunting",305122,307169
-2025-03,21,"Mining, Quarrying, and Oil and Gas Extraction",622671,622923
-2025-03,22,Utilities,493800,494439
-2025-03,23,Construction,8260728,8289895
-2025-03,31-33,Manufacturing,12735195,12767819
-2025-03,42,Wholesale Trade,6110937,6126574
-2025-03,44-45,Retail Trade,15422146,15466449
-2025-03,48-49,Transportation and Warehousing,6509301,6523180
-2025-03,51,Information,2920099,2924070
-2025-03,52-53,Financial Activities,9238915,9268230
-2025-03,54-56,Professional and Business Services,22763324,22785132
-2025-03,61-62,Education and Health Services,26981248,26869108
-2025-03,71-72,Leisure and Hospitality,16634305,16721856
-2025-03,81,Other Services (except Public Administration),5984338,5990639
-2025-03,92,Public Administration,23520811,23525598
-2025-03,99,Unclassified,533795,535824
-2025-04,11,"Agriculture, Forestry, Fishing and Hunting",305222,306658
-2025-04,21,"Mining, Quarrying, and Oil and Gas Extraction",620482,620879
-2025-04,22,Utilities,493845,494742
-2025-04,23,Construction,8262245,8293572
-2025-04,31-33,Manufacturing,12722187,12763830
-2025-04,42,Wholesale Trade,6108541,6125059
-2025-04,44-45,Retail Trade,15414684,15463044
-2025-04,48-49,Transportation and Warehousing,6507139,6519796
-2025-04,51,Information,2917192,2925119
-2025-04,52-53,Financial Activities,9238617,9280103
-2025-04,54-56,Professional and Business Services,22742738,22793905
-2025-04,61-62,Education and Health Services,26999534,26929863
-2025-04,71-72,Leisure and Hospitality,16640583,16704758
-2025-04,81,Other Services (except Public Administration),5986762,5997048
-2025-04,92,Public Administration,23515556,23527439
-2025-04,99,Unclassified,533428,535174
-2025-05,11,"Agriculture, Forestry, Fishing and Hunting",307372,306886
-2025-05,21,"Mining, Quarrying, and Oil and Gas Extraction",619900,619455
-2025-05,22,Utilities,496304,495638
-2025-05,23,Construction,8305956,8296171
-2025-05,31-33,Manufacturing,12748136,12757429
-2025-05,42,Wholesale Trade,6121133,6119954
-2025-05,44-45,Retail Trade,15448742,15443781
-2025-05,48-49,Transportation and Warehousing,6520060,6519926
-2025-05,51,Information,2919897,2925712
-2025-05,52-53,Financial Activities,9268916,9293930
-2025-05,54-56,Professional and Business Services,22796981,22790392
-2025-05,61-62,Education and Health Services,26954800,26983474
-2025-05,71-72,Leisure and Hospitality,16726219,16651094
-2025-05,81,Other Services (except Public Administration),5994050,5985338
-2025-05,92,Public Administration,23551220,23523219
-2025-05,99,Unclassified,535685,534087
-2025-06,11,"Agriculture, Forestry, Fishing and Hunting",308317,305004
-2025-06,21,"Mining, Quarrying, and Oil and Gas Extraction",619885,618220
-2025-06,22,Utilities,499264,498585
-2025-06,23,Construction,8350722,8307477
-2025-06,31-33,Manufacturing,12787926,12756717
-2025-06,42,Wholesale Trade,6132998,6116905
-2025-06,44-45,Retail Trade,15470775,15429507
-2025-06,48-49,Transportation and Warehousing,6513961,6509633
-2025-06,51,Information,2927309,2932172
-2025-06,52-53,Financial Activities,9341568,9320590
-2025-06,54-56,Professional and Business Services,22853868,22844623
-2025-06,61-62,Education and Health Services,26716892,27024677
-2025-06,71-72,Leisure and Hospitality,16726001,16531044
-2025-06,81,Other Services (except Public Administration),5982497,5977129
-2025-06,92,Public Administration,23517047,23533273
-2025-06,99,Unclassified,535700,532227
-2025-07,11,"Agriculture, Forestry, Fishing and Hunting",307880,304797
-2025-07,21,"Mining, Quarrying, and Oil and Gas Extraction",617932,616450
-2025-07,22,Utilities,499529,498818
-2025-07,23,Construction,8351243,8309689
-2025-07,31-33,Manufacturing,12792693,12752576
-2025-07,42,Wholesale Trade,6130436,6114725
-2025-07,44-45,Retail Trade,15462856,15427512
-2025-07,48-49,Transportation and Warehousing,6508438,6502069
-2025-07,51,Information,2929132,2931846
-2025-07,52-53,Financial Activities,9375376,9339078
-2025-07,54-56,Professional and Business Services,22847893,22822224
-2025-07,61-62,Education and Health Services,26680739,27072133
-2025-07,71-72,Leisure and Hospitality,16691579,16517786
-2025-07,81,Other Services (except Public Administration),5972022,5973649
-2025-07,92,Public Administration,23462812,23542739
-2025-07,99,Unclassified,534659,531897
-2025-08,11,"Agriculture, Forestry, Fishing and Hunting",307725,304960
-2025-08,21,"Mining, Quarrying, and Oil and Gas Extraction",615328,614458
-2025-08,22,Utilities,500014,499215
-2025-08,23,Construction,8351508,8313430
-2025-08,31-33,Manufacturing,12788262,12742300
-2025-08,42,Wholesale Trade,6129617,6110713
-2025-08,44-45,Retail Trade,15469946,15414616
-2025-08,48-49,Transportation and Warehousing,6508649,6497822
-2025-08,51,Information,2935015,2925231
-2025-08,52-53,Financial Activities,9394644,9350291
-2025-08,54-56,Professional and Business Services,22848857,22825476
-2025-08,61-62,Education and Health Services,27121059,27072629
-2025-08,71-72,Leisure and Hospitality,16688959,16547009
-2025-08,81,Other Services (except Public Administration),5998175,5974563
-2025-08,92,Public Administration,23556067,23493007
-2025-08,99,Unclassified,536123,532477
-2025-09,11,"Agriculture, Forestry, Fishing and Hunting",305655,306207
-2025-09,21,"Mining, Quarrying, and Oil and Gas Extraction",611242,612475
-2025-09,22,Utilities,498419,498147
-2025-09,23,Construction,8316182,8321818
-2025-09,31-33,Manufacturing,12743039,12740938
-2025-09,42,Wholesale Trade,6109097,6112239
-2025-09,44-45,Retail Trade,15393723,15424761
-2025-09,48-49,Transportation and Warehousing,6492143,6497296
-2025-09,51,Information,2931217,2923714
-2025-09,52-53,Financial Activities,9373264,9360082
-2025-09,54-56,Professional and Business Services,22831508,22834669
-2025-09,61-62,Education and Health Services,27160438,27065696
-2025-09,71-72,Leisure and Hospitality,16477335,16560226
-2025-09,81,Other Services (except Public Administration),5972715,5977418
-2025-09,92,Public Administration,23486200,23485568
-2025-09,99,Unclassified,533414,534787
-2025-10,11,"Agriculture, Forestry, Fishing and Hunting",305912,306486
-2025-10,21,"Mining, Quarrying, and Oil and Gas Extraction",609931,611026
-2025-10,22,Utilities,498286,498263
-2025-10,23,Construction,8317094,8324519
-2025-10,31-33,Manufacturing,12740440,12736281
-2025-10,42,Wholesale Trade,6113841,6111745
-2025-10,44-45,Retail Trade,15408228,15413848
-2025-10,48-49,Transportation and Warehousing,6501583,6496272
-2025-10,51,Information,2930043,2922439
-2025-10,52-53,Financial Activities,9377489,9370452
-2025-10,54-56,Professional and Business Services,22865168,22838544
-2025-10,61-62,Education and Health Services,27217611,27086978
-2025-10,71-72,Leisure and Hospitality,16458001,16548874
-2025-10,81,Other Services (except Public Administration),5974460,5976685
-2025-10,92,Public Administration,23476237,23462053
-2025-10,99,Unclassified,534457,536120
-2025-11,11,"Agriculture, Forestry, Fishing and Hunting",305731,306804
-2025-11,21,"Mining, Quarrying, and Oil and Gas Extraction",608876,610097
-2025-11,22,Utilities,497490,497775
-2025-11,23,Construction,8311230,8327146
-2025-11,31-33,Manufacturing,12731735,12729166
-2025-11,42,Wholesale Trade,6113029,6109878
-2025-11,44-45,Retail Trade,15436213,15405387
-2025-11,48-49,Transportation and Warehousing,6505244,6488215
-2025-11,51,Information,2922846,2920430
-2025-11,52-53,Financial Activities,9366792,9367070
-2025-11,54-56,Professional and Business Services,22848326,22834942
-2025-11,61-62,Education and Health Services,27240602,27112621
-2025-11,71-72,Leisure and Hospitality,16460677,16537560
-2025-11,81,Other Services (except Public Administration),5978706,5975822
-2025-11,92,Public Administration,23483565,23472456
-2025-11,99,Unclassified,534866,536234
+2021-01,11,"Agriculture, Forestry, Fishing and Hunting",196584,198071
+2021-01,21,"Mining, Quarrying, and Oil and Gas Extraction",618696,618226
+2021-01,22,Utilities,348542,348635
+2021-01,23,Construction,7476090,7492426
+2021-01,31-33,Manufacturing,12291596,12290751
+2021-01,42,Wholesale Trade,5808438,5813042
+2021-01,44-45,Retail Trade,14752381,14736469
+2021-01,48-49,Transportation and Warehousing,6312998,6302143
+2021-01,51,Information,2877189,2870023
+2021-01,52-53,Financial Activities,8773897,8781596
+2021-01,54-56,Professional and Business Services,20535707,20507709
+2021-01,61-62,Education and Health Services,23659482,23514374
+2021-01,71-72,Leisure and Hospitality,14741025,14825745
+2021-01,81,Other Services (except Public Administration),5420978,5421772
+2021-01,92,Public Administration,22183765,22152157
+2021-01,99,Unclassified,357957,358997
+2021-02,11,"Agriculture, Forestry, Fishing and Hunting",196914,198882
+2021-02,21,"Mining, Quarrying, and Oil and Gas Extraction",615520,616676
+2021-02,22,Utilities,348369,349412
+2021-02,23,Construction,7477221,7512927
+2021-02,31-33,Manufacturing,12281482,12323241
+2021-02,42,Wholesale Trade,5805944,5825866
+2021-02,44-45,Retail Trade,14702956,14767255
+2021-02,48-49,Transportation and Warehousing,6291180,6305021
+2021-02,51,Information,2878994,2882639
+2021-02,52-53,Financial Activities,8773040,8791857
+2021-02,54-56,Professional and Business Services,20558607,20594839
+2021-02,61-62,Education and Health Services,23671032,23599134
+2021-02,71-72,Leisure and Hospitality,14748515,14873628
+2021-02,81,Other Services (except Public Administration),5417826,5435836
+2021-02,92,Public Administration,22162061,22184257
+2021-02,99,Unclassified,357724,359700
+2021-03,11,"Agriculture, Forestry, Fishing and Hunting",198619,200016
+2021-03,21,"Mining, Quarrying, and Oil and Gas Extraction",614690,615800
+2021-03,22,Utilities,349548,350281
+2021-03,23,Construction,7505918,7536179
+2021-03,31-33,Manufacturing,12318008,12353741
+2021-03,42,Wholesale Trade,5821558,5838267
+2021-03,44-45,Retail Trade,14739570,14801588
+2021-03,48-49,Transportation and Warehousing,6303804,6316243
+2021-03,51,Information,2892179,2895977
+2021-03,52-53,Financial Activities,8796809,8813029
+2021-03,54-56,Professional and Business Services,20640759,20676306
+2021-03,61-62,Education and Health Services,23744938,23677565
+2021-03,71-72,Leisure and Hospitality,14857571,14947619
+2021-03,81,Other Services (except Public Administration),5437353,5450552
+2021-03,92,Public Administration,22197049,22223342
+2021-03,99,Unclassified,359253,360749
+2021-04,11,"Agriculture, Forestry, Fishing and Hunting",200165,201275
+2021-04,21,"Mining, Quarrying, and Oil and Gas Extraction",613425,615506
+2021-04,22,Utilities,349938,350909
+2021-04,23,Construction,7522985,7555478
+2021-04,31-33,Manufacturing,12332054,12375683
+2021-04,42,Wholesale Trade,5830058,5848498
+2021-04,44-45,Retail Trade,14776646,14847544
+2021-04,48-49,Transportation and Warehousing,6312260,6328824
+2021-04,51,Information,2898770,2907172
+2021-04,52-53,Financial Activities,8803392,8829261
+2021-04,54-56,Professional and Business Services,20683211,20747735
+2021-04,61-62,Education and Health Services,23770836,23747944
+2021-04,71-72,Leisure and Hospitality,14963067,15036389
+2021-04,81,Other Services (except Public Administration),5449506,5463748
+2021-04,92,Public Administration,22214043,22255498
+2021-04,99,Unclassified,360209,361464
+2021-05,11,"Agriculture, Forestry, Fishing and Hunting",203439,203032
+2021-05,21,"Mining, Quarrying, and Oil and Gas Extraction",613362,614301
+2021-05,22,Utilities,351077,351138
+2021-05,23,Construction,7574225,7570041
+2021-05,31-33,Manufacturing,12385611,12402725
+2021-05,42,Wholesale Trade,5856646,5859390
+2021-05,44-45,Retail Trade,14897339,14913469
+2021-05,48-49,Transportation and Warehousing,6343363,6350011
+2021-05,51,Information,2908712,2916976
+2021-05,52-53,Financial Activities,8826665,8840540
+2021-05,54-56,Professional and Business Services,20784486,20804643
+2021-05,61-62,Education and Health Services,23771013,23823210
+2021-05,71-72,Leisure and Hospitality,15245216,15187369
+2021-05,81,Other Services (except Public Administration),5481859,5480613
+2021-05,92,Public Administration,22277972,22276605
+2021-05,99,Unclassified,363263,362804
+2021-06,11,"Agriculture, Forestry, Fishing and Hunting",206214,204540
+2021-06,21,"Mining, Quarrying, and Oil and Gas Extraction",614321,613668
+2021-06,22,Utilities,352648,352167
+2021-06,23,Construction,7620285,7584976
+2021-06,31-33,Manufacturing,12455250,12431343
+2021-06,42,Wholesale Trade,5885291,5873619
+2021-06,44-45,Retail Trade,15018312,14989381
+2021-06,48-49,Transportation and Warehousing,6376655,6369162
+2021-06,51,Information,2923823,2928615
+2021-06,52-53,Financial Activities,8869897,8856648
+2021-06,54-56,Professional and Business Services,20902939,20878167
+2021-06,61-62,Education and Health Services,23646840,23916196
+2021-06,71-72,Leisure and Hospitality,15496704,15372066
+2021-06,81,Other Services (except Public Administration),5507276,5499013
+2021-06,92,Public Administration,22286764,22305562
+2021-06,99,Unclassified,365408,363675
+2021-07,11,"Agriculture, Forestry, Fishing and Hunting",207087,205346
+2021-07,21,"Mining, Quarrying, and Oil and Gas Extraction",614157,612773
+2021-07,22,Utilities,353075,352594
+2021-07,23,Construction,7640148,7603379
+2021-07,31-33,Manufacturing,12487012,12453591
+2021-07,42,Wholesale Trade,5898276,5884743
+2021-07,44-45,Retail Trade,15074909,15043981
+2021-07,48-49,Transportation and Warehousing,6392720,6385137
+2021-07,51,Information,2936391,2939224
+2021-07,52-53,Financial Activities,8894129,8869522
+2021-07,54-56,Professional and Business Services,20974322,20957071
+2021-07,61-62,Education and Health Services,23655981,23990313
+2021-07,71-72,Leisure and Hospitality,15600128,15485539
+2021-07,81,Other Services (except Public Administration),5519144,5516574
+2021-07,92,Public Administration,22238911,22316574
+2021-07,99,Unclassified,365871,364340
+2021-08,11,"Agriculture, Forestry, Fishing and Hunting",207692,206036
+2021-08,21,"Mining, Quarrying, and Oil and Gas Extraction",614595,612535
+2021-08,22,Utilities,354001,353303
+2021-08,23,Construction,7666603,7627007
+2021-08,31-33,Manufacturing,12532092,12487989
+2021-08,42,Wholesale Trade,5923627,5903768
+2021-08,44-45,Retail Trade,15133802,15080685
+2021-08,48-49,Transportation and Warehousing,6420206,6407198
+2021-08,51,Information,2958565,2952332
+2021-08,52-53,Financial Activities,8923806,8892466
+2021-08,54-56,Professional and Business Services,21087448,21057031
+2021-08,61-62,Education and Health Services,24140201,24068884
+2021-08,71-72,Leisure and Hospitality,15698111,15559823
+2021-08,81,Other Services (except Public Administration),5559441,5533693
+2021-08,92,Public Administration,22431023,22356712
+2021-08,99,Unclassified,367206,364952
+2021-09,11,"Agriculture, Forestry, Fishing and Hunting",206120,206013
+2021-09,21,"Mining, Quarrying, and Oil and Gas Extraction",613913,613015
+2021-09,22,Utilities,354126,353899
+2021-09,23,Construction,7656465,7651530
+2021-09,31-33,Manufacturing,12526492,12516485
+2021-09,42,Wholesale Trade,5921992,5918364
+2021-09,44-45,Retail Trade,15071868,15082435
+2021-09,48-49,Transportation and Warehousing,6418584,6421640
+2021-09,51,Information,2971389,2965927
+2021-09,52-53,Financial Activities,8927803,8919477
+2021-09,54-56,Professional and Business Services,21166812,21150647
+2021-09,61-62,Education and Health Services,24275631,24162059
+2021-09,71-72,Leisure and Hospitality,15558333,15587112
+2021-09,81,Other Services (except Public Administration),5553076,5551069
+2021-09,92,Public Administration,22426896,22392920
+2021-09,99,Unclassified,365335,365568
+2021-10,11,"Agriculture, Forestry, Fishing and Hunting",206227,206375
+2021-10,21,"Mining, Quarrying, and Oil and Gas Extraction",614296,613537
+2021-10,22,Utilities,354695,354211
+2021-10,23,Construction,7668696,7670433
+2021-10,31-33,Manufacturing,12555788,12542999
+2021-10,42,Wholesale Trade,5934684,5929478
+2021-10,44-45,Retail Trade,15147199,15120389
+2021-10,48-49,Transportation and Warehousing,6443241,6438666
+2021-10,51,Information,2984641,2975127
+2021-10,52-53,Financial Activities,8946894,8937965
+2021-10,54-56,Professional and Business Services,21264466,21223046
+2021-10,61-62,Education and Health Services,24374415,24237791
+2021-10,71-72,Leisure and Hospitality,15594320,15642455
+2021-10,81,Other Services (except Public Administration),5569866,5567070
+2021-10,92,Public Administration,22453590,22419153
+2021-10,99,Unclassified,365464,365950
+2021-11,11,"Agriculture, Forestry, Fishing and Hunting",206343,206971
+2021-11,21,"Mining, Quarrying, and Oil and Gas Extraction",614117,613949
+2021-11,22,Utilities,355025,354963
+2021-11,23,Construction,7678564,7692860
+2021-11,31-33,Manufacturing,12580390,12571109
+2021-11,42,Wholesale Trade,5944195,5940991
+2021-11,44-45,Retail Trade,15211904,15153000
+2021-11,48-49,Transportation and Warehousing,6470378,6457684
+2021-11,51,Information,2993879,2985114
+2021-11,52-53,Financial Activities,8961060,8963456
+2021-11,54-56,Professional and Business Services,21325544,21305162
+2021-11,61-62,Education and Health Services,24429362,24307239
+2021-11,71-72,Leisure and Hospitality,15627829,15682958
+2021-11,81,Other Services (except Public Administration),5583084,5581063
+2021-11,92,Public Administration,22466853,22443343
+2021-11,99,Unclassified,365455,365961
+2021-12,11,"Agriculture, Forestry, Fishing and Hunting",206200,207534
+2021-12,21,"Mining, Quarrying, and Oil and Gas Extraction",613841,614782
+2021-12,22,Utilities,354810,355392
+2021-12,23,Construction,7680575,7713391
+2021-12,31-33,Manufacturing,12580560,12589581
+2021-12,42,Wholesale Trade,5942990,5949896
+2021-12,44-45,Retail Trade,15229114,15181409
+2021-12,48-49,Transportation and Warehousing,6482150,6470649
+2021-12,51,Information,2995401,3005925
+2021-12,52-53,Financial Activities,8960968,8981391
+2021-12,54-56,Professional and Business Services,21345365,21369819
+2021-12,61-62,Education and Health Services,24458691,24369768
+2021-12,71-72,Leisure and Hospitality,15658817,15734034
+2021-12,81,Other Services (except Public Administration),5587389,5595355
+2021-12,92,Public Administration,22468659,22465496
+2021-12,99,Unclassified,365491,366384
+2022-01,11,"Agriculture, Forestry, Fishing and Hunting",206718,208171
+2022-01,21,"Mining, Quarrying, and Oil and Gas Extraction",614785,614536
+2022-01,22,Utilities,356020,356240
+2022-01,23,Construction,7717479,7734676
+2022-01,31-33,Manufacturing,12615557,12618287
+2022-01,42,Wholesale Trade,5958498,5963773
+2022-01,44-45,Retail Trade,15233557,15223020
+2022-01,48-49,Transportation and Warehousing,6496694,6488293
+2022-01,51,Information,3014364,3007837
+2022-01,52-53,Financial Activities,8988705,9001862
+2022-01,54-56,Professional and Business Services,21478561,21455416
+2022-01,61-62,Education and Health Services,24595810,24456817
+2022-01,71-72,Leisure and Hospitality,15720284,15804794
+2022-01,81,Other Services (except Public Administration),5610505,5611689
+2022-01,92,Public Administration,22509666,22481856
+2022-01,99,Unclassified,365544,366676
+2022-02,11,"Agriculture, Forestry, Fishing and Hunting",206835,208758
+2022-02,21,"Mining, Quarrying, and Oil and Gas Extraction",614598,615586
+2022-02,22,Utilities,356142,357170
+2022-02,23,Construction,7723739,7759049
+2022-02,31-33,Manufacturing,12607494,12646203
+2022-02,42,Wholesale Trade,5959263,5978713
+2022-02,44-45,Retail Trade,15202451,15263447
+2022-02,48-49,Transportation and Warehousing,6486950,6500314
+2022-02,51,Information,3016561,3019316
+2022-02,52-53,Financial Activities,8982103,8998994
+2022-02,54-56,Professional and Business Services,21504088,21539194
+2022-02,61-62,Education and Health Services,24613573,24535789
+2022-02,71-72,Leisure and Hospitality,15740489,15861754
+2022-02,81,Other Services (except Public Administration),5612331,5629021
+2022-02,92,Public Administration,22489230,22509616
+2022-02,99,Unclassified,365068,366946
+2022-03,11,"Agriculture, Forestry, Fishing and Hunting",208036,209359
+2022-03,21,"Mining, Quarrying, and Oil and Gas Extraction",615779,616715
+2022-03,22,Utilities,357074,357751
+2022-03,23,Construction,7751040,7780830
+2022-03,31-33,Manufacturing,12636777,12669680
+2022-03,42,Wholesale Trade,5975282,5991221
+2022-03,44-45,Retail Trade,15232305,15289516
+2022-03,48-49,Transportation and Warehousing,6499292,6511100
+2022-03,51,Information,3028160,3031353
+2022-03,52-53,Financial Activities,8999364,9013819
+2022-03,54-56,Professional and Business Services,21578485,21612489
+2022-03,61-62,Education and Health Services,24685074,24609368
+2022-03,71-72,Leisure and Hospitality,15838119,15922822
+2022-03,81,Other Services (except Public Administration),5634672,5645959
+2022-03,92,Public Administration,22516104,22539094
+2022-03,99,Unclassified,365935,367317
+2022-04,11,"Agriculture, Forestry, Fishing and Hunting",208662,209704
+2022-04,21,"Mining, Quarrying, and Oil and Gas Extraction",616160,617849
+2022-04,22,Utilities,357589,358468
+2022-04,23,Construction,7769383,7802019
+2022-04,31-33,Manufacturing,12649798,12691262
+2022-04,42,Wholesale Trade,5984544,6002318
+2022-04,44-45,Retail Trade,15244364,15309602
+2022-04,48-49,Transportation and Warehousing,6506542,6522477
+2022-04,51,Information,3033471,3041750
+2022-04,52-53,Financial Activities,9003555,9028134
+2022-04,54-56,Professional and Business Services,21618257,21682597
+2022-04,61-62,Education and Health Services,24713396,24682452
+2022-04,71-72,Leisure and Hospitality,15918529,15985596
+2022-04,81,Other Services (except Public Administration),5648409,5660495
+2022-04,92,Public Administration,22525503,22562072
+2022-04,99,Unclassified,366595,367729
+2022-05,11,"Agriculture, Forestry, Fishing and Hunting",210978,210545
+2022-05,21,"Mining, Quarrying, and Oil and Gas Extraction",617931,618703
+2022-05,22,Utilities,359037,358999
+2022-05,23,Construction,7827557,7823162
+2022-05,31-33,Manufacturing,12707982,12725122
+2022-05,42,Wholesale Trade,6015408,6017540
+2022-05,44-45,Retail Trade,15332334,15343073
+2022-05,48-49,Transportation and Warehousing,6530789,6536704
+2022-05,51,Information,3043834,3052491
+2022-05,52-53,Financial Activities,9027064,9040673
+2022-05,54-56,Professional and Business Services,21735120,21754556
+2022-05,61-62,Education and Health Services,24712058,24761122
+2022-05,71-72,Leisure and Hospitality,16151914,16087958
+2022-05,81,Other Services (except Public Administration),5680728,5678626
+2022-05,92,Public Administration,22596045,22590446
+2022-05,99,Unclassified,369100,368573
+2022-06,11,"Agriculture, Forestry, Fishing and Hunting",213072,211449
+2022-06,21,"Mining, Quarrying, and Oil and Gas Extraction",620284,619527
+2022-06,22,Utilities,360533,360096
+2022-06,23,Construction,7879531,7843706
+2022-06,31-33,Manufacturing,12770893,12747605
+2022-06,42,Wholesale Trade,6043966,6031972
+2022-06,44-45,Retail Trade,15427896,15396191
+2022-06,48-49,Transportation and Warehousing,6553991,6545855
+2022-06,51,Information,3054284,3059624
+2022-06,52-53,Financial Activities,9067065,9053939
+2022-06,54-56,Professional and Business Services,21852690,21826002
+2022-06,61-62,Education and Health Services,24571900,24844339
+2022-06,71-72,Leisure and Hospitality,16345434,16221388
+2022-06,81,Other Services (except Public Administration),5704221,5697442
+2022-06,92,Public Administration,22596298,22614038
+2022-06,99,Unclassified,370596,368835
+2022-07,11,"Agriculture, Forestry, Fishing and Hunting",213217,211524
+2022-07,21,"Mining, Quarrying, and Oil and Gas Extraction",621568,620234
+2022-07,22,Utilities,361127,360699
+2022-07,23,Construction,7900182,7862575
+2022-07,31-33,Manufacturing,12798400,12765315
+2022-07,42,Wholesale Trade,6055756,6042020
+2022-07,44-45,Retail Trade,15458793,15425465
+2022-07,48-49,Transportation and Warehousing,6564324,6555935
+2022-07,51,Information,3061218,3064475
+2022-07,52-53,Financial Activities,9086803,9061120
+2022-07,54-56,Professional and Business Services,21918518,21900846
+2022-07,61-62,Education and Health Services,24575643,24914072
+2022-07,71-72,Leisure and Hospitality,16404516,16289940
+2022-07,81,Other Services (except Public Administration),5714760,5713735
+2022-07,92,Public Administration,22551051,22624316
+2022-07,99,Unclassified,370546,368993
+2022-08,11,"Agriculture, Forestry, Fishing and Hunting",213557,211976
+2022-08,21,"Mining, Quarrying, and Oil and Gas Extraction",623116,621330
+2022-08,22,Utilities,362397,361781
+2022-08,23,Construction,7924543,7884764
+2022-08,31-33,Manufacturing,12835186,12792614
+2022-08,42,Wholesale Trade,6076296,6057075
+2022-08,44-45,Retail Trade,15494878,15443237
+2022-08,48-49,Transportation and Warehousing,6582204,6568909
+2022-08,51,Information,3076080,3070297
+2022-08,52-53,Financial Activities,9108115,9076384
+2022-08,54-56,Professional and Business Services,22019770,21991999
+2022-08,61-62,Education and Health Services,25064954,25000172
+2022-08,71-72,Leisure and Hospitality,16470054,16334560
+2022-08,81,Other Services (except Public Administration),5756121,5731565
+2022-08,92,Public Administration,22748410,22678342
+2022-08,99,Unclassified,371356,369156
+2022-09,11,"Agriculture, Forestry, Fishing and Hunting",211640,211608
+2022-09,21,"Mining, Quarrying, and Oil and Gas Extraction",622818,622306
+2022-09,22,Utilities,362574,362420
+2022-09,23,Construction,7910708,7907204
+2022-09,31-33,Manufacturing,12813235,12805317
+2022-09,42,Wholesale Trade,6071404,6069093
+2022-09,44-45,Retail Trade,15415408,15430492
+2022-09,48-49,Transportation and Warehousing,6574344,6578394
+2022-09,51,Information,3076094,3071008
+2022-09,52-53,Financial Activities,9099879,9091972
+2022-09,54-56,Professional and Business Services,22071400,22058579
+2022-09,61-62,Education and Health Services,25192399,25086306
+2022-09,71-72,Leisure and Hospitality,16304656,16343013
+2022-09,81,Other Services (except Public Administration),5747834,5747285
+2022-09,92,Public Administration,22741970,22714859
+2022-09,99,Unclassified,369112,369506
+2022-10,11,"Agriculture, Forestry, Fishing and Hunting",211462,211629
+2022-10,21,"Mining, Quarrying, and Oil and Gas Extraction",623785,623373
+2022-10,22,Utilities,363497,363044
+2022-10,23,Construction,7921765,7924525
+2022-10,31-33,Manufacturing,12832068,12821084
+2022-10,42,Wholesale Trade,6084026,6079859
+2022-10,44-45,Retail Trade,15461499,15442988
+2022-10,48-49,Transportation and Warehousing,6592274,6588946
+2022-10,51,Information,3078677,3069091
+2022-10,52-53,Financial Activities,9110960,9103072
+2022-10,54-56,Professional and Business Services,22144429,22103321
+2022-10,61-62,Education and Health Services,25298254,25166176
+2022-10,71-72,Leisure and Hospitality,16331188,16386167
+2022-10,81,Other Services (except Public Administration),5764036,5762331
+2022-10,92,Public Administration,22774755,22746030
+2022-10,99,Unclassified,369174,369814
+2022-11,11,"Agriculture, Forestry, Fishing and Hunting",211375,211963
+2022-11,21,"Mining, Quarrying, and Oil and Gas Extraction",624084,624197
+2022-11,22,Utilities,363930,363920
+2022-11,23,Construction,7925428,7939768
+2022-11,31-33,Manufacturing,12840544,12832551
+2022-11,42,Wholesale Trade,6089684,6086755
+2022-11,44-45,Retail Trade,15506225,15457151
+2022-11,48-49,Transportation and Warehousing,6607830,6596826
+2022-11,51,Information,3074567,3065268
+2022-11,52-53,Financial Activities,9110444,9114716
+2022-11,54-56,Professional and Business Services,22171527,22151041
+2022-11,61-62,Education and Health Services,25358003,25236565
+2022-11,71-72,Leisure and Hospitality,16363976,16421145
+2022-11,81,Other Services (except Public Administration),5776333,5774165
+2022-11,92,Public Administration,22797983,22777926
+2022-11,99,Unclassified,369279,369863
+2022-12,11,"Agriculture, Forestry, Fishing and Hunting",211070,212293
+2022-12,21,"Mining, Quarrying, and Oil and Gas Extraction",624191,625074
+2022-12,22,Utilities,364010,364697
+2022-12,23,Construction,7924346,7956135
+2022-12,31-33,Manufacturing,12827047,12835778
+2022-12,42,Wholesale Trade,6085563,6091611
+2022-12,44-45,Retail Trade,15510789,15468206
+2022-12,48-49,Transportation and Warehousing,6610512,6600949
+2022-12,51,Information,3061060,3073736
+2022-12,52-53,Financial Activities,9096661,9119576
+2022-12,54-56,Professional and Business Services,22161548,22184171
+2022-12,61-62,Education and Health Services,25390141,25298221
+2022-12,71-72,Leisure and Hospitality,16389515,16459274
+2022-12,81,Other Services (except Public Administration),5777170,5782737
+2022-12,92,Public Administration,22805424,22802110
+2022-12,99,Unclassified,369217,370034
+2023-01,11,"Agriculture, Forestry, Fishing and Hunting",210876,212296
+2023-01,21,"Mining, Quarrying, and Oil and Gas Extraction",625865,625835
+2023-01,22,Utilities,365223,365569
+2023-01,23,Construction,7949878,7967985
+2023-01,31-33,Manufacturing,12839691,12846121
+2023-01,42,Wholesale Trade,6095598,6101579
+2023-01,44-45,Retail Trade,15482630,15477727
+2023-01,48-49,Transportation and Warehousing,6612746,6606810
+2023-01,51,Information,3054483,3048584
+2023-01,52-53,Financial Activities,9108637,9127474
+2023-01,54-56,Professional and Business Services,22234805,22216639
+2023-01,61-62,Education and Health Services,25518676,25386005
+2023-01,71-72,Leisure and Hospitality,16423568,16508331
+2023-01,81,Other Services (except Public Administration),5795628,5797235
+2023-01,92,Public Administration,22861050,22837114
+2023-01,99,Unclassified,368911,370137
+2023-02,11,"Agriculture, Forestry, Fishing and Hunting",210642,212518
+2023-02,21,"Mining, Quarrying, and Oil and Gas Extraction",625806,626627
+2023-02,22,Utilities,365218,366231
+2023-02,23,Construction,7949393,7984316
+2023-02,31-33,Manufacturing,12814152,12849818
+2023-02,42,Wholesale Trade,6089419,6108402
+2023-02,44-45,Retail Trade,15430655,15488344
+2023-02,48-49,Transportation and Warehousing,6603036,6615923
+2023-02,51,Information,3032636,3034481
+2023-02,52-53,Financial Activities,9092208,9107161
+2023-02,54-56,Professional and Business Services,22216277,22250291
+2023-02,61-62,Education and Health Services,25541001,25457397
+2023-02,71-72,Leisure and Hospitality,16430737,16548116
+2023-02,81,Other Services (except Public Administration),5796202,5811579
+2023-02,92,Public Administration,22856738,22875358
+2023-02,99,Unclassified,368489,370268
+2023-03,11,"Agriculture, Forestry, Fishing and Hunting",211320,212566
+2023-03,21,"Mining, Quarrying, and Oil and Gas Extraction",626448,627212
+2023-03,22,Utilities,366309,366929
+2023-03,23,Construction,7968773,7998093
+2023-03,31-33,Manufacturing,12819571,12849641
+2023-03,42,Wholesale Trade,6097095,6112269
+2023-03,44-45,Retail Trade,15451452,15503829
+2023-03,48-49,Transportation and Warehousing,6610187,6621360
+2023-03,51,Information,3025599,3028173
+2023-03,52-53,Financial Activities,9098088,9110764
+2023-03,54-56,Professional and Business Services,22249262,22281734
+2023-03,61-62,Education and Health Services,25614324,25530307
+2023-03,71-72,Leisure and Hospitality,16504715,16584033
+2023-03,81,Other Services (except Public Administration),5814133,5823507
+2023-03,92,Public Administration,22891833,22911522
+2023-03,99,Unclassified,369145,370413
+2023-04,11,"Agriculture, Forestry, Fishing and Hunting",211803,212777
+2023-04,21,"Mining, Quarrying, and Oil and Gas Extraction",626257,627557
+2023-04,22,Utilities,366648,367434
+2023-04,23,Construction,7976866,8009639
+2023-04,31-33,Manufacturing,12808597,12847895
+2023-04,42,Wholesale Trade,6098090,6115200
+2023-04,44-45,Retail Trade,15449345,15508873
+2023-04,48-49,Transportation and Warehousing,6606427,6621727
+2023-04,51,Information,3011898,3020056
+2023-04,52-53,Financial Activities,9090587,9113869
+2023-04,54-56,Professional and Business Services,22241034,22305203
+2023-04,61-62,Education and Health Services,25640424,25601421
+2023-04,71-72,Leisure and Hospitality,16556843,16617590
+2023-04,81,Other Services (except Public Administration),5824514,5834436
+2023-04,92,Public Administration,22910446,22942123
+2023-04,99,Unclassified,369755,370767
+2023-05,11,"Agriculture, Forestry, Fishing and Hunting",213620,213163
+2023-05,21,"Mining, Quarrying, and Oil and Gas Extraction",627382,627988
+2023-05,22,Utilities,368272,368135
+2023-05,23,Construction,8030181,8025577
+2023-05,31-33,Manufacturing,12839705,12856883
+2023-05,42,Wholesale Trade,6117293,6118815
+2023-05,44-45,Retail Trade,15509173,15514487
+2023-05,48-49,Transportation and Warehousing,6617675,6622854
+2023-05,51,Information,3004828,3013899
+2023-05,52-53,Financial Activities,9105319,9118668
+2023-05,54-56,Professional and Business Services,22309527,22328268
+2023-05,61-62,Education and Health Services,25619100,25664967
+2023-05,71-72,Leisure and Hospitality,16729051,16658960
+2023-05,81,Other Services (except Public Administration),5848501,5845536
+2023-05,92,Public Administration,22980585,22970741
+2023-05,99,Unclassified,371486,370893
+2023-06,11,"Agriculture, Forestry, Fishing and Hunting",214940,213368
+2023-06,21,"Mining, Quarrying, and Oil and Gas Extraction",628632,627773
+2023-06,22,Utilities,369902,369508
+2023-06,23,Construction,8072926,8036585
+2023-06,31-33,Manufacturing,12873656,12850998
+2023-06,42,Wholesale Trade,6134074,6121754
+2023-06,44-45,Retail Trade,15571146,15536662
+2023-06,48-49,Transportation and Warehousing,6630455,6621677
+2023-06,51,Information,2998282,3004193
+2023-06,52-53,Financial Activities,9139505,9126503
+2023-06,54-56,Professional and Business Services,22367820,22339222
+2023-06,61-62,Education and Health Services,25457906,25733307
+2023-06,71-72,Leisure and Hospitality,16851123,16727712
+2023-06,81,Other Services (except Public Administration),5862910,5857615
+2023-06,92,Public Administration,22984736,23001388
+2023-06,99,Unclassified,372586,370797
+2023-07,11,"Agriculture, Forestry, Fishing and Hunting",214757,213113
+2023-07,21,"Mining, Quarrying, and Oil and Gas Extraction",629093,627809
+2023-07,22,Utilities,370662,370285
+2023-07,23,Construction,8089382,8050930
+2023-07,31-33,Manufacturing,12880328,12847605
+2023-07,42,Wholesale Trade,6138378,6124442
+2023-07,44-45,Retail Trade,15581661,15545935
+2023-07,48-49,Transportation and Warehousing,6631322,6622132
+2023-07,51,Information,2989956,2993682
+2023-07,52-53,Financial Activities,9153744,9126993
+2023-07,54-56,Professional and Business Services,22379789,22361746
+2023-07,61-62,Education and Health Services,25460040,25802420
+2023-07,71-72,Leisure and Hospitality,16874815,16760302
+2023-07,81,Other Services (except Public Administration),5866031,5866553
+2023-07,92,Public Administration,22961182,23029977
+2023-07,99,Unclassified,372620,371045
+2023-08,11,"Agriculture, Forestry, Fishing and Hunting",214670,213166
+2023-08,21,"Mining, Quarrying, and Oil and Gas Extraction",629625,628112
+2023-08,22,Utilities,371227,370692
+2023-08,23,Construction,8106536,8066572
+2023-08,31-33,Manufacturing,12889470,12848436
+2023-08,42,Wholesale Trade,6148179,6129599
+2023-08,44-45,Retail Trade,15597802,15547635
+2023-08,48-49,Transportation and Warehousing,6630421,6616839
+2023-08,51,Information,2990032,2984706
+2023-08,52-53,Financial Activities,9163667,9131547
+2023-08,54-56,Professional and Business Services,22411127,22386001
+2023-08,61-62,Education and Health Services,25927365,25869149
+2023-08,71-72,Leisure and Hospitality,16906080,16773429
+2023-08,81,Other Services (except Public Administration),5898709,5875355
+2023-08,92,Public Administration,23133730,23067931
+2023-08,99,Unclassified,373427,371281
+2023-09,11,"Agriculture, Forestry, Fishing and Hunting",212883,212927
+2023-09,21,"Mining, Quarrying, and Oil and Gas Extraction",628642,628513
+2023-09,22,Utilities,370736,370655
+2023-09,23,Construction,8084961,8082891
+2023-09,31-33,Manufacturing,12850962,12845114
+2023-09,42,Wholesale Trade,6134265,6133274
+2023-09,44-45,Retail Trade,15521120,15540707
+2023-09,48-49,Transportation and Warehousing,6618956,6623985
+2023-09,51,Information,2982495,2977759
+2023-09,52-53,Financial Activities,9141540,9134047
+2023-09,54-56,Professional and Business Services,22414005,22404484
+2023-09,61-62,Education and Health Services,26042381,25943845
+2023-09,71-72,Leisure and Hospitality,16722669,16770618
+2023-09,81,Other Services (except Public Administration),5886471,5887389
+2023-09,92,Public Administration,23123705,23103503
+2023-09,99,Unclassified,370789,371344
+2023-10,11,"Agriculture, Forestry, Fishing and Hunting",212820,213004
+2023-10,21,"Mining, Quarrying, and Oil and Gas Extraction",628631,628567
+2023-10,22,Utilities,371024,370603
+2023-10,23,Construction,8103110,8106902
+2023-10,31-33,Manufacturing,12854856,12845660
+2023-10,42,Wholesale Trade,6143216,6140094
+2023-10,44-45,Retail Trade,15558101,15547909
+2023-10,48-49,Transportation and Warehousing,6632920,6630823
+2023-10,51,Information,2978499,2968816
+2023-10,52-53,Financial Activities,9140690,9133847
+2023-10,54-56,Professional and Business Services,22462974,22422126
+2023-10,61-62,Education and Health Services,26132929,26005497
+2023-10,71-72,Leisure and Hospitality,16739337,16801137
+2023-10,81,Other Services (except Public Administration),5898479,5897875
+2023-10,92,Public Administration,23162877,23139925
+2023-10,99,Unclassified,370568,371361
+2023-11,11,"Agriculture, Forestry, Fishing and Hunting",212347,212894
+2023-11,21,"Mining, Quarrying, and Oil and Gas Extraction",628102,628494
+2023-11,22,Utilities,371019,371061
+2023-11,23,Construction,8103945,8118336
+2023-11,31-33,Manufacturing,12850826,12844095
+2023-11,42,Wholesale Trade,6144887,6142230
+2023-11,44-45,Retail Trade,15588576,15549373
+2023-11,48-49,Transportation and Warehousing,6641287,6631969
+2023-11,51,Information,2971873,2962012
+2023-11,52-53,Financial Activities,9133331,9139477
+2023-11,54-56,Professional and Business Services,22466069,22445430
+2023-11,61-62,Education and Health Services,26183542,26062862
+2023-11,71-72,Leisure and Hospitality,16751805,16811026
+2023-11,81,Other Services (except Public Administration),5910745,5908436
+2023-11,92,Public Administration,23184349,23167790
+2023-11,99,Unclassified,370902,371564
+2023-12,11,"Agriculture, Forestry, Fishing and Hunting",211860,212971
+2023-12,21,"Mining, Quarrying, and Oil and Gas Extraction",627579,628380
+2023-12,22,Utilities,370297,371088
+2023-12,23,Construction,8100099,8130817
+2023-12,31-33,Manufacturing,12830794,12839142
+2023-12,42,Wholesale Trade,6138179,6143310
+2023-12,44-45,Retail Trade,15583028,15545669
+2023-12,48-49,Transportation and Warehousing,6638000,6630548
+2023-12,51,Information,2960538,2975371
+2023-12,52-53,Financial Activities,9117352,9142644
+2023-12,54-56,Professional and Business Services,22443722,22464400
+2023-12,61-62,Education and Health Services,26204641,26109639
+2023-12,71-72,Leisure and Hospitality,16756061,16820375
+2023-12,81,Other Services (except Public Administration),5912972,5916068
+2023-12,92,Public Administration,23196024,23192333
+2023-12,99,Unclassified,370834,371570
+2024-01,11,"Agriculture, Forestry, Fishing and Hunting",211611,212994
+2024-01,21,"Mining, Quarrying, and Oil and Gas Extraction",628720,628895
+2024-01,22,Utilities,370699,371168
+2024-01,23,Construction,8124221,8143183
+2024-01,31-33,Manufacturing,12830583,12840670
+2024-01,42,Wholesale Trade,6139606,6146189
+2024-01,44-45,Retail Trade,15537569,15538509
+2024-01,48-49,Transportation and Warehousing,6632252,6628824
+2024-01,51,Information,2958353,2953061
+2024-01,52-53,Financial Activities,9117391,9141874
+2024-01,54-56,Professional and Business Services,22500880,22487562
+2024-01,61-62,Education and Health Services,26298594,26172213
+2024-01,71-72,Leisure and Hospitality,16744984,16829896
+2024-01,81,Other Services (except Public Administration),5925557,5927535
+2024-01,92,Public Administration,23245176,23224877
+2024-01,99,Unclassified,370416,371733
+2024-02,11,"Agriculture, Forestry, Fishing and Hunting",211163,212991
+2024-02,21,"Mining, Quarrying, and Oil and Gas Extraction",627897,628549
+2024-02,22,Utilities,370039,371037
+2024-02,23,Construction,8126031,8160578
+2024-02,31-33,Manufacturing,12802068,12834680
+2024-02,42,Wholesale Trade,6129506,6148017
+2024-02,44-45,Retail Trade,15488909,15543304
+2024-02,48-49,Transportation and Warehousing,6626665,6639071
+2024-02,51,Information,2945429,2946342
+2024-02,52-53,Financial Activities,9106959,9119968
+2024-02,54-56,Professional and Business Services,22483852,22516761
+2024-02,61-62,Education and Health Services,26319980,26230632
+2024-02,71-72,Leisure and Hospitality,16729979,16843406
+2024-02,81,Other Services (except Public Administration),5922061,5936124
+2024-02,92,Public Administration,23244030,23260953
+2024-02,99,Unclassified,370381,372062
+2024-03,11,"Agriculture, Forestry, Fishing and Hunting",211726,212895
+2024-03,21,"Mining, Quarrying, and Oil and Gas Extraction",627656,628248
+2024-03,22,Utilities,370221,370785
+2024-03,23,Construction,8141430,8170286
+2024-03,31-33,Manufacturing,12804157,12831390
+2024-03,42,Wholesale Trade,6133035,6147448
+2024-03,44-45,Retail Trade,15495620,15543151
+2024-03,48-49,Transportation and Warehousing,6630672,6641205
+2024-03,51,Information,2944550,2946489
+2024-03,52-53,Financial Activities,9116220,9127111
+2024-03,54-56,Professional and Business Services,22508203,22539130
+2024-03,61-62,Education and Health Services,26382114,26289822
+2024-03,71-72,Leisure and Hospitality,16773010,16846892
+2024-03,81,Other Services (except Public Administration),5936704,5944158
+2024-03,92,Public Administration,23275350,23291754
+2024-03,99,Unclassified,371100,372255
+2024-04,11,"Agriculture, Forestry, Fishing and Hunting",211827,212732
+2024-04,21,"Mining, Quarrying, and Oil and Gas Extraction",626936,627852
+2024-04,22,Utilities,370325,371021
+2024-04,23,Construction,8151217,8184128
+2024-04,31-33,Manufacturing,12794517,12831640
+2024-04,42,Wholesale Trade,6132736,6149183
+2024-04,44-45,Retail Trade,15489384,15543156
+2024-04,48-49,Transportation and Warehousing,6626791,6641450
+2024-04,51,Information,2940150,2948181
+2024-04,52-53,Financial Activities,9112259,9134242
+2024-04,54-56,Professional and Business Services,22506228,22570223
+2024-04,61-62,Education and Health Services,26399707,26352654
+2024-04,71-72,Leisure and Hospitality,16792082,16846447
+2024-04,81,Other Services (except Public Administration),5943013,5950762
+2024-04,92,Public Administration,23282949,23309744
+2024-04,99,Unclassified,371310,372200
+2024-05,11,"Agriculture, Forestry, Fishing and Hunting",213011,212528
+2024-05,21,"Mining, Quarrying, and Oil and Gas Extraction",626719,627165
+2024-05,22,Utilities,371154,370917
+2024-05,23,Construction,8196778,8191971
+2024-05,31-33,Manufacturing,12810093,12827319
+2024-05,42,Wholesale Trade,6145590,6146507
+2024-05,44-45,Retail Trade,15532788,15532657
+2024-05,48-49,Transportation and Warehousing,6639013,6643450
+2024-05,51,Information,2939227,2948709
+2024-05,52-53,Financial Activities,9129023,9142107
+2024-05,54-56,Professional and Business Services,22568026,22586080
+2024-05,61-62,Education and Health Services,26355857,26398491
+2024-05,71-72,Leisure and Hospitality,16910432,16834226
+2024-05,81,Other Services (except Public Administration),5959027,5955192
+2024-05,92,Public Administration,23340520,23326435
+2024-05,99,Unclassified,372867,372208
+2024-06,11,"Agriculture, Forestry, Fishing and Hunting",214426,212905
+2024-06,21,"Mining, Quarrying, and Oil and Gas Extraction",628272,627315
+2024-06,22,Utilities,372821,372472
+2024-06,23,Construction,8243235,8206369
+2024-06,31-33,Manufacturing,12837710,12815683
+2024-06,42,Wholesale Trade,6159794,6147141
+2024-06,44-45,Retail Trade,15572604,15535326
+2024-06,48-49,Transportation and Warehousing,6655512,6646090
+2024-06,51,Information,2940800,2947276
+2024-06,52-53,Financial Activities,9177891,9164999
+2024-06,54-56,Professional and Business Services,22632778,22602251
+2024-06,61-62,Education and Health Services,26159713,26437968
+2024-06,71-72,Leisure and Hospitality,16973733,16851030
+2024-06,81,Other Services (except Public Administration),5965080,5961274
+2024-06,92,Public Administration,23340453,23355988
+2024-06,99,Unclassified,373626,371812
+2024-07,11,"Agriculture, Forestry, Fishing and Hunting",214395,212802
+2024-07,21,"Mining, Quarrying, and Oil and Gas Extraction",628610,627378
+2024-07,22,Utilities,373366,373043
+2024-07,23,Construction,8258137,8218827
+2024-07,31-33,Manufacturing,12846661,12814318
+2024-07,42,Wholesale Trade,6159942,6145811
+2024-07,44-45,Retail Trade,15568742,15530607
+2024-07,48-49,Transportation and Warehousing,6659353,6649364
+2024-07,51,Information,2941409,2945597
+2024-07,52-53,Financial Activities,9205353,9177522
+2024-07,54-56,Professional and Business Services,22658332,22639929
+2024-07,61-62,Education and Health Services,26133095,26479332
+2024-07,71-72,Leisure and Hospitality,16959040,16844713
+2024-07,81,Other Services (except Public Administration),5964997,5967080
+2024-07,92,Public Administration,23310860,23375156
+2024-07,99,Unclassified,373362,371766
+2024-08,11,"Agriculture, Forestry, Fishing and Hunting",214175,212748
+2024-08,21,"Mining, Quarrying, and Oil and Gas Extraction",628994,627754
+2024-08,22,Utilities,373957,373503
+2024-08,23,Construction,8275802,8235643
+2024-08,31-33,Manufacturing,12856429,12816938
+2024-08,42,Wholesale Trade,6163645,6145707
+2024-08,44-45,Retail Trade,15574993,15526284
+2024-08,48-49,Transportation and Warehousing,6672192,6658333
+2024-08,51,Information,2947926,2943061
+2024-08,52-53,Financial Activities,9226050,9193538
+2024-08,54-56,Professional and Business Services,22703637,22681164
+2024-08,61-62,Education and Health Services,26570856,26519224
+2024-08,71-72,Leisure and Hospitality,16963428,16833687
+2024-08,81,Other Services (except Public Administration),5999071,5976933
+2024-08,92,Public Administration,23463362,23401834
+2024-08,99,Unclassified,374106,372014
+2024-09,11,"Agriculture, Forestry, Fishing and Hunting",212324,212444
+2024-09,21,"Mining, Quarrying, and Oil and Gas Extraction",627420,627674
+2024-09,22,Utilities,374180,374171
+2024-09,23,Construction,8250083,8249454
+2024-09,31-33,Manufacturing,12826618,12822839
+2024-09,42,Wholesale Trade,6144824,6145152
+2024-09,44-45,Retail Trade,15487791,15511861
+2024-09,48-49,Transportation and Warehousing,6655902,6661912
+2024-09,51,Information,2946615,2942241
+2024-09,52-53,Financial Activities,9217000,9209944
+2024-09,54-56,Professional and Business Services,22725206,22719030
+2024-09,61-62,Education and Health Services,26659021,26568073
+2024-09,71-72,Leisure and Hospitality,16752135,16809665
+2024-09,81,Other Services (except Public Administration),5982924,5985316
+2024-09,92,Public Administration,23443251,23429966
+2024-09,99,Unclassified,371706,372422
+2024-10,11,"Agriculture, Forestry, Fishing and Hunting",212116,212318
+2024-10,21,"Mining, Quarrying, and Oil and Gas Extraction",626953,627235
+2024-10,22,Utilities,374721,374330
+2024-10,23,Construction,8257443,8262277
+2024-10,31-33,Manufacturing,12825016,12817601
+2024-10,42,Wholesale Trade,6145810,6143730
+2024-10,44-45,Retail Trade,15509727,15507868
+2024-10,48-49,Transportation and Warehousing,6663284,6662420
+2024-10,51,Information,2947604,2937837
+2024-10,52-53,Financial Activities,9230153,9224382
+2024-10,54-56,Professional and Business Services,22787409,22746850
+2024-10,61-62,Education and Health Services,26742454,26619710
+2024-10,71-72,Leisure and Hospitality,16738747,16807301
+2024-10,81,Other Services (except Public Administration),5993492,5993997
+2024-10,92,Public Administration,23477141,23459983
+2024-10,99,Unclassified,371324,372270
+2024-11,11,"Agriculture, Forestry, Fishing and Hunting",211679,212185
+2024-11,21,"Mining, Quarrying, and Oil and Gas Extraction",626059,626730
+2024-11,22,Utilities,374996,375090
+2024-11,23,Construction,8256236,8270685
+2024-11,31-33,Manufacturing,12818992,12813512
+2024-11,42,Wholesale Trade,6145629,6143242
+2024-11,44-45,Retail Trade,15532084,15502785
+2024-11,48-49,Transportation and Warehousing,6670781,6663162
+2024-11,51,Information,2945062,2934644
+2024-11,52-53,Financial Activities,9232425,9240456
+2024-11,54-56,Professional and Business Services,22797166,22776390
+2024-11,61-62,Education and Health Services,26789135,26669231
+2024-11,71-72,Leisure and Hospitality,16740031,16801273
+2024-11,81,Other Services (except Public Administration),6002059,5999612
+2024-11,92,Public Administration,23499209,23486154
+2024-11,99,Unclassified,371384,372124
+2024-12,11,"Agriculture, Forestry, Fishing and Hunting",211005,212000
+2024-12,21,"Mining, Quarrying, and Oil and Gas Extraction",625180,625880
+2024-12,22,Utilities,374885,375783
+2024-12,23,Construction,8250288,8279954
+2024-12,31-33,Manufacturing,12793353,12801316
+2024-12,42,Wholesale Trade,6136104,6140302
+2024-12,44-45,Retail Trade,15521053,15489061
+2024-12,48-49,Transportation and Warehousing,6666878,6661762
+2024-12,51,Information,2937332,2954326
+2024-12,52-53,Financial Activities,9224920,9252539
+2024-12,54-56,Professional and Business Services,22775542,22794198
+2024-12,61-62,Education and Health Services,26804817,26706710
+2024-12,71-72,Leisure and Hospitality,16731308,16790098
+2024-12,81,Other Services (except Public Administration),5993037,5993603
+2024-12,92,Public Administration,23498683,23494609
+2024-12,99,Unclassified,371294,371945
+2025-01,11,"Agriculture, Forestry, Fishing and Hunting",210608,211946
+2025-01,21,"Mining, Quarrying, and Oil and Gas Extraction",625060,625425
+2025-01,22,Utilities,375846,376435
+2025-01,23,Construction,8271297,8291027
+2025-01,31-33,Manufacturing,12788886,12802544
+2025-01,42,Wholesale Trade,6132264,6139308
+2025-01,44-45,Retail Trade,15467736,15474632
+2025-01,48-49,Transportation and Warehousing,6658826,6657984
+2025-01,51,Information,2940016,2935304
+2025-01,52-53,Financial Activities,9236840,9266839
+2025-01,54-56,Professional and Business Services,22834537,22825857
+2025-01,61-62,Education and Health Services,26849040,26728842
+2025-01,71-72,Leisure and Hospitality,16695322,16780086
+2025-01,81,Other Services (except Public Administration),5995138,5997374
+2025-01,92,Public Administration,23527243,23510237
+2025-01,99,Unclassified,370679,372079
+2025-02,11,"Agriculture, Forestry, Fishing and Hunting",210228,212006
+2025-02,21,"Mining, Quarrying, and Oil and Gas Extraction",624689,625171
+2025-02,22,Utilities,376031,377016
+2025-02,23,Construction,8269313,8303494
+2025-02,31-33,Manufacturing,12757971,12787547
+2025-02,42,Wholesale Trade,6119658,6137692
+2025-02,44-45,Retail Trade,15417609,15468722
+2025-02,48-49,Transportation and Warehousing,6647087,6659031
+2025-02,51,Information,2933765,2933757
+2025-02,52-53,Financial Activities,9235010,9246107
+2025-02,54-56,Professional and Business Services,22820452,22852344
+2025-02,61-62,Education and Health Services,26866999,26771921
+2025-02,71-72,Leisure and Hospitality,16666577,16775939
+2025-02,81,Other Services (except Public Administration),5988860,6001602
+2025-02,92,Public Administration,23505534,23520787
+2025-02,99,Unclassified,370079,371662
+2025-03,11,"Agriculture, Forestry, Fishing and Hunting",210381,211473
+2025-03,21,"Mining, Quarrying, and Oil and Gas Extraction",623834,624254
+2025-03,22,Utilities,376966,377475
+2025-03,23,Construction,8285621,8314020
+2025-03,31-33,Manufacturing,12764226,12788625
+2025-03,42,Wholesale Trade,6122339,6135991
+2025-03,44-45,Retail Trade,15413940,15456596
+2025-03,48-49,Transportation and Warehousing,6648995,6658896
+2025-03,51,Information,2938235,2939542
+2025-03,52-53,Financial Activities,9253209,9262327
+2025-03,54-56,Professional and Business Services,22849571,22878996
+2025-03,61-62,Education and Health Services,26916952,26816369
+2025-03,71-72,Leisure and Hospitality,16687023,16755381
+2025-03,81,Other Services (except Public Administration),5996565,6002089
+2025-03,92,Public Administration,23501310,23514412
+2025-03,99,Unclassified,370238,371278
+2025-04,11,"Agriculture, Forestry, Fishing and Hunting",210211,211047
+2025-04,21,"Mining, Quarrying, and Oil and Gas Extraction",622393,622929
+2025-04,22,Utilities,377304,377909
+2025-04,23,Construction,8289695,8322746
+2025-04,31-33,Manufacturing,12753448,12788388
+2025-04,42,Wholesale Trade,6119445,6135225
+2025-04,44-45,Retail Trade,15400586,15448545
+2025-04,48-49,Transportation and Warehousing,6644454,6658473
+2025-04,51,Information,2936872,2944780
+2025-04,52-53,Financial Activities,9253535,9274222
+2025-04,54-56,Professional and Business Services,22834949,22898790
+2025-04,61-62,Education and Health Services,26923974,26868831
+2025-04,71-72,Leisure and Hospitality,16693989,16741874
+2025-04,81,Other Services (except Public Administration),5997883,6003449
+2025-04,92,Public Administration,23489967,23511875
+2025-04,99,Unclassified,370078,370846
+2025-05,11,"Agriculture, Forestry, Fishing and Hunting",211175,210669
+2025-05,21,"Mining, Quarrying, and Oil and Gas Extraction",622540,622831
+2025-05,22,Utilities,379125,378787
+2025-05,23,Construction,8334089,8329090
+2025-05,31-33,Manufacturing,12780923,12798192
+2025-05,42,Wholesale Trade,6131612,6131928
+2025-05,44-45,Retail Trade,15422909,15417323
+2025-05,48-49,Transportation and Warehousing,6651749,6655442
+2025-05,51,Information,2943358,2953245
+2025-05,52-53,Financial Activities,9282999,9295793
+2025-05,54-56,Professional and Business Services,22907677,22925031
+2025-05,61-62,Education and Health Services,26883006,26922349
+2025-05,71-72,Leisure and Hospitality,16768315,16686044
+2025-05,81,Other Services (except Public Administration),6006209,6001505
+2025-05,92,Public Administration,23517739,23499441
+2025-05,99,Unclassified,370854,370130
+2025-06,11,"Agriculture, Forestry, Fishing and Hunting",211661,210192
+2025-06,21,"Mining, Quarrying, and Oil and Gas Extraction",623293,622241
+2025-06,22,Utilities,381442,381136
+2025-06,23,Construction,8380953,8343559
+2025-06,31-33,Manufacturing,12823666,12802260
+2025-06,42,Wholesale Trade,6142918,6129930
+2025-06,44-45,Retail Trade,15433478,15393409
+2025-06,48-49,Transportation and Warehousing,6663848,6653782
+2025-06,51,Information,2954525,2961550
+2025-06,52-53,Financial Activities,9352199,9339370
+2025-06,54-56,Professional and Business Services,22986251,22953738
+2025-06,61-62,Education and Health Services,26659088,26940092
+2025-06,71-72,Leisure and Hospitality,16772257,16650353
+2025-06,81,Other Services (except Public Administration),5997178,5994879
+2025-06,92,Public Administration,23485475,23499904
+2025-06,99,Unclassified,370611,368774
+2025-07,11,"Agriculture, Forestry, Fishing and Hunting",211277,209735
+2025-07,21,"Mining, Quarrying, and Oil and Gas Extraction",622758,621580
+2025-07,22,Utilities,382019,381747
+2025-07,23,Construction,8387426,8347252
+2025-07,31-33,Manufacturing,12830572,12798592
+2025-07,42,Wholesale Trade,6140380,6126060
+2025-07,44-45,Retail Trade,15419230,15378689
+2025-07,48-49,Transportation and Warehousing,6659689,6648903
+2025-07,51,Information,2957045,2961670
+2025-07,52-53,Financial Activities,9384041,9355061
+2025-07,54-56,Professional and Business Services,22990231,22971410
+2025-07,61-62,Education and Health Services,26610400,26960405
+2025-07,71-72,Leisure and Hospitality,16744667,16630680
+2025-07,81,Other Services (except Public Administration),5987304,5990982
+2025-07,92,Public Administration,23430916,23490749
+2025-07,99,Unclassified,370109,368492
+2025-08,11,"Agriculture, Forestry, Fishing and Hunting",211013,209665
+2025-08,21,"Mining, Quarrying, and Oil and Gas Extraction",621996,621027
+2025-08,22,Utilities,383007,382634
+2025-08,23,Construction,8398589,8358231
+2025-08,31-33,Manufacturing,12837257,12799317
+2025-08,42,Wholesale Trade,6141689,6124404
+2025-08,44-45,Retail Trade,15414343,15367087
+2025-08,48-49,Transportation and Warehousing,6661402,6647266
+2025-08,51,Information,2967207,2962805
+2025-08,52-53,Financial Activities,9409548,9376631
+2025-08,54-56,Professional and Business Services,23023444,23003620
+2025-08,61-62,Education and Health Services,26982148,26937123
+2025-08,71-72,Leisure and Hospitality,16737353,16610637
+2025-08,81,Other Services (except Public Administration),6014022,5993119
+2025-08,92,Public Administration,23510622,23453377
+2025-08,99,Unclassified,370509,368472
+2025-09,11,"Agriculture, Forestry, Fishing and Hunting",209466,209664
+2025-09,21,"Mining, Quarrying, and Oil and Gas Extraction",619627,620260
+2025-09,22,Utilities,382551,382617
+2025-09,23,Construction,8367690,8368503
+2025-09,31-33,Manufacturing,12803749,12802049
+2025-09,42,Wholesale Trade,6123201,6124858
+2025-09,44-45,Retail Trade,15334072,15362618
+2025-09,48-49,Transportation and Warehousing,6643890,6650862
+2025-09,51,Information,2968424,2964426
+2025-09,52-53,Financial Activities,9396596,9390011
+2025-09,54-56,Professional and Business Services,23035683,23032890
+2025-09,61-62,Education and Health Services,26992064,26908719
+2025-09,71-72,Leisure and Hospitality,16562581,16629723
+2025-09,81,Other Services (except Public Administration),5990980,5994845
+2025-09,92,Public Administration,23441555,23435140
+2025-09,99,Unclassified,368434,369311
+2025-10,11,"Agriculture, Forestry, Fishing and Hunting",209272,209494
+2025-10,21,"Mining, Quarrying, and Oil and Gas Extraction",618849,619475
+2025-10,22,Utilities,382724,382366
+2025-10,23,Construction,8364264,8370150
+2025-10,31-33,Manufacturing,12808119,12802503
+2025-10,42,Wholesale Trade,6122699,6121674
+2025-10,44-45,Retail Trade,15329456,15335961
+2025-10,48-49,Transportation and Warehousing,6644138,6644494
+2025-10,51,Information,2975960,2966127
+2025-10,52-53,Financial Activities,9411606,9406952
+2025-10,54-56,Professional and Business Services,23108085,23067839
+2025-10,61-62,Education and Health Services,27040620,26922590
+2025-10,71-72,Leisure and Hospitality,16537315,16612602
+2025-10,81,Other Services (except Public Administration),5993423,5995037
+2025-10,92,Public Administration,23420726,23409330
+2025-10,99,Unclassified,368076,369174
+2025-11,11,"Agriculture, Forestry, Fishing and Hunting",208997,209463
+2025-11,21,"Mining, Quarrying, and Oil and Gas Extraction",617914,618861
+2025-11,22,Utilities,382659,382805
+2025-11,23,Construction,8357539,8372062
+2025-11,31-33,Manufacturing,12808774,12804554
+2025-11,42,Wholesale Trade,6121581,6119472
+2025-11,44-45,Retail Trade,15336034,15316695
+2025-11,48-49,Transportation and Warehousing,6644465,6638548
+2025-11,51,Information,2979333,2968362
+2025-11,52-53,Financial Activities,9412531,9422477
+2025-11,54-56,Professional and Business Services,23111273,23090389
+2025-11,61-62,Education and Health Services,27069587,26950470
+2025-11,71-72,Leisure and Hospitality,16533222,16596498
+2025-11,81,Other Services (except Public Administration),5999253,5996665
+2025-11,92,Public Administration,23421056,23411476
+2025-11,99,Unclassified,368091,368909
+2025-12,11,"Agriculture, Forestry, Fishing and Hunting",209042,209918
+2025-12,21,"Mining, Quarrying, and Oil and Gas Extraction",617472,618056
+2025-12,22,Utilities,382213,383223
+2025-12,23,Construction,8351253,8379944
+2025-12,31-33,Manufacturing,12794546,12802165
+2025-12,42,Wholesale Trade,6115038,6118326
+2025-12,44-45,Retail Trade,15330251,15303832
+2025-12,48-49,Transportation and Warehousing,6636698,6634164
+2025-12,51,Information,2979790,2998961
+2025-12,52-53,Financial Activities,9402438,9432421
+2025-12,54-56,Professional and Business Services,23098441,23115055
+2025-12,61-62,Education and Health Services,27083086,26981919
+2025-12,71-72,Leisure and Hospitality,16532878,16586068
+2025-12,81,Other Services (except Public Administration),6000832,5998826
+2025-12,92,Public Administration,23411808,23407482
+2025-12,99,Unclassified,367923,368485

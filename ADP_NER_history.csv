@@ -189,7 +189,8 @@ M,Census Divisions,East North Central,2025-07-01,19845000.0,19583000.0
 M,Census Divisions,East North Central,2025-08-01,19842000.0,19555000.0
 M,Census Divisions,East North Central,2025-09-01,19736000.0,19503000.0
 M,Census Divisions,East North Central,2025-10-01,19780000.0,19513000.0
-M,Census Divisions,East North Central,2025-11-01,19834000.0,19554000.0
+M,Census Divisions,East North Central,2025-11-01,19831000.0,19551000.0
+M,Census Divisions,East North Central,2025-12-01,19787000.0,19560000.0
 M,Census Divisions,East South Central,2010-01-01,5745000.0,5877000.0
 M,Census Divisions,East South Central,2010-02-01,5706000.0,5852000.0
 M,Census Divisions,East South Central,2010-03-01,5737000.0,5840000.0
@@ -380,7 +381,8 @@ M,Census Divisions,East South Central,2025-07-01,7514000.0,7430000.0
 M,Census Divisions,East South Central,2025-08-01,7500000.0,7432000.0
 M,Census Divisions,East South Central,2025-09-01,7479000.0,7414000.0
 M,Census Divisions,East South Central,2025-10-01,7503000.0,7423000.0
-M,Census Divisions,East South Central,2025-11-01,7511000.0,7455000.0
+M,Census Divisions,East South Central,2025-11-01,7509000.0,7452000.0
+M,Census Divisions,East South Central,2025-12-01,7509000.0,7461000.0
 M,Census Divisions,Mid-Atlantic,2010-01-01,14457000.0,14796000.0
 M,Census Divisions,Mid-Atlantic,2010-02-01,14396000.0,14752000.0
 M,Census Divisions,Mid-Atlantic,2010-03-01,14410000.0,14702000.0
@@ -571,7 +573,8 @@ M,Census Divisions,Mid-Atlantic,2025-07-01,17597000.0,17533000.0
 M,Census Divisions,Mid-Atlantic,2025-08-01,17690000.0,17551000.0
 M,Census Divisions,Mid-Atlantic,2025-09-01,17702000.0,17545000.0
 M,Census Divisions,Mid-Atlantic,2025-10-01,17782000.0,17523000.0
-M,Census Divisions,Mid-Atlantic,2025-11-01,17755000.0,17474000.0
+M,Census Divisions,Mid-Atlantic,2025-11-01,17757000.0,17474000.0
+M,Census Divisions,Mid-Atlantic,2025-12-01,17795000.0,17525000.0
 M,Census Divisions,Mountain,2010-01-01,7257000.0,7371000.0
 M,Census Divisions,Mountain,2010-02-01,7171000.0,7317000.0
 M,Census Divisions,Mountain,2010-03-01,7187000.0,7278000.0
@@ -762,7 +765,8 @@ M,Census Divisions,Mountain,2025-07-01,10273000.0,10215000.0
 M,Census Divisions,Mountain,2025-08-01,10240000.0,10190000.0
 M,Census Divisions,Mountain,2025-09-01,10216000.0,10184000.0
 M,Census Divisions,Mountain,2025-10-01,10236000.0,10186000.0
-M,Census Divisions,Mountain,2025-11-01,10266000.0,10199000.0
+M,Census Divisions,Mountain,2025-11-01,10269000.0,10202000.0
+M,Census Divisions,Mountain,2025-12-01,10274000.0,10200000.0
 M,Census Divisions,New England,2010-01-01,5561000.0,5694000.0
 M,Census Divisions,New England,2010-02-01,5546000.0,5676000.0
 M,Census Divisions,New England,2010-03-01,5536000.0,5651000.0
@@ -953,7 +957,8 @@ M,Census Divisions,New England,2025-07-01,6674000.0,6565000.0
 M,Census Divisions,New England,2025-08-01,6664000.0,6548000.0
 M,Census Divisions,New England,2025-09-01,6623000.0,6549000.0
 M,Census Divisions,New England,2025-10-01,6627000.0,6554000.0
-M,Census Divisions,New England,2025-11-01,6602000.0,6504000.0
+M,Census Divisions,New England,2025-11-01,6600000.0,6502000.0
+M,Census Divisions,New England,2025-12-01,6582000.0,6491000.0
 M,Census Divisions,Pacific,2010-01-01,16011000.0,16361000.0
 M,Census Divisions,Pacific,2010-02-01,15908000.0,16284000.0
 M,Census Divisions,Pacific,2010-03-01,15936000.0,16219000.0
@@ -1144,7 +1149,8 @@ M,Census Divisions,Pacific,2025-07-01,21337000.0,21227000.0
 M,Census Divisions,Pacific,2025-08-01,21271000.0,21241000.0
 M,Census Divisions,Pacific,2025-09-01,21278000.0,21263000.0
 M,Census Divisions,Pacific,2025-10-01,21553000.0,21295000.0
-M,Census Divisions,Pacific,2025-11-01,22044000.0,21349000.0
+M,Census Divisions,Pacific,2025-11-01,22045000.0,21354000.0
+M,Census Divisions,Pacific,2025-12-01,22023000.0,21295000.0
 M,Census Divisions,South Atlantic,2010-01-01,19602000.0,20006000.0
 M,Census Divisions,South Atlantic,2010-02-01,19518000.0,19941000.0
 M,Census Divisions,South Atlantic,2010-03-01,19560000.0,19885000.0
@@ -1335,7 +1341,8 @@ M,Census Divisions,South Atlantic,2025-07-01,26738000.0,26590000.0
 M,Census Divisions,South Atlantic,2025-08-01,26737000.0,26636000.0
 M,Census Divisions,South Atlantic,2025-09-01,26828000.0,26657000.0
 M,Census Divisions,South Atlantic,2025-10-01,26841000.0,26645000.0
-M,Census Divisions,South Atlantic,2025-11-01,26802000.0,26566000.0
+M,Census Divisions,South Atlantic,2025-11-01,26797000.0,26564000.0
+M,Census Divisions,South Atlantic,2025-12-01,26770000.0,26593000.0
 M,Census Divisions,West North Central,2010-01-01,7740000.0,7941000.0
 M,Census Divisions,West North Central,2010-02-01,7696000.0,7916000.0
 M,Census Divisions,West North Central,2010-03-01,7726000.0,7899000.0
@@ -1526,7 +1533,8 @@ M,Census Divisions,West North Central,2025-07-01,9330000.0,9196000.0
 M,Census Divisions,West North Central,2025-08-01,9309000.0,9203000.0
 M,Census Divisions,West North Central,2025-09-01,9291000.0,9200000.0
 M,Census Divisions,West North Central,2025-10-01,9314000.0,9206000.0
-M,Census Divisions,West North Central,2025-11-01,9330000.0,9210000.0
+M,Census Divisions,West North Central,2025-11-01,9329000.0,9212000.0
+M,Census Divisions,West North Central,2025-12-01,9329000.0,9212000.0
 M,Census Divisions,West South Central,2010-01-01,11867000.0,12128000.0
 M,Census Divisions,West South Central,2010-02-01,11823000.0,12074000.0
 M,Census Divisions,West South Central,2010-03-01,11780000.0,11991000.0
@@ -1717,7 +1725,8 @@ M,Census Divisions,West South Central,2025-07-01,16484000.0,16121000.0
 M,Census Divisions,West South Central,2025-08-01,16468000.0,16102000.0
 M,Census Divisions,West South Central,2025-09-01,16437000.0,16116000.0
 M,Census Divisions,West South Central,2025-10-01,16454000.0,16124000.0
-M,Census Divisions,West South Central,2025-11-01,16461000.0,16127000.0
+M,Census Divisions,West South Central,2025-11-01,16458000.0,16125000.0
+M,Census Divisions,West South Central,2025-12-01,16417000.0,16141000.0
 M,Establishment Size,1-19 employees,2010-01-01,28886000.0,29473000.0
 M,Establishment Size,1-19 employees,2010-02-01,28650000.0,29272000.0
 M,Establishment Size,1-19 employees,2010-03-01,28614000.0,29082000.0
@@ -1908,7 +1917,8 @@ M,Establishment Size,1-19 employees,2025-07-01,35712000.0,35369000.0
 M,Establishment Size,1-19 employees,2025-08-01,35676000.0,35355000.0
 M,Establishment Size,1-19 employees,2025-09-01,35559000.0,35337000.0
 M,Establishment Size,1-19 employees,2025-10-01,35531000.0,35313000.0
-M,Establishment Size,1-19 employees,2025-11-01,35483000.0,35267000.0
+M,Establishment Size,1-19 employees,2025-11-01,35483000.0,35269000.0
+M,Establishment Size,1-19 employees,2025-12-01,35364000.0,35273000.0
 M,Establishment Size,20-49 employees,2010-01-01,18240000.0,18820000.0
 M,Establishment Size,20-49 employees,2010-02-01,18103000.0,18707000.0
 M,Establishment Size,20-49 employees,2010-03-01,18106000.0,18592000.0
@@ -2099,7 +2109,8 @@ M,Establishment Size,20-49 employees,2025-07-01,23591000.0,23203000.0
 M,Establishment Size,20-49 employees,2025-08-01,23577000.0,23173000.0
 M,Establishment Size,20-49 employees,2025-09-01,23500000.0,23157000.0
 M,Establishment Size,20-49 employees,2025-10-01,23539000.0,23157000.0
-M,Establishment Size,20-49 employees,2025-11-01,23467000.0,23083000.0
+M,Establishment Size,20-49 employees,2025-11-01,23468000.0,23105000.0
+M,Establishment Size,20-49 employees,2025-12-01,23357000.0,23110000.0
 M,Establishment Size,250-499 employees,2010-01-01,9412000.0,9551000.0
 M,Establishment Size,250-499 employees,2010-02-01,9421000.0,9563000.0
 M,Establishment Size,250-499 employees,2010-03-01,9457000.0,9566000.0
@@ -2290,7 +2301,8 @@ M,Establishment Size,250-499 employees,2025-07-01,12139000.0,12074000.0
 M,Establishment Size,250-499 employees,2025-08-01,12121000.0,12066000.0
 M,Establishment Size,250-499 employees,2025-09-01,12090000.0,12059000.0
 M,Establishment Size,250-499 employees,2025-10-01,12099000.0,12060000.0
-M,Establishment Size,250-499 employees,2025-11-01,12104000.0,12080000.0
+M,Establishment Size,250-499 employees,2025-11-01,12103000.0,12080000.0
+M,Establishment Size,250-499 employees,2025-12-01,12091000.0,12085000.0
 M,Establishment Size,50-249 employees,2010-01-01,30840000.0,31635000.0
 M,Establishment Size,50-249 employees,2010-02-01,30692000.0,31550000.0
 M,Establishment Size,50-249 employees,2010-03-01,30800000.0,31487000.0
@@ -2481,7 +2493,8 @@ M,Establishment Size,50-249 employees,2025-07-01,39512000.0,39131000.0
 M,Establishment Size,50-249 employees,2025-08-01,39504000.0,39138000.0
 M,Establishment Size,50-249 employees,2025-09-01,39398000.0,39115000.0
 M,Establishment Size,50-249 employees,2025-10-01,39374000.0,39089000.0
-M,Establishment Size,50-249 employees,2025-11-01,39398000.0,39120000.0
+M,Establishment Size,50-249 employees,2025-11-01,39396000.0,39114000.0
+M,Establishment Size,50-249 employees,2025-12-01,39203000.0,39143000.0
 M,Establishment Size,500+ employees,2010-01-01,17154000.0,17379000.0
 M,Establishment Size,500+ employees,2010-02-01,17035000.0,17286000.0
 M,Establishment Size,500+ employees,2010-03-01,16993000.0,17185000.0
@@ -2672,7 +2685,8 @@ M,Establishment Size,500+ employees,2025-07-01,24694000.0,24706000.0
 M,Establishment Size,500+ employees,2025-08-01,24725000.0,24752000.0
 M,Establishment Size,500+ employees,2025-09-01,24824000.0,24783000.0
 M,Establishment Size,500+ employees,2025-10-01,25128000.0,24856000.0
-M,Establishment Size,500+ employees,2025-11-01,25528000.0,24895000.0
+M,Establishment Size,500+ employees,2025-11-01,25524000.0,24892000.0
+M,Establishment Size,500+ employees,2025-12-01,25622000.0,24894000.0
 M,Industry,Construction,2010-01-01,5234000.0,5390000.0
 M,Industry,Construction,2010-02-01,5201000.0,5359000.0
 M,Industry,Construction,2010-03-01,5187000.0,5319000.0
@@ -2863,7 +2877,8 @@ M,Industry,Construction,2025-07-01,8464000.0,8357000.0
 M,Industry,Construction,2025-08-01,8479000.0,8367000.0
 M,Industry,Construction,2025-09-01,8457000.0,8363000.0
 M,Industry,Construction,2025-10-01,8452000.0,8367000.0
-M,Industry,Construction,2025-11-01,8429000.0,8358000.0
+M,Industry,Construction,2025-11-01,8430000.0,8359000.0
+M,Industry,Construction,2025-12-01,8394000.0,8360000.0
 M,Industry,Education and health services,2010-01-01,18587000.0,18825000.0
 M,Industry,Education and health services,2010-02-01,18584000.0,18795000.0
 M,Industry,Education and health services,2010-03-01,18591000.0,18757000.0
@@ -3054,7 +3069,8 @@ M,Industry,Education and health services,2025-07-01,25479000.0,25655000.0
 M,Industry,Education and health services,2025-08-01,25483000.0,25673000.0
 M,Industry,Education and health services,2025-09-01,25554000.0,25705000.0
 M,Industry,Education and health services,2025-10-01,25681000.0,25731000.0
-M,Industry,Education and health services,2025-11-01,25741000.0,25764000.0
+M,Industry,Education and health services,2025-11-01,25737000.0,25762000.0
+M,Industry,Education and health services,2025-12-01,25679000.0,25801000.0
 M,Industry,Financial activities,2010-01-01,7441000.0,7553000.0
 M,Industry,Financial activities,2010-02-01,7392000.0,7517000.0
 M,Industry,Financial activities,2010-03-01,7376000.0,7481000.0
@@ -3246,6 +3262,7 @@ M,Industry,Financial activities,2025-08-01,9088000.0,8966000.0
 M,Industry,Financial activities,2025-09-01,9059000.0,8957000.0
 M,Industry,Financial activities,2025-10-01,9064000.0,8967000.0
 M,Industry,Financial activities,2025-11-01,9055000.0,8958000.0
+M,Industry,Financial activities,2025-12-01,9031000.0,8964000.0
 M,Industry,Information,2010-01-01,2719000.0,2752000.0
 M,Industry,Information,2010-02-01,2704000.0,2739000.0
 M,Industry,Information,2010-03-01,2708000.0,2735000.0
@@ -3436,7 +3453,8 @@ M,Industry,Information,2025-07-01,2981000.0,2965000.0
 M,Industry,Information,2025-08-01,2974000.0,2952000.0
 M,Industry,Information,2025-09-01,2957000.0,2953000.0
 M,Industry,Information,2025-10-01,2955000.0,2935000.0
-M,Industry,Information,2025-11-01,2952000.0,2915000.0
+M,Industry,Information,2025-11-01,2950000.0,2914000.0
+M,Industry,Information,2025-12-01,2953000.0,2902000.0
 M,Industry,Leisure and hospitality,2010-01-01,12602000.0,13419000.0
 M,Industry,Leisure and hospitality,2010-02-01,12450000.0,13334000.0
 M,Industry,Leisure and hospitality,2010-03-01,12553000.0,13254000.0
@@ -3627,7 +3645,8 @@ M,Industry,Leisure and hospitality,2025-07-01,18308000.0,17621000.0
 M,Industry,Leisure and hospitality,2025-08-01,18308000.0,17631000.0
 M,Industry,Leisure and hospitality,2025-09-01,18179000.0,17615000.0
 M,Industry,Leisure and hospitality,2025-10-01,18048000.0,17607000.0
-M,Industry,Leisure and hospitality,2025-11-01,18009000.0,17620000.0
+M,Industry,Leisure and hospitality,2025-11-01,18009000.0,17621000.0
+M,Industry,Leisure and hospitality,2025-12-01,17920000.0,17645000.0
 M,Industry,Manufacturing,2010-01-01,11377000.0,11457000.0
 M,Industry,Manufacturing,2010-02-01,11329000.0,11434000.0
 M,Industry,Manufacturing,2010-03-01,11346000.0,11423000.0
@@ -3818,7 +3837,8 @@ M,Industry,Manufacturing,2025-07-01,12875000.0,12817000.0
 M,Industry,Manufacturing,2025-08-01,12849000.0,12799000.0
 M,Industry,Manufacturing,2025-09-01,12800000.0,12801000.0
 M,Industry,Manufacturing,2025-10-01,12793000.0,12797000.0
-M,Industry,Manufacturing,2025-11-01,12793000.0,12779000.0
+M,Industry,Manufacturing,2025-11-01,12792000.0,12779000.0
+M,Industry,Manufacturing,2025-12-01,12788000.0,12774000.0
 M,Industry,Natural resources and mining,2010-01-01,1573000.0,1634000.0
 M,Industry,Natural resources and mining,2010-02-01,1590000.0,1655000.0
 M,Industry,Natural resources and mining,2010-03-01,1616000.0,1669000.0
@@ -4010,6 +4030,7 @@ M,Industry,Natural resources and mining,2025-08-01,1854000.0,1847000.0
 M,Industry,Natural resources and mining,2025-09-01,1850000.0,1842000.0
 M,Industry,Natural resources and mining,2025-10-01,1851000.0,1848000.0
 M,Industry,Natural resources and mining,2025-11-01,1843000.0,1856000.0
+M,Industry,Natural resources and mining,2025-12-01,1819000.0,1857000.0
 M,Industry,Other services,2010-01-01,4316000.0,4400000.0
 M,Industry,Other services,2010-02-01,4297000.0,4382000.0
 M,Industry,Other services,2010-03-01,4298000.0,4366000.0
@@ -4200,7 +4221,8 @@ M,Industry,Other services,2025-07-01,4916000.0,4836000.0
 M,Industry,Other services,2025-08-01,4912000.0,4826000.0
 M,Industry,Other services,2025-09-01,4879000.0,4809000.0
 M,Industry,Other services,2025-10-01,4857000.0,4796000.0
-M,Industry,Other services,2025-11-01,4849000.0,4792000.0
+M,Industry,Other services,2025-11-01,4847000.0,4790000.0
+M,Industry,Other services,2025-12-01,4831000.0,4795000.0
 M,Industry,Professional and business services,2010-01-01,16322000.0,16632000.0
 M,Industry,Professional and business services,2010-02-01,16322000.0,16616000.0
 M,Industry,Professional and business services,2010-03-01,16300000.0,16575000.0
@@ -4391,7 +4413,8 @@ M,Industry,Professional and business services,2025-07-01,22940000.0,22661000.0
 M,Industry,Professional and business services,2025-08-01,22941000.0,22660000.0
 M,Industry,Professional and business services,2025-09-01,22930000.0,22654000.0
 M,Industry,Professional and business services,2025-10-01,23019000.0,22632000.0
-M,Industry,Professional and business services,2025-11-01,23048000.0,22606000.0
+M,Industry,Professional and business services,2025-11-01,23051000.0,22614000.0
+M,Industry,Professional and business services,2025-12-01,22969000.0,22585000.0
 M,Industry,"Trade, transportation, and utilities",2010-01-01,24360000.0,24821000.0
 M,Industry,"Trade, transportation, and utilities",2010-02-01,24030000.0,24571000.0
 M,Industry,"Trade, transportation, and utilities",2010-03-01,23995000.0,24356000.0
@@ -4582,7 +4605,8 @@ M,Industry,"Trade, transportation, and utilities",2025-07-01,28887000.0,28853000
 M,Industry,"Trade, transportation, and utilities",2025-08-01,28930000.0,28836000.0
 M,Industry,"Trade, transportation, and utilities",2025-09-01,29030000.0,28830000.0
 M,Industry,"Trade, transportation, and utilities",2025-10-01,29294000.0,28896000.0
-M,Industry,"Trade, transportation, and utilities",2025-11-01,29560000.0,28897000.0
+M,Industry,"Trade, transportation, and utilities",2025-11-01,29556000.0,28894000.0
+M,Industry,"Trade, transportation, and utilities",2025-12-01,29725000.0,28905000.0
 M,National,U.S.,2010-01-01,104531000.0,106884000.0
 M,National,U.S.,2010-02-01,103899000.0,106401000.0
 M,National,U.S.,2010-03-01,103970000.0,105935000.0
@@ -4773,7 +4797,8 @@ M,National,U.S.,2025-07-01,135787000.0,134561000.0
 M,National,U.S.,2025-08-01,135818000.0,134558000.0
 M,National,U.S.,2025-09-01,135695000.0,134529000.0
 M,National,U.S.,2025-10-01,136014000.0,134576000.0
-M,National,U.S.,2025-11-01,136277000.0,134544000.0
+M,National,U.S.,2025-11-01,136270000.0,134547000.0
+M,National,U.S.,2025-12-01,136109000.0,134588000.0
 W,Census Divisions,East North Central,2010-01-09,16339000.0,16731000.0
 W,Census Divisions,East North Central,2010-01-16,16292000.0,16698000.0
 W,Census Divisions,East North Central,2010-01-23,16240000.0,16675000.0
@@ -5598,6 +5623,10 @@ W,Census Divisions,East North Central,2025-09-27,19680000.0,19491000.0
 W,Census Divisions,East North Central,2025-10-04,19713000.0,19521000.0
 W,Census Divisions,East North Central,2025-10-11,19719000.0,19505000.0
 W,Census Divisions,East North Central,2025-10-18,19713000.0,19473000.0
+W,Census Divisions,East North Central,2025-10-25,19727000.0,19485000.0
+W,Census Divisions,East North Central,2025-11-01,19752000.0,19509000.0
+W,Census Divisions,East North Central,2025-11-08,19775000.0,19531000.0
+W,Census Divisions,East North Central,2025-11-15,19766000.0,19520000.0
 W,Census Divisions,East South Central,2010-01-09,5763000.0,5882000.0
 W,Census Divisions,East South Central,2010-01-16,5745000.0,5877000.0
 W,Census Divisions,East South Central,2010-01-23,5729000.0,5872000.0
@@ -6422,6 +6451,10 @@ W,Census Divisions,East South Central,2025-09-27,7502000.0,7432000.0
 W,Census Divisions,East South Central,2025-10-04,7509000.0,7433000.0
 W,Census Divisions,East South Central,2025-10-11,7514000.0,7437000.0
 W,Census Divisions,East South Central,2025-10-18,7518000.0,7442000.0
+W,Census Divisions,East South Central,2025-10-25,7516000.0,7438000.0
+W,Census Divisions,East South Central,2025-11-01,7518000.0,7437000.0
+W,Census Divisions,East South Central,2025-11-08,7523000.0,7448000.0
+W,Census Divisions,East South Central,2025-11-15,7520000.0,7456000.0
 W,Census Divisions,Mid-Atlantic,2010-01-09,14493000.0,14815000.0
 W,Census Divisions,Mid-Atlantic,2010-01-16,14457000.0,14796000.0
 W,Census Divisions,Mid-Atlantic,2010-01-23,14438000.0,14794000.0
@@ -7246,6 +7279,10 @@ W,Census Divisions,Mid-Atlantic,2025-09-27,17803000.0,17608000.0
 W,Census Divisions,Mid-Atlantic,2025-10-04,17822000.0,17609000.0
 W,Census Divisions,Mid-Atlantic,2025-10-11,17835000.0,17611000.0
 W,Census Divisions,Mid-Atlantic,2025-10-18,17853000.0,17611000.0
+W,Census Divisions,Mid-Atlantic,2025-10-25,17869000.0,17595000.0
+W,Census Divisions,Mid-Atlantic,2025-11-01,17874000.0,17573000.0
+W,Census Divisions,Mid-Atlantic,2025-11-08,17878000.0,17571000.0
+W,Census Divisions,Mid-Atlantic,2025-11-15,17896000.0,17597000.0
 W,Census Divisions,Mountain,2010-01-09,7289000.0,7391000.0
 W,Census Divisions,Mountain,2010-01-16,7257000.0,7371000.0
 W,Census Divisions,Mountain,2010-01-23,7231000.0,7364000.0
@@ -8070,6 +8107,10 @@ W,Census Divisions,Mountain,2025-09-27,10207000.0,10177000.0
 W,Census Divisions,Mountain,2025-10-04,10203000.0,10168000.0
 W,Census Divisions,Mountain,2025-10-11,10209000.0,10174000.0
 W,Census Divisions,Mountain,2025-10-18,10217000.0,10182000.0
+W,Census Divisions,Mountain,2025-10-25,10211000.0,10167000.0
+W,Census Divisions,Mountain,2025-11-01,10232000.0,10175000.0
+W,Census Divisions,Mountain,2025-11-08,10229000.0,10168000.0
+W,Census Divisions,Mountain,2025-11-15,10249000.0,10191000.0
 W,Census Divisions,New England,2010-01-09,5572000.0,5698000.0
 W,Census Divisions,New England,2010-01-16,5561000.0,5694000.0
 W,Census Divisions,New England,2010-01-23,5555000.0,5693000.0
@@ -8894,6 +8935,10 @@ W,Census Divisions,New England,2025-09-27,6604000.0,6533000.0
 W,Census Divisions,New England,2025-10-04,6604000.0,6534000.0
 W,Census Divisions,New England,2025-10-11,6604000.0,6538000.0
 W,Census Divisions,New England,2025-10-18,6608000.0,6543000.0
+W,Census Divisions,New England,2025-10-25,6606000.0,6536000.0
+W,Census Divisions,New England,2025-11-01,6609000.0,6530000.0
+W,Census Divisions,New England,2025-11-08,6585000.0,6499000.0
+W,Census Divisions,New England,2025-11-15,6586000.0,6495000.0
 W,Census Divisions,Pacific,2010-01-09,16059000.0,16373000.0
 W,Census Divisions,Pacific,2010-01-16,16011000.0,16361000.0
 W,Census Divisions,Pacific,2010-01-23,15974000.0,16347000.0
@@ -9718,6 +9763,10 @@ W,Census Divisions,Pacific,2025-09-27,21508000.0,21432000.0
 W,Census Divisions,Pacific,2025-10-04,21595000.0,21471000.0
 W,Census Divisions,Pacific,2025-10-11,21586000.0,21423000.0
 W,Census Divisions,Pacific,2025-10-18,21668000.0,21462000.0
+W,Census Divisions,Pacific,2025-10-25,21725000.0,21450000.0
+W,Census Divisions,Pacific,2025-11-01,21821000.0,21450000.0
+W,Census Divisions,Pacific,2025-11-08,21941000.0,21464000.0
+W,Census Divisions,Pacific,2025-11-15,22062000.0,21474000.0
 W,Census Divisions,South Atlantic,2010-01-09,19657000.0,20022000.0
 W,Census Divisions,South Atlantic,2010-01-16,19602000.0,20006000.0
 W,Census Divisions,South Atlantic,2010-01-23,19575000.0,19994000.0
@@ -10542,6 +10591,10 @@ W,Census Divisions,South Atlantic,2025-09-27,26810000.0,26631000.0
 W,Census Divisions,South Atlantic,2025-10-04,26830000.0,26639000.0
 W,Census Divisions,South Atlantic,2025-10-11,26832000.0,26638000.0
 W,Census Divisions,South Atlantic,2025-10-18,26821000.0,26629000.0
+W,Census Divisions,South Atlantic,2025-10-25,26825000.0,26628000.0
+W,Census Divisions,South Atlantic,2025-11-01,26809000.0,26601000.0
+W,Census Divisions,South Atlantic,2025-11-08,26802000.0,26584000.0
+W,Census Divisions,South Atlantic,2025-11-15,26784000.0,26559000.0
 W,Census Divisions,West North Central,2010-01-09,7764000.0,7955000.0
 W,Census Divisions,West North Central,2010-01-16,7740000.0,7941000.0
 W,Census Divisions,West North Central,2010-01-23,7727000.0,7941000.0
@@ -11366,6 +11419,10 @@ W,Census Divisions,West North Central,2025-09-27,9282000.0,9192000.0
 W,Census Divisions,West North Central,2025-10-04,9289000.0,9196000.0
 W,Census Divisions,West North Central,2025-10-11,9297000.0,9202000.0
 W,Census Divisions,West North Central,2025-10-18,9303000.0,9204000.0
+W,Census Divisions,West North Central,2025-10-25,9304000.0,9199000.0
+W,Census Divisions,West North Central,2025-11-01,9306000.0,9194000.0
+W,Census Divisions,West North Central,2025-11-08,9312000.0,9199000.0
+W,Census Divisions,West North Central,2025-11-15,9315000.0,9203000.0
 W,Census Divisions,West South Central,2010-01-09,11905000.0,12146000.0
 W,Census Divisions,West South Central,2010-01-16,11867000.0,12128000.0
 W,Census Divisions,West South Central,2010-01-23,11837000.0,12120000.0
@@ -12190,6 +12247,10 @@ W,Census Divisions,West South Central,2025-09-27,16447000.0,16132000.0
 W,Census Divisions,West South Central,2025-10-04,16459000.0,16147000.0
 W,Census Divisions,West South Central,2025-10-11,16452000.0,16141000.0
 W,Census Divisions,West South Central,2025-10-18,16460000.0,16142000.0
+W,Census Divisions,West South Central,2025-10-25,16465000.0,16139000.0
+W,Census Divisions,West South Central,2025-11-01,16464000.0,16132000.0
+W,Census Divisions,West South Central,2025-11-08,16463000.0,16131000.0
+W,Census Divisions,West South Central,2025-11-15,16474000.0,16144000.0
 W,Establishment Size,1-19 employees,2010-01-09,29023000.0,29549000.0
 W,Establishment Size,1-19 employees,2010-01-16,28886000.0,29473000.0
 W,Establishment Size,1-19 employees,2010-01-23,28794000.0,29429000.0
@@ -13014,6 +13075,10 @@ W,Establishment Size,1-19 employees,2025-09-27,35713000.0,35584000.0
 W,Establishment Size,1-19 employees,2025-10-04,35725000.0,35594000.0
 W,Establishment Size,1-19 employees,2025-10-11,35704000.0,35554000.0
 W,Establishment Size,1-19 employees,2025-10-18,35701000.0,35543000.0
+W,Establishment Size,1-19 employees,2025-10-25,35691000.0,35532000.0
+W,Establishment Size,1-19 employees,2025-11-01,35684000.0,35522000.0
+W,Establishment Size,1-19 employees,2025-11-08,35666000.0,35503000.0
+W,Establishment Size,1-19 employees,2025-11-15,35655000.0,35495000.0
 W,Establishment Size,20-49 employees,2010-01-09,18307000.0,18847000.0
 W,Establishment Size,20-49 employees,2010-01-16,18240000.0,18820000.0
 W,Establishment Size,20-49 employees,2010-01-23,18193000.0,18799000.0
@@ -13838,6 +13903,10 @@ W,Establishment Size,20-49 employees,2025-09-27,23439000.0,23102000.0
 W,Establishment Size,20-49 employees,2025-10-04,23480000.0,23137000.0
 W,Establishment Size,20-49 employees,2025-10-11,23483000.0,23132000.0
 W,Establishment Size,20-49 employees,2025-10-18,23485000.0,23124000.0
+W,Establishment Size,20-49 employees,2025-10-25,23484000.0,23123000.0
+W,Establishment Size,20-49 employees,2025-11-01,23474000.0,23116000.0
+W,Establishment Size,20-49 employees,2025-11-08,23420000.0,23069000.0
+W,Establishment Size,20-49 employees,2025-11-15,23414000.0,23070000.0
 W,Establishment Size,250-499 employees,2010-01-09,9420000.0,9548000.0
 W,Establishment Size,250-499 employees,2010-01-16,9412000.0,9551000.0
 W,Establishment Size,250-499 employees,2010-01-23,9413000.0,9562000.0
@@ -14662,6 +14731,10 @@ W,Establishment Size,250-499 employees,2025-09-27,12092000.0,12051000.0
 W,Establishment Size,250-499 employees,2025-10-04,12095000.0,12051000.0
 W,Establishment Size,250-499 employees,2025-10-11,12095000.0,12056000.0
 W,Establishment Size,250-499 employees,2025-10-18,12087000.0,12051000.0
+W,Establishment Size,250-499 employees,2025-10-25,12092000.0,12051000.0
+W,Establishment Size,250-499 employees,2025-11-01,12094000.0,12046000.0
+W,Establishment Size,250-499 employees,2025-11-08,12100000.0,12056000.0
+W,Establishment Size,250-499 employees,2025-11-15,12098000.0,12066000.0
 W,Establishment Size,50-249 employees,2010-01-09,30922000.0,31665000.0
 W,Establishment Size,50-249 employees,2010-01-16,30840000.0,31635000.0
 W,Establishment Size,50-249 employees,2010-01-23,30783000.0,31625000.0
@@ -15486,6 +15559,10 @@ W,Establishment Size,50-249 employees,2025-09-27,39358000.0,39093000.0
 W,Establishment Size,50-249 employees,2025-10-04,39340000.0,39074000.0
 W,Establishment Size,50-249 employees,2025-10-11,39336000.0,39074000.0
 W,Establishment Size,50-249 employees,2025-10-18,39335000.0,39074000.0
+W,Establishment Size,50-249 employees,2025-10-25,39348000.0,39079000.0
+W,Establishment Size,50-249 employees,2025-11-01,39368000.0,39091000.0
+W,Establishment Size,50-249 employees,2025-11-08,39388000.0,39115000.0
+W,Establishment Size,50-249 employees,2025-11-15,39374000.0,39109000.0
 W,Establishment Size,500+ employees,2010-01-09,17170000.0,17387000.0
 W,Establishment Size,500+ employees,2010-01-16,17154000.0,17379000.0
 W,Establishment Size,500+ employees,2010-01-23,17125000.0,17370000.0
@@ -16310,6 +16387,10 @@ W,Establishment Size,500+ employees,2025-09-27,24931000.0,24805000.0
 W,Establishment Size,500+ employees,2025-10-04,25024000.0,24853000.0
 W,Establishment Size,500+ employees,2025-10-11,25044000.0,24842000.0
 W,Establishment Size,500+ employees,2025-10-18,25120000.0,24881000.0
+W,Establishment Size,500+ employees,2025-10-25,25172000.0,24866000.0
+W,Establishment Size,500+ employees,2025-11-01,25259000.0,24865000.0
+W,Establishment Size,500+ employees,2025-11-08,25361000.0,24880000.0
+W,Establishment Size,500+ employees,2025-11-15,25490000.0,24921000.0
 W,Industry,Construction,2010-01-09,5260000.0,5406000.0
 W,Industry,Construction,2010-01-16,5234000.0,5390000.0
 W,Industry,Construction,2010-01-23,5223000.0,5384000.0
@@ -17134,6 +17215,10 @@ W,Industry,Construction,2025-09-27,8446000.0,8360000.0
 W,Industry,Construction,2025-10-04,8449000.0,8364000.0
 W,Industry,Construction,2025-10-11,8446000.0,8364000.0
 W,Industry,Construction,2025-10-18,8441000.0,8361000.0
+W,Industry,Construction,2025-10-25,8443000.0,8363000.0
+W,Industry,Construction,2025-11-01,8439000.0,8362000.0
+W,Industry,Construction,2025-11-08,8436000.0,8364000.0
+W,Industry,Construction,2025-11-15,8426000.0,8359000.0
 W,Industry,Education and health services,2010-01-09,18618000.0,18834000.0
 W,Industry,Education and health services,2010-01-16,18587000.0,18825000.0
 W,Industry,Education and health services,2010-01-23,18582000.0,18831000.0
@@ -17958,6 +18043,10 @@ W,Industry,Education and health services,2025-09-27,25566000.0,25689000.0
 W,Industry,Education and health services,2025-10-04,25596000.0,25697000.0
 W,Industry,Education and health services,2025-10-11,25626000.0,25707000.0
 W,Industry,Education and health services,2025-10-18,25647000.0,25707000.0
+W,Industry,Education and health services,2025-10-25,25674000.0,25715000.0
+W,Industry,Education and health services,2025-11-01,25696000.0,25726000.0
+W,Industry,Education and health services,2025-11-08,25710000.0,25737000.0
+W,Industry,Education and health services,2025-11-15,25722000.0,25746000.0
 W,Industry,Financial activities,2010-01-09,7460000.0,7565000.0
 W,Industry,Financial activities,2010-01-16,7441000.0,7553000.0
 W,Industry,Financial activities,2010-01-23,7426000.0,7548000.0
@@ -18782,6 +18871,10 @@ W,Industry,Financial activities,2025-09-27,9108000.0,9010000.0
 W,Industry,Financial activities,2025-10-04,9106000.0,9009000.0
 W,Industry,Financial activities,2025-10-11,9110000.0,9017000.0
 W,Industry,Financial activities,2025-10-18,9113000.0,9021000.0
+W,Industry,Financial activities,2025-10-25,9112000.0,9019000.0
+W,Industry,Financial activities,2025-11-01,9109000.0,9015000.0
+W,Industry,Financial activities,2025-11-08,9111000.0,9017000.0
+W,Industry,Financial activities,2025-11-15,9109000.0,9017000.0
 W,Industry,Information,2010-01-09,2725000.0,2756000.0
 W,Industry,Information,2010-01-16,2719000.0,2752000.0
 W,Industry,Information,2010-01-23,2714000.0,2749000.0
@@ -19606,6 +19699,10 @@ W,Industry,Information,2025-09-27,2958000.0,2947000.0
 W,Industry,Information,2025-10-04,2957000.0,2939000.0
 W,Industry,Information,2025-10-11,2955000.0,2937000.0
 W,Industry,Information,2025-10-18,2955000.0,2938000.0
+W,Industry,Information,2025-10-25,2954000.0,2934000.0
+W,Industry,Information,2025-11-01,2951000.0,2923000.0
+W,Industry,Information,2025-11-08,2950000.0,2916000.0
+W,Industry,Information,2025-11-15,2953000.0,2917000.0
 W,Industry,Leisure and hospitality,2010-01-09,12679000.0,13438000.0
 W,Industry,Leisure and hospitality,2010-01-16,12602000.0,13419000.0
 W,Industry,Leisure and hospitality,2010-01-23,12533000.0,13403000.0
@@ -20430,6 +20527,10 @@ W,Industry,Leisure and hospitality,2025-09-27,18111000.0,17614000.0
 W,Industry,Leisure and hospitality,2025-10-04,18084000.0,17615000.0
 W,Industry,Leisure and hospitality,2025-10-11,18052000.0,17608000.0
 W,Industry,Leisure and hospitality,2025-10-18,18026000.0,17605000.0
+W,Industry,Leisure and hospitality,2025-10-25,18011000.0,17607000.0
+W,Industry,Leisure and hospitality,2025-11-01,17999000.0,17608000.0
+W,Industry,Leisure and hospitality,2025-11-08,17988000.0,17610000.0
+W,Industry,Leisure and hospitality,2025-11-15,17976000.0,17611000.0
 W,Industry,Manufacturing,2010-01-09,11381000.0,11458000.0
 W,Industry,Manufacturing,2010-01-16,11377000.0,11457000.0
 W,Industry,Manufacturing,2010-01-23,11373000.0,11456000.0
@@ -21254,6 +21355,10 @@ W,Industry,Manufacturing,2025-09-27,12793000.0,12796000.0
 W,Industry,Manufacturing,2025-10-04,12792000.0,12798000.0
 W,Industry,Manufacturing,2025-10-11,12793000.0,12805000.0
 W,Industry,Manufacturing,2025-10-18,12787000.0,12799000.0
+W,Industry,Manufacturing,2025-10-25,12788000.0,12794000.0
+W,Industry,Manufacturing,2025-11-01,12788000.0,12787000.0
+W,Industry,Manufacturing,2025-11-08,12785000.0,12781000.0
+W,Industry,Manufacturing,2025-11-15,12785000.0,12780000.0
 W,Industry,Natural resources and mining,2010-01-09,1571000.0,1629000.0
 W,Industry,Natural resources and mining,2010-01-16,1573000.0,1634000.0
 W,Industry,Natural resources and mining,2010-01-23,1582000.0,1643000.0
@@ -22078,6 +22183,10 @@ W,Industry,Natural resources and mining,2025-09-27,1848000.0,1839000.0
 W,Industry,Natural resources and mining,2025-10-04,1848000.0,1839000.0
 W,Industry,Natural resources and mining,2025-10-11,1850000.0,1842000.0
 W,Industry,Natural resources and mining,2025-10-18,1848000.0,1843000.0
+W,Industry,Natural resources and mining,2025-10-25,1847000.0,1845000.0
+W,Industry,Natural resources and mining,2025-11-01,1848000.0,1848000.0
+W,Industry,Natural resources and mining,2025-11-08,1847000.0,1851000.0
+W,Industry,Natural resources and mining,2025-11-15,1845000.0,1853000.0
 W,Industry,Other services,2010-01-09,4329000.0,4404000.0
 W,Industry,Other services,2010-01-16,4316000.0,4400000.0
 W,Industry,Other services,2010-01-23,4309000.0,4397000.0
@@ -22902,6 +23011,10 @@ W,Industry,Other services,2025-09-27,4869000.0,4806000.0
 W,Industry,Other services,2025-10-04,4865000.0,4803000.0
 W,Industry,Other services,2025-10-11,4861000.0,4801000.0
 W,Industry,Other services,2025-10-18,4857000.0,4798000.0
+W,Industry,Other services,2025-10-25,4853000.0,4796000.0
+W,Industry,Other services,2025-11-01,4849000.0,4794000.0
+W,Industry,Other services,2025-11-08,4847000.0,4795000.0
+W,Industry,Other services,2025-11-15,4847000.0,4795000.0
 W,Industry,Professional and business services,2010-01-09,16346000.0,16647000.0
 W,Industry,Professional and business services,2010-01-16,16322000.0,16632000.0
 W,Industry,Professional and business services,2010-01-23,16313000.0,16638000.0
@@ -23726,6 +23839,10 @@ W,Industry,Professional and business services,2025-09-27,22946000.0,22647000.0
 W,Industry,Professional and business services,2025-10-04,22973000.0,22648000.0
 W,Industry,Professional and business services,2025-10-11,22983000.0,22640000.0
 W,Industry,Professional and business services,2025-10-18,22991000.0,22633000.0
+W,Industry,Professional and business services,2025-10-25,23004000.0,22617000.0
+W,Industry,Professional and business services,2025-11-01,23016000.0,22597000.0
+W,Industry,Professional and business services,2025-11-08,23019000.0,22583000.0
+W,Industry,Professional and business services,2025-11-15,23028000.0,22592000.0
 W,Industry,"Trade, transportation, and utilities",2010-01-09,24473000.0,24885000.0
 W,Industry,"Trade, transportation, and utilities",2010-01-16,24360000.0,24821000.0
 W,Industry,"Trade, transportation, and utilities",2010-01-23,24252000.0,24760000.0
@@ -24550,6 +24667,10 @@ W,Industry,"Trade, transportation, and utilities",2025-09-27,29237000.0,28996000
 W,Industry,"Trade, transportation, and utilities",2025-10-04,29328000.0,29058000.0
 W,Industry,"Trade, transportation, and utilities",2025-10-11,29319000.0,29013000.0
 W,Industry,"Trade, transportation, and utilities",2025-10-18,29407000.0,29054000.0
+W,Industry,"Trade, transportation, and utilities",2025-10-25,29479000.0,29062000.0
+W,Industry,"Trade, transportation, and utilities",2025-11-01,29549000.0,29065000.0
+W,Industry,"Trade, transportation, and utilities",2025-11-08,29601000.0,29058000.0
+W,Industry,"Trade, transportation, and utilities",2025-11-15,29655000.0,29052000.0
 W,National,U.S.,2010-01-09,104842000.0,107022000.0
 W,National,U.S.,2010-01-16,104531000.0,106884000.0
 W,National,U.S.,2010-01-23,104307000.0,106809000.0
@@ -25374,3 +25495,7 @@ W,National,U.S.,2025-09-27,135882000.0,134704000.0
 W,National,U.S.,2025-10-04,135998000.0,134770000.0
 W,National,U.S.,2025-10-11,135995000.0,134734000.0
 W,National,U.S.,2025-10-18,136072000.0,134759000.0
+W,National,U.S.,2025-10-25,136165000.0,134752000.0
+W,National,U.S.,2025-11-01,136244000.0,134725000.0
+W,National,U.S.,2025-11-08,136294000.0,134712000.0
+W,National,U.S.,2025-11-15,136346000.0,134722000.0

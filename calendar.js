@@ -47,7 +47,8 @@ const FALLBACK_EVENTS = [
 ];
 
 const STORAGE_KEY = "labor_calendar_custom_events";
-const ADMIN_PASSWORD = "caelan";
+const ADMIN_PASS_KEY = "labor_calendar_admin_passphrase";
+const DEFAULT_TIME_ZONE = "America/New_York";
 const FRED_RELEASE_SEARCH_ENDPOINT =
   "https://api.stlouisfed.org/fred/releases/search";
 const FRED_RELEASE_DATES_ENDPOINT =
@@ -365,6 +366,12 @@ const loadCustomEvents = () => {
   }
 };
 
+const getAdminPassphrase = () => localStorage.getItem(ADMIN_PASS_KEY) || "";
+
+const setAdminPassphrase = (value) => {
+  localStorage.setItem(ADMIN_PASS_KEY, value);
+};
+
 const saveCustomEvents = (events) => {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(events));
 };
@@ -380,12 +387,92 @@ const dedupeEvents = (events) => {
   return Array.from(map.values());
 };
 
-const combineDateAndTime = (dateStr, time = "08:30", tzOffset = "-05:00") => {
+const _parseIsoDateParts = (dateStr) => {
   if (!dateStr) return null;
   const parsed = new Date(dateStr);
   const isoDate = Number.isNaN(parsed.getTime())
-    ? dateStr
+    ? String(dateStr)
     : parsed.toISOString().split("T")[0];
+  const match = isoDate.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if (!match) return null;
+  return { isoDate, year: Number(match[1]), month: Number(match[2]), day: Number(match[3]) };
+};
+
+const _parseTimeParts = (timeStr) => {
+  const match = String(timeStr || "").match(/^(\d{2}):(\d{2})$/);
+  if (!match) return null;
+  return { hour: Number(match[1]), minute: Number(match[2]) };
+};
+
+const _tzOffsetMinutes = (date, timeZone) => {
+  try {
+    const dtf = new Intl.DateTimeFormat("en-US", {
+      timeZone,
+      hour12: false,
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit"
+    });
+    const parts = dtf.formatToParts(date);
+    const values = {};
+    parts.forEach((part) => {
+      if (part.type !== "literal") values[part.type] = part.value;
+    });
+    const utc = Date.UTC(
+      Number(values.year),
+      Number(values.month) - 1,
+      Number(values.day),
+      Number(values.hour),
+      Number(values.minute),
+      Number(values.second)
+    );
+    return (utc - date.getTime()) / 60000;
+  } catch {
+    return null;
+  }
+};
+
+const _isoFromTimeZone = (isoDate, timeStr, timeZone) => {
+  const dateParts = _parseIsoDateParts(isoDate);
+  const timeParts = _parseTimeParts(timeStr);
+  if (!dateParts || !timeParts) return null;
+  const utcGuess = new Date(Date.UTC(
+    dateParts.year,
+    dateParts.month - 1,
+    dateParts.day,
+    timeParts.hour,
+    timeParts.minute,
+    0
+  ));
+  const offsetMinutes = _tzOffsetMinutes(utcGuess, timeZone);
+  if (offsetMinutes === null) return null;
+  const ts = Date.UTC(
+    dateParts.year,
+    dateParts.month - 1,
+    dateParts.day,
+    timeParts.hour,
+    timeParts.minute,
+    0
+  ) - offsetMinutes * 60 * 1000;
+  return new Date(ts).toISOString();
+};
+
+const combineDateAndTime = (
+  dateStr,
+  time = "08:30",
+  tzOffset = "-05:00",
+  timeZone = DEFAULT_TIME_ZONE
+) => {
+  if (!dateStr) return null;
+  const parsed = new Date(dateStr);
+  const isoDate = Number.isNaN(parsed.getTime())
+    ? String(dateStr)
+    : parsed.toISOString().split("T")[0];
+  const zonedIso = timeZone ? _isoFromTimeZone(isoDate, time, timeZone) : null;
+  if (zonedIso) return zonedIso;
   return `${isoDate}T${time}:00${tzOffset}`;
 };
 
@@ -733,7 +820,14 @@ const handleFormSubmit = (event) => {
   event.preventDefault();
   if (!addForm) return;
   const pass = document.getElementById("adminPass").value.trim();
-  if (pass !== ADMIN_PASSWORD) {
+  const storedPass = getAdminPassphrase();
+  if (!storedPass) {
+    if (!pass) {
+      formStatus.textContent = "Set a passphrase to enable admin edits.";
+      return;
+    }
+    setAdminPassphrase(pass);
+  } else if (pass !== storedPass) {
     formStatus.textContent = "Incorrect passphrase.";
     return;
   }

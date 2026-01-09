@@ -1,4 +1,4 @@
-const byId = (id) => document.getElementById(id);
+import { byId, toNumber, fetchJSONLocal, initInfoPopover } from "./ui_utils.js";
 
 const elements = {
   sectorSelect: byId("altSectorSelect"),
@@ -46,13 +46,6 @@ const parseMonth = (value) => {
   return new Date(Date.UTC(year, monthIndex, 1));
 };
 
-const toNumber = (value) => {
-  if (value === null || value === undefined) return null;
-  if (typeof value === "string" && value.trim() === "") return null;
-  const n = Number(value);
-  return Number.isFinite(n) ? n : null;
-};
-
 const formatPeople = (value) => {
   if (!Number.isFinite(value)) return "—";
   return Math.round(value).toLocaleString();
@@ -95,46 +88,12 @@ const setRevStatus = (message, isError = false) => {
   elements.revStatus.classList.toggle("error", Boolean(isError));
 };
 
-const initInfoPopover = () => {
-  const wrap = byId("altInfo");
-  const btn = byId("altInfoBtn");
-  if (!wrap || !btn) return;
-
-  const setOpen = (open) => {
-    wrap.classList.toggle("show", Boolean(open));
-    btn.setAttribute("aria-expanded", open ? "true" : "false");
-  };
-
-  btn.addEventListener("click", (event) => {
-    event.preventDefault();
-    setOpen(!wrap.classList.contains("show"));
-  });
-
-  document.addEventListener("click", (event) => {
-    if (!wrap.classList.contains("show")) return;
-    if (wrap.contains(event.target)) return;
-    setOpen(false);
-  });
-
-  document.addEventListener("keydown", (event) => {
-    if (event.key !== "Escape") return;
-    if (!wrap.classList.contains("show")) return;
-    setOpen(false);
-  });
-};
-
 const setHint = (message) => {
   if (!elements.hint) return;
   elements.hint.textContent = message;
 };
 
-const fetchJSONLocal = async (path) => {
-  const response = await fetch(path, { cache: "no-cache" });
-  if (!response.ok) {
-    throw new Error(`${path}: HTTP ${response.status}`);
-  }
-  return await response.json();
-};
+const initAltInfoPopover = () => initInfoPopover({ wrap: byId("altInfo"), btn: byId("altInfoBtn") });
 
 const sliceMonthSeries = (series, rangeKey) => {
   if (!Array.isArray(series) || !series.length) return [];
@@ -366,6 +325,19 @@ const transformSeries = (points, accessor, transform) => {
   return out;
 };
 
+const transformWithLookback = (allPoints, windowedPoints, accessor, transform) => {
+  const lookbackMonths = transform === "mom" || transform === "momPct" ? 1 : transform === "yoy" || transform === "yoyPct" ? 12 : 0;
+  if (!lookbackMonths || !windowedPoints.length) {
+    return transformSeries(windowedPoints, accessor, transform);
+  }
+  const start = new Date(windowedPoints[0].date);
+  start.setUTCMonth(start.getUTCMonth() - lookbackMonths);
+  const computePoints = allPoints.filter((p) => p.date && p.date >= start);
+  const transformed = transformSeries(computePoints, accessor, transform);
+  const offset = computePoints.length - windowedPoints.length;
+  return offset > 0 ? transformed.slice(offset) : transformed;
+};
+
 const renderMetrics = (items) => {
   if (!elements.metrics) return;
   elements.metrics.innerHTML = items
@@ -466,7 +438,8 @@ const renderAccuracy = ({ unitLabel, transformLabel, rangeLabel, stats }) => {
   const cards = [];
   const sources = [
     { key: "revelio", title: "Revelio vs BLS", tone: "good" },
-    { key: "adp", title: "ADP vs BLS", tone: "neutral" }
+    { key: "adp", title: "ADP vs BLS", tone: "neutral" },
+    { key: "revelioAdp", title: "Revelio vs ADP", tone: "neutral" }
   ];
 
   sources.forEach(({ key, title, tone }) => {
@@ -501,7 +474,7 @@ const renderAccuracy = ({ unitLabel, transformLabel, rangeLabel, stats }) => {
   });
 
   if (!cards.length) {
-    elements.accuracy.innerHTML = `<section class="accuracy-card"><header><h3>Accuracy</h3><p>No overlapping months with BLS for this selection.</p></header></section>`;
+    elements.accuracy.innerHTML = `<section class="accuracy-card"><header><h3>Accuracy</h3><p>No overlapping months for this selection.</p></header></section>`;
     return;
   }
   elements.accuracy.innerHTML = cards.join("");
@@ -568,14 +541,14 @@ const updateEmploymentView = () => {
 
   const seriesData = {
     sa: {
-      bls: available.bls ? transformSeries(windowed, (p) => p.sa.bls, transform) : [],
-      revelio: available.revelio ? transformSeries(windowed, (p) => p.sa.revelio, transform) : [],
-      adp: available.adp ? transformSeries(windowed, (p) => p.sa.adp, transform) : []
+      bls: available.bls ? transformWithLookback(sector.points, windowed, (p) => p.sa.bls, transform) : [],
+      revelio: available.revelio ? transformWithLookback(sector.points, windowed, (p) => p.sa.revelio, transform) : [],
+      adp: available.adp ? transformWithLookback(sector.points, windowed, (p) => p.sa.adp, transform) : []
     },
     nsa: {
-      bls: available.bls ? transformSeries(windowed, (p) => p.nsa.bls, transform) : [],
-      revelio: available.revelio ? transformSeries(windowed, (p) => p.nsa.revelio, transform) : [],
-      adp: available.adp ? transformSeries(windowed, (p) => p.nsa.adp, transform) : []
+      bls: available.bls ? transformWithLookback(sector.points, windowed, (p) => p.nsa.bls, transform) : [],
+      revelio: available.revelio ? transformWithLookback(sector.points, windowed, (p) => p.nsa.revelio, transform) : [],
+      adp: available.adp ? transformWithLookback(sector.points, windowed, (p) => p.nsa.adp, transform) : []
     }
   };
 
@@ -659,16 +632,23 @@ const updateEmploymentView = () => {
     return seriesData[k].adp;
   };
 
-  const gapSeries = (k, targetKey) => {
-    const baseArr = baselineSeriesFor(k);
+  const gapSeries = (k, targetKey, baseKey = baseline) => {
+    const baseArr =
+      baseKey === "bls"
+        ? seriesData[k].bls
+        : baseKey === "revelio"
+          ? seriesData[k].revelio
+          : seriesData[k].adp;
     const otherArr = seriesData[k][targetKey];
     return labels.map((_, i) => pctDiff(otherArr[i], baseArr[i]));
   };
 
   const include = (key) => key !== baseline && available[key];
+  const includePair = (a, b) => available[a] && available[b];
 
   if (include("revelio")) addGap("Revelio vs BLS", gapSeries(seriesKey, "revelio"), "#16a34a");
   if (include("adp")) addGap("ADP vs BLS", gapSeries(seriesKey, "adp"), "#7c3aed");
+  if (includePair("revelio", "adp")) addGap("Revelio vs ADP", gapSeries(seriesKey, "revelio", "adp"), "#0f766e");
 
   if (elements.gapCanvas && typeof Chart !== "undefined") {
     const ctx = elements.gapCanvas.getContext("2d");
@@ -723,12 +703,16 @@ const updateEmploymentView = () => {
     adp:
       available.bls && available.adp
         ? computeAccuracyStats(labels, seriesData[seriesKey].bls, seriesData[seriesKey].adp, { allowSignMatch })
+        : null,
+    revelioAdp:
+      available.revelio && available.adp
+        ? computeAccuracyStats(labels, seriesData[seriesKey].adp, seriesData[seriesKey].revelio, { allowSignMatch })
         : null
   };
 
   renderAccuracy({ unitLabel, transformLabel, rangeLabel, stats });
 
-  setStatus(`Showing ${windowed.length.toLocaleString()} months • Units: ${unitLabel} • Accuracy uses overlapping months with BLS.`);
+  setStatus(`Showing ${windowed.length.toLocaleString()} months • Units: ${unitLabel} • Accuracy uses overlapping months for each pair.`);
 };
 
 const renderRevMetrics = (items) => {
@@ -871,7 +855,7 @@ const updateRevisionsView = () => {
 };
 
 const init = async () => {
-  initInfoPopover();
+  initAltInfoPopover();
   await ensureLoaded();
   if (!state.loaded) return;
 

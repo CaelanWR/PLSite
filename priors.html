@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caelan's Labor Market Tracker — Market Priors</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div>
+      <p class="eyebrow">Caelan's Labor Market Tracker</p>
+      <h1>Market Priors</h1>
+      <p class="tagline">Blend Kalshi and Polymarket brackets to see the full distribution ahead of key releases.</p>
+    </div>
+  </header>
+
+  <nav class="site-nav" role="tablist">
+    <a href="index.html" class="nav-link" role="tab" aria-selected="false">News Feed</a>
+    <a href="calendar.html" class="nav-link" role="tab" aria-selected="false">Release Calendar</a>
+    <a href="live.html" class="nav-link" role="tab" aria-selected="false">Live Feeds</a>
+    <a href="alt.html" class="nav-link" role="tab" aria-selected="false">Alt Compare</a>
+    <a href="impact.html" class="nav-link" role="tab" aria-selected="false">Market Impact</a>
+    <a href="priors.html" class="nav-link active" role="tab" aria-selected="true">Market Priors</a>
+    <a href="papers.html" class="nav-link" role="tab" aria-selected="false">Research</a>
+    <a href="links.html" class="nav-link" role="tab" aria-selected="false">Links</a>
+  </nav>
+
+  <main>
+    <section class="revelio-board">
+      <header class="links-board-header">
+        <div>
+          <h2>Distribution dashboard</h2>
+          <p>Track how market expectations shift as release day approaches.</p>
+        </div>
+      </header>
+
+      <div class="fred-controls">
+        <label>
+          <span>Event</span>
+          <select id="priorsEventSelect" aria-label="Economic release selector"></select>
+        </label>
+        <label>
+          <span>Next release</span>
+          <input id="priorsReleaseDate" type="text" readonly aria-readonly="true">
+        </label>
+        <button id="priorsRefresh" class="refresh-btn" type="button">Refresh</button>
+        <small id="priorsUpdatedAt">Updated: --</small>
+      </div>
+
+      <p id="priorsStatus" class="form-status" aria-live="polite">Loading market priors...</p>
+
+      <div class="chart-card revelio-chart-card">
+        <div class="chart-header">
+          <h3>Current distribution</h3>
+        </div>
+        <p class="chart-subtitle">Combined probability across Kalshi and Polymarket brackets.</p>
+        <div class="revelio-chart-wrap">
+          <canvas id="priorsBarChart" height="320"></canvas>
+        </div>
+        <div class="revelio-metrics" id="priorsMetrics"></div>
+      </div>
+
+      <div class="chart-card revelio-chart-card">
+        <div class="chart-header">
+          <h3>Distribution evolution</h3>
+        </div>
+        <p class="chart-subtitle">Market expectations 4 weeks, 2 weeks, 1 week ago vs current.</p>
+        <div class="revelio-chart-wrap revelio-chart-wrap-small">
+          <canvas id="priorsEvolutionChart" height="220"></canvas>
+        </div>
+      </div>
+
+      <div class="revision-table-wrap">
+        <table class="revision-table compact" id="priorsTable">
+          <thead id="priorsTableHead"></thead>
+          <tbody id="priorsTableBody"></tbody>
+        </table>
+      </div>
+
+      <div class="empty-state">
+        <h3>Coming soon data sources</h3>
+        <p>Planned additions to deepen the distribution signal:</p>
+        <ul>
+          <li>Morning Consult Economic Sentiment</li>
+          <li>Bloomberg Economist Survey Distribution</li>
+          <li>Fed Survey of Consumer Expectations</li>
+          <li>Options-Implied Volatility</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="priors.js" type="module"></script>
+</body>
+</html>

@@ -14,10 +14,17 @@ Then open `http://localhost:8000/` (or `http://localhost:8000/index.html`).
 
 ```sh
 source .venv/bin/activate
-python3 fetch_bls_revisions.py
+FRED_API_KEY="..." python3 fetch_bls_revisions.py
 ```
 
 This updates files like `employment_naics.csv`, `bls_revisions.csv`, and JSONs under `data/`.
+
+Lightweight refresh (Alt Compare employment only, skip revisions):
+
+```sh
+source .venv/bin/activate
+FRED_API_KEY="..." python3 fetch_bls_revisions.py --employment-only
+```
 
 ## Build the Kalshi “Market Impact” dataset
 

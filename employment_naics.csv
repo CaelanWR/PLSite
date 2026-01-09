@@ -56,8 +56,9 @@ month,naics2d_code,naics2d_name,employment_nsa,employment_sa
 2025-07,00,Total private (ex-ag; ex gov; ADP comparable),136835000.0,135913000.0
 2025-08,00,Total private (ex-ag; ex gov; ADP comparable),136700000.0,135923000.0
 2025-09,00,Total private (ex-ag; ex gov; ADP comparable),136145000.0,136027000.0
-2025-10,00,Total private (ex-ag; ex gov; ADP comparable),136710000.0,136079000.0
-2025-11,00,Total private (ex-ag; ex gov; ADP comparable),136842000.0,136148000.0
+2025-10,00,Total private (ex-ag; ex gov; ADP comparable),136690000.0,136028000.0
+2025-11,00,Total private (ex-ag; ex gov; ADP comparable),136828000.0,136078000.0
+2025-12,00,Total private (ex-ag; ex gov; ADP comparable),136762000.0,136115000.0
 2021-01,NF,Total nonfarm payrolls,140975000.0,142913000.0
 2021-02,NF,Total nonfarm payrolls,142129000.0,143422000.0
 2021-03,NF,Total nonfarm payrolls,143308000.0,144246000.0
@@ -115,8 +116,9 @@ month,naics2d_code,naics2d_name,employment_nsa,employment_sa
 2025-07,NF,Total nonfarm payrolls,159219000.0,159511000.0
 2025-08,NF,Total nonfarm payrolls,159404000.0,159485000.0
 2025-09,NF,Total nonfarm payrolls,159732000.0,159593000.0
-2025-10,NF,Total nonfarm payrolls,160411000.0,159488000.0
-2025-11,NF,Total nonfarm payrolls,160652000.0,159552000.0
+2025-10,NF,Total nonfarm payrolls,160397000.0,159420000.0
+2025-11,NF,Total nonfarm payrolls,160640000.0,159476000.0
+2025-12,NF,Total nonfarm payrolls,160448000.0,159526000.0
 2021-01,11,"Agriculture, Forestry, Fishing and Hunting",,
 2021-02,11,"Agriculture, Forestry, Fishing and Hunting",,
 2021-03,11,"Agriculture, Forestry, Fishing and Hunting",,
@@ -176,6 +178,7 @@ month,naics2d_code,naics2d_name,employment_nsa,employment_sa
 2025-09,11,"Agriculture, Forestry, Fishing and Hunting",,
 2025-10,11,"Agriculture, Forestry, Fishing and Hunting",,
 2025-11,11,"Agriculture, Forestry, Fishing and Hunting",,
+2025-12,11,"Agriculture, Forestry, Fishing and Hunting",,
 2021-01,21,"Mining, Quarrying, and Oil and Gas Extraction",541000.0,
 2021-02,21,"Mining, Quarrying, and Oil and Gas Extraction",531000.0,
 2021-03,21,"Mining, Quarrying, and Oil and Gas Extraction",547000.0,
@@ -233,8 +236,9 @@ month,naics2d_code,naics2d_name,employment_nsa,employment_sa
 2025-07,21,"Mining, Quarrying, and Oil and Gas Extraction",622000.0,
 2025-08,21,"Mining, Quarrying, and Oil and Gas Extraction",621000.0,
 2025-09,21,"Mining, Quarrying, and Oil and Gas Extraction",615000.0,
-2025-10,21,"Mining, Quarrying, and Oil and Gas Extraction",615000.0,
-2025-11,21,"Mining, Quarrying, and Oil and Gas Extraction",610000.0,
+2025-10,21,"Mining, Quarrying, and Oil and Gas Extraction",616000.0,
+2025-11,21,"Mining, Quarrying, and Oil and Gas Extraction",612000.0,
+2025-12,21,"Mining, Quarrying, and Oil and Gas Extraction",606000.0,
 2021-01,22,Utilities,541300.0,542200.0
 2021-02,22,Utilities,539900.0,542500.0
 2021-03,22,Utilities,542200.0,543300.0
@@ -292,8 +296,9 @@ month,naics2d_code,naics2d_name,employment_nsa,employment_sa
 2025-07,22,Utilities,603400.0,598900.0
 2025-08,22,Utilities,598700.0,598000.0
 2025-09,22,Utilities,596100.0,597800.0
-2025-10,22,Utilities,597300.0,598100.0
-2025-11,22,Utilities,599700.0,599100.0
+2025-10,22,Utilities,598100.0,598900.0
+2025-11,22,Utilities,601000.0,600300.0
+2025-12,22,Utilities,602400.0,601100.0
 2021-01,23,Construction,7033000.0,
 2021-02,23,Construction,6970000.0,
 2021-03,23,Construction,7162000.0,
@@ -351,8 +356,9 @@ month,naics2d_code,naics2d_name,employment_nsa,employment_sa
 2025-07,23,Construction,8512000.0,
 2025-08,23,Construction,8492000.0,
 2025-09,23,Construction,8442000.0,
-2025-10,23,Construction,8462000.0,
-2025-11,23,Construction,8395000.0,
+2025-10,23,Construction,8457000.0,
+2025-11,23,Construction,8383000.0,
+2025-12,23,Construction,8231000.0,
 2021-01,31-33,Manufacturing,12066000.0,
 2021-02,31-33,Manufacturing,12127000.0,
 2021-03,31-33,Manufacturing,12183000.0,
@@ -411,7 +417,8 @@ month,naics2d_code,naics2d_name,employment_nsa,employment_sa
 2025-08,31-33,Manufacturing,12774000.0,
 2025-09,31-33,Manufacturing,12726000.0,
 2025-10,31-33,Manufacturing,12710000.0,
-2025-11,31-33,Manufacturing,12694000.0,
+2025-11,31-33,Manufacturing,12698000.0,
+2025-12,31-33,Manufacturing,12711000.0,
 2021-01,42,Wholesale Trade,5581900.0,
 2021-02,42,Wholesale Trade,5589600.0,
 2021-03,42,Wholesale Trade,5609300.0,
@@ -469,8 +476,9 @@ month,naics2d_code,naics2d_name,employment_nsa,employment_sa
 2025-07,42,Wholesale Trade,6193800.0,
 2025-08,42,Wholesale Trade,6170400.0,
 2025-09,42,Wholesale Trade,6158900.0,
-2025-10,42,Wholesale Trade,6178400.0,
-2025-11,42,Wholesale Trade,6173700.0,
+2025-10,42,Wholesale Trade,6173400.0,
+2025-11,42,Wholesale Trade,6171100.0,
+2025-12,42,Wholesale Trade,6183800.0,
 2021-01,44-45,Retail Trade,15096300.0,
 2021-02,44-45,Retail Trade,14986000.0,
 2021-03,44-45,Retail Trade,15035000.0,
@@ -528,8 +536,9 @@ month,naics2d_code,naics2d_name,employment_nsa,employment_sa
 2025-07,44-45,Retail Trade,15581400.0,
 2025-08,44-45,Retail Trade,15546200.0,
 2025-09,44-45,Retail Trade,15484200.0,
-2025-10,44-45,Retail Trade,15579800.0,
-2025-11,44-45,Retail Trade,15831000.0,
+2025-10,44-45,Retail Trade,15589600.0,
+2025-11,44-45,Retail Trade,15825800.0,
+2025-12,44-45,Retail Trade,15945100.0,
 2021-01,48-49,Transportation and Warehousing,5932100.0,5903900.0
 2021-02,48-49,Transportation and Warehousing,5906900.0,5932300.0
 2021-03,48-49,Transportation and Warehousing,5953700.0,6019500.0
@@ -587,8 +596,9 @@ month,naics2d_code,naics2d_name,employment_nsa,employment_sa
 2025-07,48-49,Transportation and Warehousing,6609300.0,6732700.0
 2025-08,48-49,Transportation and Warehousing,6631600.0,6736000.0
 2025-09,48-49,Transportation and Warehousing,6692200.0,6702600.0
-2025-10,48-49,Transportation and Warehousing,6744900.0,6702100.0
-2025-11,48-49,Transportation and Warehousing,6852200.0,6684400.0
+2025-10,48-49,Transportation and Warehousing,6741600.0,6696500.0
+2025-11,48-49,Transportation and Warehousing,6854500.0,6671300.0
+2025-12,48-49,Transportation and Warehousing,6975300.0,6664700.0
 2021-01,51,Information,2717000.0,
 2021-02,51,Information,2749000.0,
 2021-03,51,Information,2759000.0,
@@ -646,8 +656,9 @@ month,naics2d_code,naics2d_name,employment_nsa,employment_sa
 2025-07,51,Information,2955000.0,
 2025-08,51,Information,2952000.0,
 2025-09,51,Information,2924000.0,
-2025-10,51,Information,2928000.0,
-2025-11,51,Information,2921000.0,
+2025-10,51,Information,2924000.0,
+2025-11,51,Information,2920000.0,
+2025-12,51,Information,2932000.0,
 2021-01,52-53,Financial Activities,8679000.0,
 2021-02,52-53,Financial Activities,8674000.0,
 2021-03,52-53,Financial Activities,8686000.0,
@@ -705,8 +716,9 @@ month,naics2d_code,naics2d_name,employment_nsa,employment_sa
 2025-07,52-53,Financial Activities,9319000.0,
 2025-08,52-53,Financial Activities,9284000.0,
 2025-09,52-53,Financial Activities,9237000.0,
-2025-10,52-53,Financial Activities,9246000.0,
-2025-11,52-53,Financial Activities,9247000.0,
+2025-10,52-53,Financial Activities,9251000.0,
+2025-11,52-53,Financial Activities,9251000.0,
+2025-12,52-53,Financial Activities,9274000.0,
 2021-01,54-56,Professional and Business Services,20578000.0,
 2021-02,54-56,Professional and Business Services,20754000.0,
 2021-03,54-56,Professional and Business Services,20873000.0,
@@ -764,8 +776,9 @@ month,naics2d_code,naics2d_name,employment_nsa,employment_sa
 2025-07,54-56,Professional and Business Services,22660000.0,
 2025-08,54-56,Professional and Business Services,22648000.0,
 2025-09,54-56,Professional and Business Services,22592000.0,
-2025-10,54-56,Professional and Business Services,22760000.0,
-2025-11,54-56,Professional and Business Services,22705000.0,
+2025-10,54-56,Professional and Business Services,22748000.0,
+2025-11,54-56,Professional and Business Services,22692000.0,
+2025-12,54-56,Professional and Business Services,22605000.0,
 2021-01,61-62,Education and Health Services,23209000.0,
 2021-02,61-62,Education and Health Services,23503000.0,
 2021-03,61-62,Education and Health Services,23643000.0,
@@ -823,8 +836,9 @@ month,naics2d_code,naics2d_name,employment_nsa,employment_sa
 2025-07,61-62,Education and Health Services,27100000.0,
 2025-08,61-62,Education and Health Services,27184000.0,
 2025-09,61-62,Education and Health Services,27445000.0,
-2025-10,61-62,Education and Health Services,27756000.0,
-2025-11,61-62,Education and Health Services,27882000.0,
+2025-10,61-62,Education and Health Services,27738000.0,
+2025-11,61-62,Education and Health Services,27860000.0,
+2025-12,61-62,Education and Health Services,27793000.0,
 2021-01,71-72,Leisure and Hospitality,12099000.0,
 2021-02,71-72,Leisure and Hospitality,12540000.0,
 2021-03,71-72,Leisure and Hospitality,12876000.0,
@@ -882,8 +896,9 @@ month,naics2d_code,naics2d_name,employment_nsa,employment_sa
 2025-07,71-72,Leisure and Hospitality,17771000.0,
 2025-08,71-72,Leisure and Hospitality,17692000.0,
 2025-09,71-72,Leisure and Hospitality,17197000.0,
-2025-10,71-72,Leisure and Hospitality,17081000.0,
-2025-11,71-72,Leisure and Hospitality,16886000.0,
+2025-10,71-72,Leisure and Hospitality,17093000.0,
+2025-11,71-72,Leisure and Hospitality,16911000.0,
+2025-12,71-72,Leisure and Hospitality,16861000.0,
 2021-01,81,Other Services (except Public Administration),5241000.0,
 2021-02,81,Other Services (except Public Administration),5266000.0,
 2021-03,81,Other Services (except Public Administration),5296000.0,
@@ -941,8 +956,9 @@ month,naics2d_code,naics2d_name,employment_nsa,employment_sa
 2025-07,81,Other Services (except Public Administration),6114000.0,
 2025-08,81,Other Services (except Public Administration),6106000.0,
 2025-09,81,Other Services (except Public Administration),6036000.0,
-2025-10,81,Other Services (except Public Administration),6052000.0,
-2025-11,81,Other Services (except Public Administration),6045000.0,
+2025-10,81,Other Services (except Public Administration),6050000.0,
+2025-11,81,Other Services (except Public Administration),6049000.0,
+2025-12,81,Other Services (except Public Administration),6042000.0,
 2021-01,92,Public Administration,21660000.0,
 2021-02,92,Public Administration,21993000.0,
 2021-03,92,Public Administration,22143000.0,
@@ -1000,8 +1016,9 @@ month,naics2d_code,naics2d_name,employment_nsa,employment_sa
 2025-07,92,Public Administration,22384000.0,
 2025-08,92,Public Administration,22704000.0,
 2025-09,92,Public Administration,23587000.0,
-2025-10,92,Public Administration,23701000.0,
-2025-11,92,Public Administration,23810000.0,
+2025-10,92,Public Administration,23707000.0,
+2025-11,92,Public Administration,23812000.0,
+2025-12,92,Public Administration,23686000.0,
 2021-01,99,Unclassified,,
 2021-02,99,Unclassified,,
 2021-03,99,Unclassified,,
@@ -1061,3 +1078,4 @@ month,naics2d_code,naics2d_name,employment_nsa,employment_sa
 2025-09,99,Unclassified,,
 2025-10,99,Unclassified,,
 2025-11,99,Unclassified,,
+2025-12,99,Unclassified,,

@@ -1,4 +1,4 @@
-const byId = (id) => document.getElementById(id);
+import { byId, toNumber, fetchJSONLocal, initInfoPopover } from "./ui_utils.js";
 
 const elements = {
   providerSelect: byId("impactProviderSelect"),
@@ -45,13 +45,6 @@ const TOP_SECTION_KEY = "impactTopSection";
 const PROVIDER_CONFIG = {
   kalshi: { label: "Kalshi", path: "data/kalshi_impact.json" },
   polymarket: { label: "Polymarket", path: "data/polymarket_impact.json" }
-};
-
-const toNumber = (value) => {
-  if (value === null || value === undefined) return null;
-  if (typeof value === "string" && value.trim() === "") return null;
-  const n = Number(value);
-  return Number.isFinite(n) ? n : null;
 };
 
 const formatPct = (value) => {
@@ -152,14 +145,6 @@ const providerMeta = () => {
   return state.data.kalshi || state.data.polymarket || null;
 };
 
-const fetchJSONLocal = async (path) => {
-  const response = await fetch(path, { cache: "no-cache" });
-  if (!response.ok) {
-    throw new Error(`${path}: HTTP ${response.status}`);
-  }
-  return await response.json();
-};
-
 const ensureDataset = async (providerKey) => {
   const key = providerKey === "polymarket" ? "polymarket" : "kalshi";
   if (state.datasets?.[key]) return state.datasets[key];
@@ -189,33 +174,7 @@ const applyTopSection = (topId) => {
   }
 };
 
-const initInfoPopover = () => {
-  const wrap = elements.infoWrap;
-  const btn = elements.infoBtn;
-  if (!wrap || !btn) return;
-
-  const setOpen = (open) => {
-    wrap.classList.toggle("show", Boolean(open));
-    btn.setAttribute("aria-expanded", open ? "true" : "false");
-  };
-
-  btn.addEventListener("click", (event) => {
-    event.preventDefault();
-    setOpen(!wrap.classList.contains("show"));
-  });
-
-  document.addEventListener("click", (event) => {
-    if (!wrap.classList.contains("show")) return;
-    if (wrap.contains(event.target)) return;
-    setOpen(false);
-  });
-
-  document.addEventListener("keydown", (event) => {
-    if (event.key !== "Escape") return;
-    if (!wrap.classList.contains("show")) return;
-    setOpen(false);
-  });
-};
+const initImpactInfoPopover = () => initInfoPopover({ wrap: elements.infoWrap, btn: elements.infoBtn });
 
 const safeArray = (value) => (Array.isArray(value) ? value : []);
 
@@ -1617,7 +1576,7 @@ const attachEvents = () => {
 };
 
 const init = async () => {
-  initInfoPopover();
+  initImpactInfoPopover();
   attachEvents();
   await ensureLoaded();
   fillHorizonOptions();

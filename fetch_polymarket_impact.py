@@ -35,19 +35,19 @@ from urllib.error import HTTPError, URLError
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
-# Reuse shared logic + summarizers from the Kalshi impact pipeline.
-from fetch_kalshi_impact import (  # type: ignore[import-not-found]
+# Reuse shared logic + summarizers.
+from impact_common import (  # type: ignore[import-not-found]
     DEFAULT_TZ,
     _attach_announced_values,
     _generate_events,
     _iso_from_ts,
     _parse_horizons,
-    _to_utc_ts,
     _parse_year_month,
     _pick_baseline,
     _pick_level_at_or_after,
     _summarize_dataset,
     _summarize_event,
+    _to_utc_ts,
 )
 
 
