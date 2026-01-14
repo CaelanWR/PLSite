@@ -29,7 +29,6 @@ from __future__ import annotations
 
 import argparse
 import base64
-import csv
 import datetime as dt
 import hashlib
 import json
@@ -53,6 +52,7 @@ from impact_common import (  # type: ignore[import-not-found]
     _first_weekday_of_month,
     _generate_events,
     _iso_from_ts,
+    _load_events_from_csv,
     _parse_horizons,
     _parse_year_month,
     _pick_baseline,
@@ -370,75 +370,48 @@ def _parse_strike(title: str) -> Optional[Dict[str, Any]]:
     return {"kind": "above", "value": value, "label": label}
 
 
-def _load_events_from_csv(path: Path) -> List[Dict[str, Any]]:
-    events: List[Dict[str, Any]] = []
-    with path.open("r", encoding="utf-8") as f:
-        reader = csv.DictReader(f)
-        for row in reader:
-            if not row:
-                continue
-            event_type = (row.get("type") or "").strip().lower()
-            release_iso = (row.get("release_iso") or row.get("release") or "").strip()
-            release_month = (row.get("release_month") or "").strip()
-            payroll_month = (row.get("payroll_month") or "").strip()
-            label = (row.get("label") or "").strip()
-            event_id = (row.get("id") or row.get("event_id") or "").strip()
-            if not event_type or not release_iso:
-                continue
+def _ensure_jobs_report_ts(
+    events: List[Dict[str, Any]],
+    *,
+    jobs_time: str,
+    tz_name: str,
+    tz_fallback_offset: str,
+) -> None:
+    by_release_month: Dict[str, int] = {}
+    for event in events:
+        rm = event.get("release_month")
+        if not rm:
+            continue
+        key = str(rm)
+        if key in by_release_month:
+            continue
+        y, m = _parse_year_month(key)
+        jobs_date = _first_weekday_of_month(y, m, weekday=4)
+        by_release_month[key] = _to_utc_ts(jobs_date, jobs_time, tz_name, tz_fallback_offset)
+    for event in events:
+        rm = str(event.get("release_month") or "")
+        if rm and "jobs_report_ts" not in event:
+            jobs_ts = by_release_month.get(rm)
+            if jobs_ts:
+                event["jobs_report_ts"] = jobs_ts
+                event["jobs_report_iso"] = _iso_from_ts(jobs_ts)
 
-            parsed = release_iso.replace("Z", "+00:00")
-            try:
-                release_dt = dt.datetime.fromisoformat(parsed)
-            except ValueError:
-                print(f"Warning: invalid release_iso in {path}: {release_iso!r}", file=sys.stderr)
-                continue
-            release_ts = int(release_dt.timestamp())
 
-            if not release_month:
-                release_month = release_dt.strftime("%Y-%m")
-            if not payroll_month and release_month:
-                y, m = _parse_year_month(release_month)
-                py, pm = _prev_month(y, m)
-                payroll_month = _ym_string(py, pm)
-            if not event_id:
-                event_id = f"{release_month}-{event_type}"
-
-            actual = row.get("actual")
-            expected = row.get("expected")
-            unit = (row.get("unit") or "jobs").strip()
-
-            value: Optional[Dict[str, Any]] = None
-            if actual is not None or expected is not None:
-                def _to_float(v: Optional[str]) -> Optional[float]:
-                    if v is None:
-                        return None
-                    v = v.strip()
-                    if not v:
-                        return None
-                    try:
-                        return float(v.replace(",", ""))
-                    except ValueError:
-                        return None
-
-                act = _to_float(actual)
-                exp = _to_float(expected)
-                if act is not None or exp is not None:
-                    value = {"actual": act, "expected": exp, "unit": unit}
-
-            events.append(
-                {
-                    "id": event_id,
-                    "type": event_type,
-                    "label": label or event_type.upper(),
-                    "release_month": release_month,
-                    "payroll_month": payroll_month,
-                    "release_ts": release_ts,
-                    "release_iso": _iso_from_ts(release_ts),
-                    "value": value,
-                }
-            )
-    events.sort(key=lambda e: int(e["release_ts"]))
-    return events
+def _merge_events(base: List[Dict[str, Any]], extra: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    by_id: Dict[str, Dict[str, Any]] = {}
+    for event in base:
+        key = str(event.get("id") or "")
+        if not key:
+            continue
+        by_id[key] = event
+    for event in extra:
+        key = str(event.get("id") or "")
+        if not key:
+            continue
+        by_id[key] = event
+    merged = list(by_id.values())
+    merged.sort(key=lambda e: int(e.get("release_ts") or 0))
+    return merged
 
 
 def _fetch_markets(
@@ -801,7 +774,7 @@ def _build_demo_dataset(out_path: Path) -> None:
             "series_ticker": DEFAULT_SERIES_TICKER,
             "interval": "1m",
             "window": {"pre_minutes": 30, "post_minutes": 240},
-            "horizons_minutes": [5, 30, 60, 240],
+            "horizons_minutes": [5, 30, 60, 120, 240],
             "demo": True,
         },
         "events": events,
@@ -809,9 +782,9 @@ def _build_demo_dataset(out_path: Path) -> None:
 
     for event in dataset["events"]:
         event["summary"] = _summarize_event(
-            event, horizons=[5, 30, 60, 240], pre_minutes=30, post_minutes=240, stability_epsilon_pp=0.5
+            event, horizons=[5, 30, 60, 120, 240], pre_minutes=30, post_minutes=240, stability_epsilon_pp=0.5
         )
-    dataset["summary"] = _summarize_dataset(dataset["events"], horizons=[5, 30, 60, 240])
+    dataset["summary"] = _summarize_dataset(dataset["events"], horizons=[5, 30, 60, 120, 240])
 
     _write_json(out_path, dataset)
 
@@ -837,6 +810,11 @@ def main() -> int:
     parser.add_argument("--start-month", default="", help="Start release month (YYYY-MM), e.g. 2025-07")
     parser.add_argument("--end-month", default="", help="End release month (YYYY-MM), e.g. 2025-12")
     parser.add_argument("--events-csv", default="", help="Optional CSV of events with actual/expected values.")
+    parser.add_argument(
+        "--custom-events",
+        default="data/impact_events_custom.csv",
+        help="Optional CSV of custom events to append (default: data/impact_events_custom.csv if present).",
+    )
     parser.add_argument("--adp-time", default="08:15", help="ADP release time in ET (HH:MM).")
     parser.add_argument("--revelio-time", default="08:30", help="Revelio release time in ET (HH:MM).")
     parser.add_argument("--jobs-time", default="08:30", help="Jobs report time in ET (HH:MM).")
@@ -854,7 +832,22 @@ def main() -> int:
         help="Local Revelio national totals CSV used to infer announced MoM change (default: data/raw/employment_national_revelio.csv).",
     )
     parser.add_argument("--interval", default="1m", help="Candlestick granularity (e.g., 1m, 1h, 1d).")
-    parser.add_argument("--horizons", default="5,30,60,240", help="Comma-separated post-release horizons in minutes.")
+    parser.add_argument(
+        "--longterm-days",
+        type=int,
+        default=0,
+        help="Days before/after release for a long-term series (default: 0 disables).",
+    )
+    parser.add_argument(
+        "--longterm-interval",
+        default="1h",
+        help="Candlestick granularity for long-term series (default: 1h).",
+    )
+    parser.add_argument(
+        "--horizons",
+        default="5,30,60,120,240",
+        help="Comma-separated post-release horizons in minutes.",
+    )
     parser.add_argument("--pre-minutes", type=int, default=30, help="Minutes before release to fetch.")
     parser.add_argument("--post-minutes", type=int, default=240, help="Minutes after release to fetch.")
     parser.add_argument(
@@ -902,22 +895,12 @@ def main() -> int:
         if not events:
             print(f"Error: no events loaded from {args.events_csv}", file=sys.stderr)
             return 2
-        # Ensure we have jobs_report_ts for market selection; infer if missing.
-        by_release_month: Dict[str, int] = {}
-        for event in events:
-            rm = event.get("release_month")
-            if not rm:
-                continue
-            y, m = _parse_year_month(str(rm))
-            jobs_date = _first_weekday_of_month(y, m, weekday=4)
-            by_release_month[str(rm)] = _to_utc_ts(jobs_date, args.jobs_time, args.tz, args.tz_fallback_offset)
-        for event in events:
-            rm = event.get("release_month")
-            if rm and "jobs_report_ts" not in event:
-                jobs_ts = by_release_month.get(str(rm))
-                if jobs_ts:
-                    event["jobs_report_ts"] = jobs_ts
-                    event["jobs_report_iso"] = _iso_from_ts(jobs_ts)
+        _ensure_jobs_report_ts(
+            events,
+            jobs_time=args.jobs_time,
+            tz_name=args.tz,
+            tz_fallback_offset=args.tz_fallback_offset,
+        )
     else:
         if not args.start_month or not args.end_month:
             print("Error: --start-month and --end-month are required (or pass --events-csv or use --demo).", file=sys.stderr)
@@ -937,6 +920,18 @@ def main() -> int:
             revelio_national_csv=_resolve_repo_path(args.revelio_national_csv) if args.revelio_national_csv else None,
         )
 
+    custom_path = _resolve_repo_path(args.custom_events) if args.custom_events else None
+    if custom_path and custom_path.exists():
+        custom_events = _load_events_from_csv(custom_path)
+        if custom_events:
+            events = _merge_events(events, custom_events)
+            _ensure_jobs_report_ts(
+                events,
+                jobs_time=args.jobs_time,
+                tz_name=args.tz,
+                tz_fallback_offset=args.tz_fallback_offset,
+            )
+
     pre_minutes = int(args.pre_minutes)
     post_minutes = int(args.post_minutes)
     horizons = _parse_horizons(args.horizons)
@@ -952,6 +947,14 @@ def main() -> int:
     except ValueError as exc:
         print(f"Error: {exc}", file=sys.stderr)
         return 2
+    longterm_days = max(0, int(args.longterm_days))
+    longterm_interval = str(args.longterm_interval)
+    if longterm_days > 0:
+        try:
+            _interval_to_period_minutes(longterm_interval)
+        except ValueError as exc:
+            print(f"Error: {exc}", file=sys.stderr)
+            return 2
     series_ticker = str(args.series)
     stability_epsilon_pp = float(args.stability_epsilon_pp)
 
@@ -992,6 +995,8 @@ def main() -> int:
         release_ts = int(event["release_ts"])
         start_ts = release_ts - pre_minutes * 60
         end_ts = release_ts + post_minutes * 60
+        longterm_start_ts = release_ts - longterm_days * 86400
+        longterm_end_ts = release_ts + longterm_days * 86400
 
         market_list = jobs_markets_by_month.get(release_month, [])
         if not market_list:
@@ -1018,6 +1023,22 @@ def main() -> int:
             except Exception as exc:
                 print(f"Warning: candlesticks failed for {ticker}: {exc}", file=sys.stderr)
                 candles = []
+            longterm_candles: List[List[Optional[float]]] = []
+            if longterm_days > 0:
+                try:
+                    longterm_candles = _fetch_candles(
+                        base_url=base_url,
+                        auth=auth,
+                        series_ticker=series_ticker,
+                        market_ticker=ticker,
+                        start_ts=longterm_start_ts,
+                        end_ts=longterm_end_ts,
+                        interval=longterm_interval,
+                        cache_dir=cache_dir,
+                    )
+                except Exception as exc:
+                    print(f"Warning: long-term candlesticks failed for {ticker}: {exc}", file=sys.stderr)
+                    longterm_candles = []
 
             close_ts = _market_close_ts(market)
             strike = _parse_strike(title)
@@ -1031,26 +1052,27 @@ def main() -> int:
                 levels[key] = yes
                 deltas[key] = (yes - baseline_yes) if (yes is not None and baseline_yes is not None) else None
 
-            event_markets.append(
-                {
-                    "ticker": ticker,
-                    "title": title,
-                    "strike": strike,
-                    "close_ts": close_ts,
-                    "close_iso": _iso_from_ts(close_ts) if close_ts else None,
-                    "candles": candles,
-                    "summary": {
-                        "baseline_ts": baseline_ts,
-                        "baseline_yes": baseline_yes,
-                        "levels": levels,
-                        "deltas": deltas,
-                        "volume": {
-                            "pre": _sum_volume(candles, start_ts, release_ts),
-                            "post": _sum_volume(candles, release_ts, end_ts),
-                        },
+            market_payload = {
+                "ticker": ticker,
+                "title": title,
+                "strike": strike,
+                "close_ts": close_ts,
+                "close_iso": _iso_from_ts(close_ts) if close_ts else None,
+                "candles": candles,
+                "summary": {
+                    "baseline_ts": baseline_ts,
+                    "baseline_yes": baseline_yes,
+                    "levels": levels,
+                    "deltas": deltas,
+                    "volume": {
+                        "pre": _sum_volume(candles, start_ts, release_ts),
+                        "post": _sum_volume(candles, release_ts, end_ts),
                     },
-                }
-            )
+                },
+            }
+            if longterm_days > 0:
+                market_payload["longterm_candles"] = longterm_candles
+            event_markets.append(market_payload)
             if i % 10 == 0:
                 time.sleep(0.1)
 
@@ -1075,6 +1097,8 @@ def main() -> int:
         },
         "events": events,
     }
+    if longterm_days > 0:
+        dataset["kalshi"]["longterm"] = {"days": longterm_days, "interval": longterm_interval}
     dataset["summary"] = _summarize_dataset(events, horizons=horizons)
 
     _write_json(out_path, dataset)

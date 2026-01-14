@@ -1,0 +1,13 @@
+{
+  "as_of": "2024-09-12T00:00:00Z",
+  "events": {
+    "nfp": {
+      "value": 47.8,
+      "note": "Net economic sentiment index (placeholder)"
+    },
+    "unemployment": {
+      "value": 45.2,
+      "note": "Labor sentiment sub-index (placeholder)"
+    }
+  }
+}

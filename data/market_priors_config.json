@@ -1,0 +1,87 @@
+{
+  "retention_days": 30,
+  "history_days": 30,
+  "history_interval_minutes": 60,
+  "history_chunk_days": 5,
+  "events": [
+    {
+      "id": "nfp",
+      "name": "Nonfarm Payrolls (NFP)",
+      "format": "jobs",
+      "decimals": 0,
+      "kalshi": {
+        "series_ticker": "KXPAYROLLS"
+      },
+      "polymarket": {
+        "slug": "",
+        "query": "how many jobs added",
+        "match": ["jobs added"]
+      }
+    },
+    {
+      "id": "unemployment",
+      "name": "Unemployment Rate",
+      "format": "percent",
+      "decimals": 1,
+      "next_release_override": "2026-02-06T08:30:00-05:00",
+      "kalshi": {
+        "series_ticker": "KXU3"
+      },
+      "polymarket": {
+        "slug": "",
+        "query": "unemployment rate",
+        "match": ["unemployment rate"]
+      }
+    },
+    {
+      "id": "cpi",
+      "name": "CPI Inflation",
+      "format": "percent",
+      "decimals": 1,
+      "next_release_override": "2026-02-11T08:30:00-05:00",
+      "kalshi": {
+        "series_ticker": "KXCPI"
+      },
+      "polymarket": {
+        "slug": "january-inflation-us-monthly",
+        "query": "consumer price index",
+        "match": ["cpi"]
+      }
+    },
+    {
+      "id": "fed",
+      "name": "Fed Rate Decision",
+      "format": "percent",
+      "decimals": 2,
+      "next_release_override": "2026-01-28T14:00:00-05:00",
+      "kalshi": {
+        "series_ticker": "KXFEDDECISION"
+      },
+      "polymarket": {
+        "slug": "fed-decision-in-january",
+        "query": "fomc rate decision",
+        "match": ["fomc"]
+      }
+    }
+  ],
+  "supplemental_sources": [
+    {
+      "id": "morning_consult",
+      "label": "Morning Consult Economic Sentiment",
+      "type": "index",
+      "path": "data/priors_sources/morning_consult.json"
+    },
+    {
+      "id": "bloomberg_survey",
+      "label": "Bloomberg Economist Survey Distribution",
+      "type": "distribution",
+      "path": "data/priors_sources/bloomberg_survey.json"
+    },
+    {
+      "id": "news_themes",
+      "label": "News Themes",
+      "type": "themes",
+      "path": "data/priors_sources/news_themes.json"
+    }
+  ]
+}

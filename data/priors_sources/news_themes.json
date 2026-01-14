@@ -1,0 +1,13 @@
+{
+  "as_of": "2024-09-12T00:00:00Z",
+  "events": {
+    "nfp": {
+      "note": "News theme mix (placeholder)",
+      "themes": [
+        { "label": "Hiring slowdown", "score": 0.62 },
+        { "label": "Wage growth easing", "score": 0.48 },
+        { "label": "Productivity gains", "score": 0.31 }
+      ]
+    }
+  }
+}

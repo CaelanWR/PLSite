@@ -277,13 +277,17 @@ def _generate_events(
     tz_fallback_offset: str,
 ) -> List[Dict[str, Any]]:
     events: List[Dict[str, Any]] = []
+    revelio_start_date = dt.date(2025, 9, 4)
+    revelio_start_ts = _to_utc_ts(revelio_start_date, revelio_time, tz_name, tz_fallback_offset)
     for year, month in _iter_year_months(start_month, end_month):
         release_month = _ym_string(year, month)
         payroll_y, payroll_m = _prev_month(year, month)
         payroll_month = _ym_string(payroll_y, payroll_m)
 
         jobs_date = _first_weekday_of_month(year, month, weekday=4)  # Friday
-        adp_date = _first_weekday_of_month(year, month, weekday=2)  # Wednesday
+        if month == 1 and jobs_date.day <= 3:
+            jobs_date = jobs_date + dt.timedelta(days=7)
+        adp_date = jobs_date - dt.timedelta(days=2)
         revelio_date = jobs_date - dt.timedelta(days=1)
 
         jobs_ts = _to_utc_ts(jobs_date, jobs_time, tz_name, tz_fallback_offset)
@@ -316,6 +320,85 @@ def _generate_events(
                 "jobs_report_iso": _iso_from_ts(jobs_ts),
             }
         )
+    events = [event for event in events if event.get("type") != "revelio" or int(event["release_ts"]) >= revelio_start_ts]
+    events.sort(key=lambda e: int(e["release_ts"]))
+    return events
+
+
+def _load_events_from_csv(path: Path) -> List[Dict[str, Any]]:
+    events: List[Dict[str, Any]] = []
+    with path.open("r", encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            if not row:
+                continue
+            event_type = (row.get("type") or "").strip().lower()
+            release_iso = (row.get("release_iso") or row.get("release") or "").strip()
+            release_month = (row.get("release_month") or "").strip()
+            payroll_month = (row.get("payroll_month") or "").strip()
+            label = (row.get("label") or "").strip()
+            event_id = (row.get("id") or row.get("event_id") or "").strip()
+            if not event_type or not release_iso:
+                continue
+
+            parsed = release_iso.replace("Z", "+00:00")
+            try:
+                release_dt = dt.datetime.fromisoformat(parsed)
+            except ValueError:
+                continue
+            release_ts = int(release_dt.timestamp())
+
+            if not release_month:
+                release_month = release_dt.strftime("%Y-%m")
+            if not payroll_month and release_month:
+                y, m = _parse_year_month(release_month)
+                py, pm = _prev_month(y, m)
+                payroll_month = _ym_string(py, pm)
+            if not event_id:
+                event_id = f"{release_month}-{event_type}"
+
+            actual = row.get("actual")
+            expected = row.get("expected")
+            actual_min = row.get("actual_min") or row.get("actual_low") or row.get("actual_floor")
+            actual_max = row.get("actual_max") or row.get("actual_high") or row.get("actual_ceiling")
+            unit = (row.get("unit") or "jobs").strip()
+
+            value: Optional[Dict[str, Any]] = None
+
+            def _to_float(v: Optional[str]) -> Optional[float]:
+                if v is None:
+                    return None
+                v = v.strip()
+                if not v:
+                    return None
+                try:
+                    return float(v.replace(",", ""))
+                except ValueError:
+                    return None
+
+            act = _to_float(actual)
+            exp = _to_float(expected)
+            act_min = _to_float(actual_min)
+            act_max = _to_float(actual_max)
+            if act is not None or exp is not None or act_min is not None or act_max is not None:
+                value = {"actual": act, "expected": exp, "unit": unit}
+                if act_min is not None:
+                    value["actual_min"] = act_min
+                if act_max is not None:
+                    value["actual_max"] = act_max
+
+            events.append(
+                {
+                    "id": event_id,
+                    "type": event_type,
+                    "label": label or event_type.upper(),
+                    "release_month": release_month,
+                    "payroll_month": payroll_month,
+                    "release_ts": release_ts,
+                    "release_iso": _iso_from_ts(release_ts),
+                    "value": value,
+                }
+            )
     events.sort(key=lambda e: int(e["release_ts"]))
     return events
 

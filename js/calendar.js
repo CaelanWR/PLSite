@@ -251,7 +251,7 @@ const state = {
   autoEvents: [],
   autoLoading: false,
   autoNotes: [],
-  viewMode: "list",
+  viewMode: "grid",
   gridMonth: initialGridMonth
 };
 
@@ -478,7 +478,7 @@ const combineDateAndTime = (
 
 const getWeekdayOnOrAfter = (year, month, startDay, weekday) => {
   const date = new Date(Date.UTC(year, month, startDay));
-  while (date.getDay() !== weekday) {
+  while (date.getUTCDay() !== weekday) {
     date.setUTCDate(date.getUTCDate() + 1);
     if (date.getUTCMonth() !== month) return null;
   }

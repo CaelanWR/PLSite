@@ -1,0 +1,24 @@
+{
+  "as_of": "2024-09-12T00:00:00Z",
+  "events": {
+    "nfp": {
+      "note": "Economist survey distribution (placeholder)",
+      "ranges": [
+        { "lower": 100000, "upper": 150000, "prob": 0.18 },
+        { "lower": 150000, "upper": 200000, "prob": 0.34 },
+        { "lower": 200000, "upper": 250000, "prob": 0.26 },
+        { "lower": 250000, "upper": 300000, "prob": 0.14 },
+        { "lower": 300000, "upper": 350000, "prob": 0.08 }
+      ]
+    },
+    "cpi": {
+      "note": "Economist survey distribution (placeholder)",
+      "ranges": [
+        { "lower": 2.8, "upper": 3.0, "prob": 0.2 },
+        { "lower": 3.0, "upper": 3.2, "prob": 0.32 },
+        { "lower": 3.2, "upper": 3.4, "prob": 0.28 },
+        { "lower": 3.4, "upper": 3.6, "prob": 0.2 }
+      ]
+    }
+  }
+}

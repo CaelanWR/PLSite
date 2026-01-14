@@ -1155,6 +1155,12 @@ select:focus {
   padding: 1rem;
 }
 
+#impactExpectationMetrics {
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.5rem;
+  padding: 0.65rem 0.8rem;
+}
+
 .revelio-metrics p {
   margin: 0;
 }
@@ -1216,6 +1222,22 @@ select:focus {
   margin: 0;
   font-size: 0.95rem;
   color: var(--muted);
+}
+.chart-control {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+.chart-control span {
+  white-space: nowrap;
+}
+.chart-control select {
+  width: auto;
+  min-width: 150px;
+  padding: 0.4rem 0.7rem;
+  font-size: 0.85rem;
 }
 
 .chart-subtitle {
@@ -1515,6 +1537,16 @@ select:focus {
   gap: 0.35rem;
 }
 
+.fred-controls a {
+  color: var(--muted);
+  font-size: 0.85rem;
+  text-decoration: none;
+}
+
+.fred-controls a:hover {
+  text-decoration: underline;
+}
+
 .fred-controls input,
 .fred-controls select {
   border: 1px solid var(--card-border);
@@ -1528,12 +1560,255 @@ select:focus {
   font-size: 0.85rem;
 }
 
+.impact-custom-panel {
+  margin-top: 0.75rem;
+  padding: 1rem 1.1rem;
+  border: 1px dashed rgba(148, 163, 184, 0.5);
+  border-radius: 18px;
+  background: rgba(248, 250, 252, 0.9);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+.impact-custom-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.impact-custom-header h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.impact-custom-header p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.impact-custom-grid {
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.impact-custom-grid label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.impact-custom-grid input {
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  padding: 0.6rem 0.85rem;
+  font-size: 0.95rem;
+}
+
+.impact-custom-actions {
+  margin-top: 0.85rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: center;
+}
+
 .chart-card {
   background: #fff;
   border: 1px solid var(--card-border);
   border-radius: 20px;
   padding: 1rem;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.impact-density-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(148, 163, 184, 0.45);
+  border-radius: 24px;
+  background: radial-gradient(circle at 15% 0%, rgba(59, 130, 246, 0.12), transparent 55%),
+    linear-gradient(135deg, #f8fafc 0%, #ffffff 45%, #eef2ff 100%);
+  box-shadow: 0 28px 60px rgba(15, 23, 42, 0.12);
+}
+
+.impact-density-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0));
+  z-index: 0;
+  pointer-events: none;
+}
+
+.impact-density-card .chart-header {
+  position: relative;
+  z-index: 1;
+  align-items: center;
+  gap: 1rem;
+}
+
+.impact-density-card .chart-header h3 {
+  font-size: 1.15rem;
+  letter-spacing: 0.01em;
+}
+
+.impact-density-card .chart-header select {
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(148, 163, 184, 0.55);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+}
+
+.impact-density-wrap {
+  position: relative;
+  z-index: 1;
+  min-height: 260px;
+  border-radius: 18px;
+  padding: 0.35rem 0.6rem 0.2rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.85), rgba(248, 250, 252, 0.95));
+  border: 1px solid rgba(226, 232, 240, 0.9);
+}
+
+.priors-density-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.1rem;
+  align-items: center;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.priors-density-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.priors-density-swatch {
+  display: inline-block;
+  width: 30px;
+  height: 0;
+  border-top: 3px solid #0f766e;
+}
+
+.priors-density-swatch-dashed {
+  border-top-style: dashed;
+  border-top-color: #64748b;
+}
+
+.priors-density-swatch-solid {
+  border-top-style: solid;
+  border-top-color: #0f766e;
+}
+
+.impact-density-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.1rem;
+  align-items: center;
+  font-size: 0.85rem;
+  color: var(--muted);
+  --density-color: #111827;
+}
+
+.impact-density-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.impact-density-swatch {
+  display: inline-block;
+  width: 30px;
+  height: 0;
+  border-top: 3px solid var(--density-color);
+  border-radius: 0;
+}
+
+.impact-density-swatch-dashed {
+  border-top-style: dashed;
+}
+
+.impact-density-swatch-solid {
+  border-top-style: solid;
+}
+
+.impact-density-wrap canvas {
+  height: 260px !important;
+}
+
+.impact-volume-title {
+  margin: 0.75rem 0 0.35rem;
+}
+
+.impact-trend-wrap {
+  min-height: 220px;
+  border-radius: 16px;
+  padding: 0.3rem 0.55rem 0.25rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(241, 245, 249, 0.96));
+  border: 1px solid rgba(226, 232, 240, 0.9);
+}
+
+.impact-trend-wrap canvas {
+  height: 220px !important;
+}
+
+.impact-trend-empty {
+  margin: 0.4rem 0 0;
+  color: var(--muted);
+}
+
+.impact-expectation-dash {
+  width: 100%;
+  height: 6px;
+  margin: 0.35rem 0 0.85rem;
+  border-radius: 999px;
+  background-image: repeating-linear-gradient(
+    90deg,
+    rgba(15, 23, 42, 0.45) 0,
+    rgba(15, 23, 42, 0.45) 12px,
+    transparent 12px,
+    transparent 20px
+  );
+}
+
+.impact-trend-volume-title {
+  margin: 0.9rem 0 0.35rem;
+}
+
+.impact-trend-volume-wrap {
+  min-height: 190px;
+  border-radius: 16px;
+  padding: 0.25rem 0.45rem 0.2rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(241, 245, 249, 0.96));
+  border: 1px solid rgba(226, 232, 240, 0.9);
+}
+
+.impact-trend-volume-wrap canvas {
+  height: 190px !important;
+}
+
+.impact-trend-volume-empty {
+  margin: 0.4rem 0 0;
+  color: var(--muted);
+}
+
+.impact-volume-wrap {
+  min-height: 180px;
+  border-radius: 16px;
+  padding: 0.25rem 0.45rem 0.2rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(241, 245, 249, 0.95));
+  border: 1px solid rgba(226, 232, 240, 0.9);
+}
+
+.impact-volume-wrap canvas {
+  height: 180px !important;
+}
+
+.impact-volume-empty {
+  margin: 0.4rem 0 0;
+  color: var(--muted);
 }
 
 .fred-details {
@@ -1551,6 +1826,11 @@ select:focus {
   font-size: 0.8rem;
   color: var(--muted);
   margin: 0 0 0.25rem;
+}
+
+.detail-note {
+  color: var(--muted);
+  font-size: 0.85rem;
 }
 
 .fred-description {

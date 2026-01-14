@@ -1,1 +1,4 @@
 kalshi.key
+.venv/
+data/kalshi_cache/
+data/polymarket_cache/

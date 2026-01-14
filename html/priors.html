@@ -14,7 +14,7 @@
     <div>
       <p class="eyebrow">Caelan's Labor Market Tracker</p>
       <h1>Market Priors</h1>
-      <p class="tagline">Blend Kalshi and Polymarket brackets to see the full distribution ahead of key releases.</p>
+      <p class="tagline">Bayesian read of market expectations from Kalshi and Polymarket.</p>
     </div>
   </header>
 
@@ -33,44 +33,103 @@
     <section class="revelio-board">
       <header class="links-board-header">
         <div>
-          <h2>Distribution dashboard</h2>
-          <p>Track how market expectations shift as release day approaches.</p>
+          <h2>Betting market expectations</h2>
+          <p>Track how market expectations evolve across Kalshi and Polymarket.</p>
+        </div>
+        <div class="auto-info" id="priorsInfo">
+          <button type="button" class="info-pill" id="priorsInfoBtn" aria-label="What am I seeing?" aria-expanded="false">i</button>
+          <div class="auto-info-details" id="priorsInfoDetails" role="dialog" aria-label="Bayesian overview">
+            <p><strong>Model</strong>: p ~ Dirichlet(1,…,1) over K bins; for each source s, y_s ~ Dirichlet(κ_s · p).</p>
+            <p><strong>Weights</strong>: κ_s scaled by log(1+volume) so deeper markets get higher κ (stronger pull).</p>
+            <p><strong>Posterior mean</strong>: E[p] ≈ average of draws; Expected = Σ(p_k · midpoint_k).</p>
+            <p><strong>Band</strong>: p10–p90 from the sampled Expected distribution.</p>
+          </div>
         </div>
       </header>
 
       <div class="fred-controls">
         <label>
+          <span>Market data</span>
+          <select id="priorsProviderSelect">
+            <option value="posterior" selected>Bayesian blend</option>
+            <option value="kalshi">Kalshi only</option>
+            <option value="polymarket">Polymarket only</option>
+          </select>
+        </label>
+        <label>
           <span>Event</span>
           <select id="priorsEventSelect" aria-label="Economic release selector"></select>
         </label>
         <label>
-          <span>Next release</span>
+          <span>Lookback</span>
+          <select id="priorsLookbackSelect">
+            <option value="1">Last 1d</option>
+            <option value="3">Last 3d</option>
+            <option value="7" selected>Last 7d</option>
+            <option value="14">Last 14d</option>
+            <option value="30">Last 30d</option>
+            <option value="45">Last 45d</option>
+          </select>
+        </label>
+        <label>
+          <a id="priorsReleaseLink" href="calendar.html">Next release</a>
           <input id="priorsReleaseDate" type="text" readonly aria-readonly="true">
         </label>
-        <button id="priorsRefresh" class="refresh-btn" type="button">Refresh</button>
+        <button id="priorsRefresh" class="refresh-btn" type="button">Refresh live</button>
         <small id="priorsUpdatedAt">Updated: --</small>
+        <small id="priorsLiveHint">Live refresh works when running `python3 scripts/serve.py` with API access.</small>
+      </div>
+
+      <div class="chart-card revelio-chart-card">
+        <div class="chart-header">
+          <h3 id="priorsBenchmarkTitle">Current benchmark</h3>
+        </div>
+        <div class="revelio-metrics" id="priorsBenchmark"></div>
       </div>
 
       <p id="priorsStatus" class="form-status" aria-live="polite">Loading market priors...</p>
 
       <div class="chart-card revelio-chart-card">
         <div class="chart-header">
-          <h3>Current distribution</h3>
+          <h3>Market prior distribution</h3>
         </div>
-        <p class="chart-subtitle">Combined probability across Kalshi and Polymarket brackets.</p>
-        <div class="revelio-chart-wrap">
-          <canvas id="priorsBarChart" height="320"></canvas>
+        <div class="revelio-chart-wrap revelio-chart-wrap-small">
+          <canvas id="priorsDistributionChart" height="320"></canvas>
+        </div>
+      </div>
+
+      <div class="chart-card revelio-chart-card">
+        <div class="chart-header">
+          <h3>Expectation summary</h3>
         </div>
         <div class="revelio-metrics" id="priorsMetrics"></div>
       </div>
 
       <div class="chart-card revelio-chart-card">
         <div class="chart-header">
-          <h3>Distribution evolution</h3>
+          <h3>Expectation over time</h3>
         </div>
-        <p class="chart-subtitle">Market expectations 4 weeks, 2 weeks, 1 week ago vs current.</p>
+        <p class="chart-subtitle">Posterior expected value over recent refreshes.</p>
         <div class="revelio-chart-wrap revelio-chart-wrap-small">
-          <canvas id="priorsEvolutionChart" height="220"></canvas>
+          <canvas id="priorsTrendChart" height="220"></canvas>
+        </div>
+      </div>
+
+      <div class="chart-card revelio-chart-card">
+        <div class="chart-header">
+          <h3>Uncertainty over time</h3>
+          <label class="chart-control">
+            <span>Band</span>
+            <select id="priorsBandSelect">
+              <option value="50">50% (p75–p25)</option>
+              <option value="80" selected>80% (p90–p10)</option>
+              <option value="90">90% (p95–p05)</option>
+            </select>
+          </label>
+        </div>
+        <p class="chart-subtitle" id="priorsUncertaintySubtitle">Width of the posterior 80% band (p90–p10).</p>
+        <div class="revelio-chart-wrap revelio-chart-wrap-small">
+          <canvas id="priorsUncertaintyChart" height="220"></canvas>
         </div>
       </div>
 
@@ -79,17 +138,6 @@
           <thead id="priorsTableHead"></thead>
           <tbody id="priorsTableBody"></tbody>
         </table>
-      </div>
-
-      <div class="empty-state">
-        <h3>Coming soon data sources</h3>
-        <p>Planned additions to deepen the distribution signal:</p>
-        <ul>
-          <li>Morning Consult Economic Sentiment</li>
-          <li>Bloomberg Economist Survey Distribution</li>
-          <li>Fed Survey of Consumer Expectations</li>
-          <li>Options-Implied Volatility</li>
-        </ul>
       </div>
     </section>
   </main>

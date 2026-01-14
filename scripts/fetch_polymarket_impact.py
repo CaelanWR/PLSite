@@ -23,10 +23,13 @@ from __future__ import annotations
 import argparse
 import datetime as dt
 import hashlib
+import http.client
 import json
 import math
 import os
 import re
+import socket
+import ssl
 import sys
 import time
 from pathlib import Path
@@ -41,6 +44,7 @@ from impact_common import (  # type: ignore[import-not-found]
     _attach_announced_values,
     _generate_events,
     _iso_from_ts,
+    _load_events_from_csv,
     _parse_horizons,
     _parse_year_month,
     _pick_baseline,
@@ -80,12 +84,37 @@ def _write_json(path: Path, data: Any) -> None:
         json.dump(data, f, ensure_ascii=False)
 
 
-def _http_get_json(url: str, timeout_s: int = 30) -> Any:
+def _http_get_json(url: str, timeout_s: int = 30, retries: int = 2, backoff_s: float = 1.0) -> Any:
     request = Request(url, headers={"Accept": "application/json", "User-Agent": "Newsfeed/polymarket-impact"}, method="GET")
-    with urlopen(request, timeout=timeout_s) as response:
-        charset = response.headers.get_content_charset() or "utf-8"
-        body = response.read().decode(charset)
-        return json.loads(body)
+    last_error: Optional[Exception] = None
+    for attempt in range(retries + 1):
+        try:
+            with urlopen(request, timeout=timeout_s) as response:
+                charset = response.headers.get_content_charset() or "utf-8"
+                body = response.read().decode(charset)
+                return json.loads(body)
+        except HTTPError as exc:
+            last_error = exc
+            if exc.code in {429, 500, 502, 503, 504} and attempt < retries:
+                time.sleep(backoff_s * (2**attempt))
+                continue
+            raise
+        except (
+            URLError,
+            TimeoutError,
+            socket.timeout,
+            ssl.SSLError,
+            http.client.IncompleteRead,
+            http.client.RemoteDisconnected,
+        ) as exc:
+            last_error = exc
+            if attempt < retries:
+                time.sleep(backoff_s * (2**attempt))
+                continue
+            raise
+    if last_error:
+        raise last_error
+    raise RuntimeError("HTTP request failed without an exception.")
 
 
 def _fetch_cached_json(*, url: str, cache_dir: Path, cache_namespace: str, timeout_s: int = 30) -> Any:
@@ -154,6 +183,23 @@ def _parse_json_arrayish(value: Any) -> Optional[List[Any]]:
             return None
         return parsed if isinstance(parsed, list) else None
     return None
+
+
+def _merge_events(base: List[Dict[str, Any]], extra: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    by_id: Dict[str, Dict[str, Any]] = {}
+    for event in base:
+        key = str(event.get("id") or "")
+        if not key:
+            continue
+        by_id[key] = event
+    for event in extra:
+        key = str(event.get("id") or "")
+        if not key:
+            continue
+        by_id[key] = event
+    merged = list(by_id.values())
+    merged.sort(key=lambda e: int(e.get("release_ts") or 0))
+    return merged
 
 
 def _parse_jobs_value(raw: str) -> Optional[int]:
@@ -476,6 +522,58 @@ def _fetch_token_price_history(
     return out
 
 
+def _fetch_token_price_history_chunked(
+    *,
+    clob_url: str,
+    token_id: str,
+    start_ts: int,
+    end_ts: int,
+    fidelity_minutes: int,
+    cache_dir: Path,
+    chunk_days: int,
+) -> List[List[Optional[float]]]:
+    out: List[List[Optional[float]]] = []
+    if end_ts <= start_ts:
+        return out
+    chunk_days = max(1, int(chunk_days))
+    current_days = chunk_days
+    cursor = int(start_ts)
+    while cursor < end_ts:
+        chunk_end = min(end_ts, cursor + current_days * 86400)
+        try:
+            part = _fetch_token_price_history(
+                clob_url=clob_url,
+                token_id=token_id,
+                start_ts=cursor,
+                end_ts=chunk_end,
+                fidelity_minutes=fidelity_minutes,
+                cache_dir=cache_dir,
+            )
+        except (
+            HTTPError,
+            URLError,
+            TimeoutError,
+            socket.timeout,
+            ssl.SSLError,
+            http.client.IncompleteRead,
+            http.client.RemoteDisconnected,
+        ) as exc:
+            if isinstance(exc, HTTPError) and exc.code == 400 and current_days > 1:
+                current_days = max(1, current_days // 2)
+                continue
+            if current_days > 1:
+                current_days = max(1, current_days // 2)
+                time.sleep(0.2)
+                continue
+            raise
+        out.extend(part)
+        cursor = chunk_end
+        if cursor < end_ts:
+            time.sleep(0.02)
+    out.sort(key=lambda row: row[0] if row and row[0] is not None else 0)
+    return out
+
+
 def _fetch_token_price_history_with_fallback(
     *,
     clob_url: str,
@@ -533,10 +631,37 @@ def main() -> int:
     parser.add_argument("--jobs-time", default="08:30", help="Jobs report time in ET (HH:MM).")
     parser.add_argument("--tz-fallback-offset", default="-05:00", help="Fallback offset if tz database missing.")
     parser.add_argument("--cache-dir", default="data/polymarket_cache", help="Cache directory for API responses.")
-    parser.add_argument("--horizons", default="5,30,60,240", help="Comma-separated post-release horizons in minutes.")
+    parser.add_argument(
+        "--horizons",
+        default="5,30,60,120,240",
+        help="Comma-separated post-release horizons in minutes.",
+    )
     parser.add_argument("--pre-minutes", type=int, default=30, help="Minutes before release to fetch.")
     parser.add_argument("--post-minutes", type=int, default=240, help="Minutes after release to fetch.")
     parser.add_argument("--fidelity", type=int, default=1, help="Price history resolution in minutes (default: 1).")
+    parser.add_argument(
+        "--longterm-days",
+        type=int,
+        default=0,
+        help="Days before/after release for a long-term series (default: 0 disables).",
+    )
+    parser.add_argument(
+        "--longterm-fidelity",
+        type=int,
+        default=60,
+        help="Resolution in minutes for the long-term series (default: 60).",
+    )
+    parser.add_argument(
+        "--longterm-chunk-days",
+        type=int,
+        default=7,
+        help="Chunk size in days for long-term history requests (default: 7).",
+    )
+    parser.add_argument(
+        "--custom-events",
+        default="data/impact_events_custom.csv",
+        help="Optional CSV of custom events to append (default: data/impact_events_custom.csv if present).",
+    )
     parser.add_argument(
         "--fallback-pre-days",
         type=int,
@@ -567,6 +692,12 @@ def main() -> int:
     if fidelity <= 0:
         print("Error: --fidelity must be a positive integer minute value.", file=sys.stderr)
         return 2
+    longterm_days = max(0, int(args.longterm_days))
+    longterm_fidelity = int(args.longterm_fidelity)
+    if longterm_days > 0 and longterm_fidelity <= 0:
+        print("Error: --longterm-fidelity must be a positive integer minute value.", file=sys.stderr)
+        return 2
+    longterm_chunk_days = max(1, int(args.longterm_chunk_days))
     fallback_pre_days = int(getattr(args, "fallback_pre_days", 7))
     fallback_post_days = int(getattr(args, "fallback_post_days", 2))
 
@@ -588,6 +719,12 @@ def main() -> int:
         adp_history_csv=_resolve_repo_path("data/raw/ADP_NER_history.csv"),
         revelio_national_csv=_resolve_repo_path("data/raw/employment_national_revelio.csv"),
     )
+
+    custom_path = _resolve_repo_path(args.custom_events) if args.custom_events else None
+    if custom_path and custom_path.exists():
+        custom_events = _load_events_from_csv(custom_path)
+        if custom_events:
+            events = _merge_events(events, custom_events)
 
     print("Resolving Polymarket NFP events…", flush=True)
 
@@ -706,6 +843,8 @@ def main() -> int:
 
         start_ts = release_ts - pre_minutes * 60
         end_ts = release_ts + post_minutes * 60
+        longterm_start_ts = release_ts - longterm_days * 86400
+        longterm_end_ts = release_ts + longterm_days * 86400
         brackets: List[Dict[str, Any]] = list(m.get("brackets") or [])
         event_markets: List[Dict[str, Any]] = []
 
@@ -726,10 +865,43 @@ def main() -> int:
                     fallback_pre_days=fallback_pre_days,
                     fallback_post_days=fallback_post_days,
                 )
-            except (HTTPError, URLError, json.JSONDecodeError) as exc:
+            except (
+                HTTPError,
+                URLError,
+                json.JSONDecodeError,
+                TimeoutError,
+                socket.timeout,
+                ssl.SSLError,
+                http.client.IncompleteRead,
+                http.client.RemoteDisconnected,
+            ) as exc:
                 print(f"Warning: prices-history failed for token {token_id}: {exc}", file=sys.stderr)
                 candles_full = []
                 fetch_meta = {"requested": {"start_ts": start_ts, "end_ts": end_ts}, "used_fallback": False, "fallback": None}
+            longterm_candles: List[List[Optional[float]]] = []
+            if longterm_days > 0:
+                try:
+                    longterm_candles = _fetch_token_price_history_chunked(
+                        clob_url=str(args.clob_url),
+                        token_id=str(token_id),
+                        start_ts=longterm_start_ts,
+                        end_ts=longterm_end_ts,
+                        fidelity_minutes=longterm_fidelity,
+                        cache_dir=cache_dir,
+                        chunk_days=longterm_chunk_days,
+                    )
+                except (
+                    HTTPError,
+                    URLError,
+                    json.JSONDecodeError,
+                    TimeoutError,
+                    socket.timeout,
+                    ssl.SSLError,
+                    http.client.IncompleteRead,
+                    http.client.RemoteDisconnected,
+                ) as exc:
+                    print(f"Warning: long-term prices-history failed for token {token_id}: {exc}", file=sys.stderr)
+                    longterm_candles = []
 
             baseline_ts, baseline_yes = _pick_baseline(candles_full, release_ts)
             candles = _clip_and_pad_candles(candles_full, start_ts=start_ts, end_ts=end_ts)
@@ -741,24 +913,25 @@ def main() -> int:
                 levels[key] = yes
                 deltas[key] = (yes - baseline_yes) if (yes is not None and baseline_yes is not None) else None
 
-            event_markets.append(
-                {
-                    "ticker": str(token_id),
-                    "title": str(outcome),
-                    "strike": strike,
-                    "close_ts": None,
-                    "close_iso": None,
-                    "candles": candles,
-                    "summary": {
-                        "baseline_ts": baseline_ts,
-                        "baseline_yes": baseline_yes,
-                        "levels": levels,
-                        "deltas": deltas,
-                        "volume": {"pre": None, "post": None},
-                    },
-                    "fetch": fetch_meta,
-                }
-            )
+            market_payload = {
+                "ticker": str(token_id),
+                "title": str(outcome),
+                "strike": strike,
+                "close_ts": None,
+                "close_iso": None,
+                "candles": candles,
+                "summary": {
+                    "baseline_ts": baseline_ts,
+                    "baseline_yes": baseline_yes,
+                    "levels": levels,
+                    "deltas": deltas,
+                    "volume": {"pre": None, "post": None},
+                },
+                "fetch": fetch_meta,
+            }
+            if longterm_days > 0:
+                market_payload["longterm_candles"] = longterm_candles
+            event_markets.append(market_payload)
             if idx % 8 == 0:
                 time.sleep(0.05)
 
@@ -789,6 +962,12 @@ def main() -> int:
         },
         "events": events,
     }
+    if longterm_days > 0:
+        dataset["polymarket"]["longterm"] = {
+            "days": longterm_days,
+            "fidelity_minutes": longterm_fidelity,
+            "chunk_days": longterm_chunk_days,
+        }
     dataset["summary"] = _summarize_dataset(events, horizons=horizons)
 
     _write_json(out_path, dataset)

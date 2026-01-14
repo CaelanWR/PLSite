@@ -39,22 +39,10 @@
 
       <div class="fred-controls">
         <label>
-          <span>Provider</span>
-          <select id="impactProviderSelect">
+          <span>Market data</span>
+          <select id="impactSummaryProviderSelect">
             <option value="kalshi" selected>Kalshi</option>
-            <option value="polymarket">Polymarket (NFP)</option>
-          </select>
-        </label>
-        <label>
-          <span>Top section</span>
-          <select id="impactSectionSelect">
-            <option value="" selected>Jump…</option>
-            <option value="impactYesCard">Yes price</option>
-            <option value="impactExpectationCard">Market expectation</option>
-            <option value="impactAlignmentCard">Announcement alignment</option>
-            <option value="impactDistributionCard">Strike distribution</option>
-            <option value="impactHistoryCard">History</option>
-            <option value="impactStrikesCard">Strikes table</option>
+            <option value="polymarket">Polymarket</option>
           </select>
         </label>
         <label>
@@ -73,12 +61,14 @@
           <span>Horizon</span>
           <select id="impactHorizonSelect">
             <option value="5m">+5 min</option>
-            <option value="30m" selected>+30 min</option>
+            <option value="30m">+30 min</option>
             <option value="60m">+1 hour</option>
+            <option value="120m" selected>+2 hours</option>
             <option value="240m">+4 hours</option>
           </select>
         </label>
         <button id="impactRefresh" class="refresh-btn" type="button">Refresh</button>
+        <button id="impactCustomToggle" class="toggle-btn" type="button" aria-expanded="false">Custom events</button>
         <div class="auto-info" id="impactInfo">
           <button type="button" class="info-pill" id="impactInfoBtn" aria-label="Methodology" aria-expanded="false">i</button>
           <div class="auto-info-details" id="impactInfoDetails" role="dialog" aria-label="Methodology details">
@@ -90,6 +80,44 @@
             <p><strong>Aggregate strike</strong>: If you select <em>Aggregate (announcement-weighted)</em>, the chart switches to an “announcement-aligned” move: for each strike <code>S</code> and announced payroll change <code>A</code>, set <code>sign = +1</code> if <code>A &gt; S</code> else <code>-1</code> if <code>A &lt; S</code>, weight <code>w = exp(-|S-A|/50,000)</code>, compute <code>ΔYes(t) = Yes(t) - Yes(baseline)</code>, then aggregate <code>agg(t) = Σ(w·sign·ΔYes(t)) / Σ(w)</code> across strikes with data.</p>
             <p><strong>Source summary</strong>: Aggregates mean/|mean| moves, volume-rate ratios, and stabilization times across all loaded events.</p>
           </div>
+        </div>
+      </div>
+
+      <div class="impact-custom-panel" id="impactCustomPanel" hidden>
+        <div class="impact-custom-header">
+          <h3>Custom events</h3>
+          <p>Add one-off releases like posts or leaks. Stored in this browser only.</p>
+        </div>
+        <div class="impact-custom-grid">
+          <label>
+            <span>Event label</span>
+            <input id="impactCustomLabel" type="text" placeholder="Trump Posts Numbers">
+          </label>
+          <label>
+            <span>Release time (local)</span>
+            <input id="impactCustomRelease" type="datetime-local">
+          </label>
+          <label>
+            <span>Payroll month (YYYY-MM)</span>
+            <input id="impactCustomPayroll" type="text" placeholder="2025-12">
+          </label>
+          <label>
+            <span>Announced (jobs)</span>
+            <input id="impactCustomActual" type="number" step="1" placeholder="50000">
+          </label>
+          <label>
+            <span>Range min (jobs)</span>
+            <input id="impactCustomMin" type="number" step="1" placeholder="40000">
+          </label>
+          <label>
+            <span>Range max (jobs)</span>
+            <input id="impactCustomMax" type="number" step="1" placeholder="60000">
+          </label>
+        </div>
+        <div class="impact-custom-actions">
+          <button id="impactCustomAdd" class="refresh-btn" type="button">Add event</button>
+          <button id="impactCustomClear" class="toggle-btn" type="button">Clear</button>
+          <button id="impactCustomCancel" class="toggle-btn" type="button">Cancel</button>
         </div>
       </div>
 
@@ -107,74 +135,140 @@
         <div class="revelio-chart-wrap">
           <canvas id="impactChart" height="320"></canvas>
         </div>
-        <div class="revelio-metrics" id="impactMetrics"></div>
+      </div>
+
+      <div class="chart-card revelio-chart-card impact-section" id="impactTrendCard">
+        <div class="chart-header">
+          <h3>Long-term expectation</h3>
+          <label>
+            <span>Lookback</span>
+            <select id="impactTrendWindowSelect">
+              <option value="1">Last 1d</option>
+              <option value="3">Last 3d</option>
+              <option value="7" selected>Last 7d</option>
+              <option value="14">Last 14d</option>
+              <option value="21">Last 21d</option>
+              <option value="30">Last 30d</option>
+              <option value="45">Last 45d</option>
+            </select>
+          </label>
+          <label>
+            <span>Volume window</span>
+            <select id="impactTrendVolumeWindowSelect">
+              <option value="6h" selected>6h</option>
+              <option value="12h">12h</option>
+              <option value="24h">24h</option>
+              <option value="3d">3d</option>
+              <option value="7d">7d</option>
+            </select>
+          </label>
+        </div>
+        <p class="chart-subtitle">Coarser history showing the market-implied expected payroll change over time.</p>
+        <div class="revelio-chart-wrap impact-trend-wrap" id="impactTrendWrap">
+          <canvas id="impactTrendChart" height="240"></canvas>
+        </div>
+        <p class="impact-trend-empty" id="impactTrendEmpty"></p>
+        <h4 class="impact-trend-volume-title" id="impactTrendVolumeTitle">Long-term volume (sum across strikes)</h4>
+        <div class="revelio-chart-wrap impact-trend-volume-wrap" id="impactTrendVolumeWrap">
+          <canvas id="impactTrendVolumeChart" height="200"></canvas>
+        </div>
+        <p class="impact-trend-volume-empty" id="impactTrendVolumeEmpty"></p>
       </div>
 
       <div class="chart-card impact-section" id="impactExpectationCard">
         <div class="chart-header">
           <h3>Market expectation</h3>
-          <label>
-            <span>Data</span>
-            <select id="impactSummaryProviderSelect">
-              <option value="same" selected>Same as provider</option>
-              <option value="kalshi">Kalshi</option>
-              <option value="polymarket">Polymarket</option>
-              <option value="both">Kalshi + Polymarket</option>
-            </select>
-          </label>
         </div>
         <p class="chart-subtitle" id="impactExpectationText">Select an event to see how the market-implied expected payroll change repriced after the release.</p>
+        <div class="impact-expectation-dash" aria-hidden="true"></div>
         <div class="revelio-metrics" id="impactExpectationMetrics"></div>
-        <div class="revelio-chart-wrap revelio-chart-wrap-small">
-          <canvas id="impactExpectationChart" height="220"></canvas>
-        </div>
-      </div>
-
-      <div class="chart-card impact-section" id="impactAlignmentCard">
-        <div class="chart-header">
-          <h3>Announcement alignment</h3>
-        </div>
-        <p class="chart-subtitle">Across all loaded events: does the market reprice in the direction implied by the announcement vs the pre-release expectation?</p>
-        <div class="revelio-metrics" id="impactAlignmentMetrics"></div>
       </div>
 
       <div class="chart-card impact-section" id="impactSummaryCard">
         <div class="chart-header">
-          <h3>Source summary</h3>
+          <h3>Avg market move by source</h3>
         </div>
-        <p class="chart-subtitle">Averages across all loaded events at the selected horizon.</p>
+        <p class="chart-subtitle">Average |Δ Yes| and aligned share at the selected horizon (ADP matched to Revelio weeks).</p>
         <div class="revelio-metrics" id="impactSummaryMetrics"></div>
+        <div class="revelio-chart-wrap revelio-chart-wrap-small">
+          <canvas id="impactSummaryChart" height="200"></canvas>
+        </div>
+        <p class="chart-subtitle">Median volume change (post/pre) by source.</p>
+        <div class="revelio-chart-wrap revelio-chart-wrap-small">
+          <canvas id="impactSummaryVolumeChart" height="200"></canvas>
+        </div>
       </div>
 
-      <div class="chart-card revelio-chart-card impact-section" id="impactDistributionCard">
+      <div class="chart-card revelio-chart-card impact-section impact-density-card" id="impactDistributionCard">
         <div class="chart-header">
-          <h3>Strike distribution</h3>
+          <h3>Implied probability density</h3>
           <label>
             <span class="visually-hidden">Bar chart mode</span>
             <select id="impactBarModeSelect">
-              <option value="distribution" selected>Before vs after</option>
-              <option value="delta">Δ Yes by strike</option>
+              <option value="distribution">Density (before vs after)</option>
+              <option value="delta" selected>Δ Yes by strike</option>
+            </select>
+          </label>
+          <label>
+            <span>Volume window</span>
+            <select id="impactVolumeWindowSelect">
+              <option value="5">5m</option>
+              <option value="15" selected>15m</option>
+              <option value="30">30m</option>
+              <option value="60">60m</option>
+              <option value="120">2h</option>
+              <option value="240">4h</option>
             </select>
           </label>
         </div>
-        <div class="revelio-chart-wrap revelio-chart-wrap-small">
+        <div class="impact-density-legend" id="impactDensityLegend">
+          <span class="impact-density-legend-item">
+            <span class="impact-density-swatch impact-density-swatch-dashed"></span>
+            <span id="impactDensityLegendBefore">Before</span>
+          </span>
+          <span class="impact-density-legend-item">
+            <span class="impact-density-swatch impact-density-swatch-solid"></span>
+            <span id="impactDensityLegendAfter">After</span>
+          </span>
+        </div>
+        <div class="revelio-chart-wrap revelio-chart-wrap-small impact-density-wrap">
           <canvas id="impactBarChart" height="220"></canvas>
         </div>
+        <p class="chart-subtitle impact-volume-title" id="impactVolumeTitle">Cumulative volume (sum across strikes)</p>
+        <div class="revelio-chart-wrap revelio-chart-wrap-small impact-volume-wrap" id="impactVolumeWrap">
+          <canvas id="impactVolumeChart" height="180"></canvas>
+        </div>
+        <p class="chart-subtitle impact-volume-empty" id="impactVolumeEmpty"></p>
       </div>
 
-      <div class="revision-table-wrap impact-section" id="impactHistoryCard">
-        <table class="revision-table compact" id="impactHistoryTable">
-          <thead id="impactHistoryTableHead"></thead>
-          <tbody id="impactHistoryTableBody"></tbody>
-        </table>
       </div>
 
-      <div class="revision-table-wrap impact-section" id="impactStrikesCard">
-        <table class="revision-table compact" id="impactTable">
-          <thead id="impactTableHead"></thead>
-          <tbody id="impactTableBody"></tbody>
-        </table>
+      <div class="chart-card impact-section" id="impactArbCard" hidden>
+        <div class="chart-header">
+          <h3>Arb window (long-term)</h3>
+        </div>
+        <p class="chart-subtitle">Max contract mispricing between Kalshi and Polymarket using the hourly long-term price series. Dots mark windows above 5pp.</p>
+        <div class="revelio-metrics" id="impactArbMetrics"></div>
+        <p class="chart-subtitle" id="impactArbDetail"></p>
+        <div class="revelio-chart-wrap revelio-chart-wrap-small" id="impactArbWrap">
+          <canvas id="impactArbChart" height="200"></canvas>
+        </div>
+        <p class="impact-trend-empty" id="impactArbEmpty"></p>
       </div>
+
+      <div class="chart-card impact-section" id="impactArbNotesCard" hidden>
+        <div class="chart-header">
+          <h3>Kalshi vs Polymarket arbitrage lens</h3>
+        </div>
+        <p class="chart-subtitle">Use the long-term (hourly) price series rather than the 1-minute release window. Any detected edge is closer to a slow carry trade than a micro-arb, but it still quantifies mispricing when bin definitions differ.</p>
+        <p>The core idea is to map each venue's bin contracts into a common payoff grid, then compare synthetic prices against the observed ones.</p>
+        <div class="revelio-metrics">
+          <p><strong>Outcome mapping:</strong> express each contract as an indicator over a shared set of bin edges, then aggregate bins to match the other venue's payoff.</p>
+          <p><strong>No-arb bounds:</strong> sum adjacent bins to form upper/lower price bounds; a contract priced outside its bounds is an arbitrage.</p>
+          <p><strong>Dominating portfolios:</strong> solve a linear program that builds a portfolio of bins that dominates a target payoff; price violations imply arbitrage size.</p>
+          <p><strong>Implied CDF check:</strong> convert bin prices into an implied CDF and compare across venues at shared edges for persistent gaps.</p>
+        </div>
+        <p class="chart-subtitle">The chart uses the most mispriced contract at each timestamp; LP-based dominance tests would refine the arb sizing.</p>
       </div>
     </section>
   </main>
