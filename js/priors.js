@@ -619,7 +619,6 @@ const renderBenchmark = (meta) => {
     `;
     return;
   }
-  const dateLabel = cached.date ? formatDateShort(cached.date) : "--";
   const valueLabel = formatBenchmarkValue(cached.value, meta);
   const decisionLabel = meta.id === "fed" ? formatFedDecision(cached.delta) : null;
   const decisionDate = cached.previousDate ? formatDateShort(cached.previousDate) : null;
@@ -629,7 +628,7 @@ const renderBenchmark = (meta) => {
   elements.benchmark.innerHTML = `
     <div>
       <p class="detail-label">Latest release</p>
-      <p>${valueLabel} <span class="detail-note">(${dateLabel})</span></p>
+      <p>${valueLabel}</p>
       ${decisionBlock}
       <p class="detail-note">${config.description}</p>
     </div>
