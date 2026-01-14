@@ -79,6 +79,14 @@
         <small id="priorsUpdatedAt">Updated: --</small>
         <small id="priorsLiveHint">Live refresh works when running `python3 scripts/serve.py` with API access.</small>
       </div>
+      <div class="fred-controls">
+        <label>
+          <span>FRED API key</span>
+          <input type="password" id="priorsFredKey" placeholder="Paste your API key">
+        </label>
+        <button id="priorsFredApply" class="refresh-btn" type="button">Apply key</button>
+        <p id="priorsFredStatus" class="form-status" aria-live="polite">Add your FRED API key to show the latest release.</p>
+      </div>
 
       <div class="chart-card revelio-chart-card">
         <div class="chart-header">

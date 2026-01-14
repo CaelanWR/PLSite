@@ -26,6 +26,9 @@ const elements = {
   releaseLink: byId("priorsReleaseLink"),
   updatedAt: byId("priorsUpdatedAt"),
   refreshButton: byId("priorsRefresh"),
+  fredKeyInput: byId("priorsFredKey"),
+  fredApplyButton: byId("priorsFredApply"),
+  fredStatus: byId("priorsFredStatus"),
   status: byId("priorsStatus"),
   metrics: byId("priorsMetrics"),
   benchmarkTitle: byId("priorsBenchmarkTitle"),
@@ -349,6 +352,12 @@ const setStatus = (message, isError = false) => {
   elements.status.classList.toggle("error", Boolean(isError));
 };
 
+const setFredStatus = (message, isError = false) => {
+  if (!elements.fredStatus) return;
+  elements.fredStatus.textContent = message;
+  elements.fredStatus.classList.toggle("error", Boolean(isError));
+};
+
 const setReleaseDate = (value) => {
   if (!elements.releaseDate) return;
   const formatted = formatDate(value);
@@ -593,7 +602,7 @@ const renderBenchmark = (meta) => {
       <div>
         <p class="detail-label">Latest release</p>
         <p>--</p>
-        <p class="detail-note">Add your FRED API key in Live Feeds to show the latest value.</p>
+        <p class="detail-note">Add your FRED API key on this page to show the latest value.</p>
         <p class="detail-note">${config.description}</p>
       </div>
     `;
@@ -1362,6 +1371,43 @@ if (elements.bandSelect) {
 elements.eventSelect?.addEventListener("change", () => render());
 
 elements.refreshButton?.addEventListener("click", () => refreshLiveData());
+
+const applyFredKey = () => {
+  if (!elements.fredKeyInput) return;
+  const trimmed = elements.fredKeyInput.value.trim();
+  if (!trimmed) {
+    setFredStatus("Enter a valid FRED API key.", true);
+    return;
+  }
+  storage.set(FRED_KEY_STORAGE, trimmed);
+  setFredStatus("FRED API key saved. Loading latest releases...", false);
+  state.benchmarkCache.clear();
+  render();
+};
+
+if (elements.fredKeyInput) {
+  elements.fredKeyInput.value = getFredKey();
+  elements.fredKeyInput.addEventListener("keypress", (event) => {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      applyFredKey();
+    }
+  });
+}
+
+if (elements.fredApplyButton) {
+  elements.fredApplyButton.addEventListener("click", applyFredKey);
+}
+
+if (elements.fredStatus) {
+  const hasKey = Boolean(getFredKey());
+  setFredStatus(
+    hasKey
+      ? "Key stored locally in this browser only."
+      : "Add your FRED API key to show the latest release.",
+    false
+  );
+}
 
 initInfoPopover({ wrap: elements.infoWrap, btn: elements.infoBtn });
 
