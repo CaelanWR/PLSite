@@ -1089,6 +1089,7 @@ const renderTrendChart = (eventData, snapshots, meta, provider, lookbackDays) =>
     spanGaps: true
   });
 
+  const trendDecimals = meta.id === "fed" ? 3 : 2;
   const config = {
     type: "line",
     data: { datasets },
@@ -1100,7 +1101,7 @@ const renderTrendChart = (eventData, snapshots, meta, provider, lookbackDays) =>
         tooltip: {
           callbacks: {
             title: (items) => formatDate(items?.[0]?.parsed?.x),
-            label: (ctx) => `Expected: ${formatChartValueTooltip(ctx.parsed.y, meta, 2)}`
+            label: (ctx) => `Expected: ${formatChartValueTooltip(ctx.parsed.y, meta, trendDecimals)}`
           }
         }
       },
@@ -1115,7 +1116,7 @@ const renderTrendChart = (eventData, snapshots, meta, provider, lookbackDays) =>
         y: {
           title: { display: true, text: meta.format === "jobs" ? "Expected payroll change" : "Expected rate" },
           ticks: {
-            callback: (value) => formatChartValue(value, meta, 2)
+            callback: (value) => formatChartValue(value, meta, trendDecimals)
           }
         }
       }
